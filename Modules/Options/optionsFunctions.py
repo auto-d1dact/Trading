@@ -298,3 +298,31 @@ def position_sim(position_df, holdings, shares,
         adj_dfs.append(adj_df)
     
     return (adj_dfs, price_ax, dte_ax)
+
+#%%
+
+def spx_put_backratios(dte_ub, dte_lb, moneyness, long_contracts, max_distance):
+    spxchain = all_options("^SPX",dte_ub,dte_lb,moneyness)
+    
+    puts = spxchain[(spxchain['Type'] == 'put') &
+                    (spxchain['Strike'] <= spxchain['Underlying_Price'])].reset_index(drop = True)
+
+    
+    ratios = []
+    
+    for curr_dte in puts.DTE.drop_duplicates().tolist():
+        
+        curr_puts = puts[puts.DTE == curr_dte].sort_values('Strike', ascending = False).reset_index(drop = True)
+    
+        for idx, row in curr_puts.iterrows():
+            short = row
+            longs = curr_puts[(curr_puts.Strike < short.Strike) & (short.Strike - curr_puts.Strike <= 60)]
+            if len(longs) > 0:
+                longs['Short_Strike'] = short.Strike
+                longs['Short_Mid'] = short.Mid
+                longs = longs[longs.Mid*long_contracts < longs.Short_Mid]
+                ratios.append(longs)
+    ratio_df = pd.concat(ratios, axis = 0)
+    ratio_df['Credit'] = ratio_df['Short_Mid'] - ratio_df['Mid']*long_contracts
+    ratio_df = ratio_df.sort_values('Credit', ascending = False).reset_index()
+    return ratio_df
