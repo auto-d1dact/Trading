@@ -118,7 +118,6 @@ if __name__ == '__main__':
     keyStats_df.to_csv('us_keystats_{}.csv'.format(datenow))
     
     earnings_df, annual_df, keyStats_df, failed_list = download_yahoo_data(cad_names, retries = 3)
-    earnings_df, annual_df, keyStats_df, failed_list = download_yahoo_data(us_names, retries = 3)
     os.chdir('..\\')
     os.chdir('..\\')
     os.chdir('..\\Data\\Historical Queries\\CAD')

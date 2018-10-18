@@ -14,30 +14,25 @@ main_dir = 'C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Trading\Modules\\
 os.chdir(main_dir)
 from yahoo_query import *
 
-# Initializing Stock Universe
+# Initializing Fin Statement Data
 os.chdir('..\\')
 os.chdir('..\\')
-os.chdir('..\\Data\\Stock Universe')
+os.chdir('..\\Data\\Historical Queries\\US')
 
-os.chdir(cad_dir)
+file_date = '2018-10-18'
+us_annual = pd.read_csv('us_annual_{}.csv'.format(file_date), index_col = 0)
+us_keystats = pd.read_csv('us_keystats_{}.csv'.format(file_date), index_col = 0)
+us_quarterly = pd.read_csv('us_quarterly_{}.csv'.format(file_date), index_col = 0)
+
+
+os.chdir('..\\CAD')
 
 file_date = '2018-10-14'
 cad_annual = pd.read_csv('cad_annual_{}.csv'.format(file_date), index_col = 0)
 cad_keystats = pd.read_csv('cad_keystats_{}.csv'.format(file_date), index_col = 0)
 cad_quarterly = pd.read_csv('cad_quarterly_{}.csv'.format(file_date), index_col = 0)
 
-os.chdir(main_dir)
-
-os.chdir(usd_dir)
-
-file_date = '2018-10-14'
-us_annual = pd.read_csv('us_annual_{}.csv'.format(file_date), index_col = 0)
-us_keystats = pd.read_csv('us_keystats_{}.csv'.format(file_date), index_col = 0)
-us_quarterly = pd.read_csv('us_quarterly_{}.csv'.format(file_date), index_col = 0)
-
-os.chdir(main_dir)
-
-os.chdir(whale_dir)
+os.chdir('..\\Whales')
 
 file_date = '2018-10-14'
 
@@ -50,8 +45,6 @@ allFunds = whale_df[whale_df.index == 'allFirms'].dropna()
 allFunds.index = allFunds.ticker
 
 os.chdir(main_dir)
-
-
 #%%
 
 def create_dgi(annual_data):
@@ -109,48 +102,39 @@ def dgi_scores(annual_df,keystats, min_dgi_score):
     dgi_df_scores = dgi_df_scores.sort_values('roRank')
     return dgi_df_scores[['currentPrice','score','roRank','sector']]
 
-cad_dgi_scores = dgi_scores(cad_annual, cad_keystats, 4)
-
-us_dgi_score = dgi_scores(us_annual, us_keystats, 5)
-us_dgi_score.head(20).join(us_keystats[['forwardPE','forwardEps','pegRatio']]).sort_values('roRank')
-
-us_dgi_picks = us_dgi_score.head(20).join(us_keystats[['forwardPE',
-                                        'forwardEps',
-                                        'pegRatio']]).sort_values('roRank').join(hedgeFunds[['numOfFirmsHoldingInTop10',
-                                                                                             'numOfHolders',
-                                                                                             'fundNumPercentChange',
-                                                                                             'fundsCreatingNewPos',
-                                                                                             'fundsAddingPos',
-                                                                                             'fundsClosingPos',
-                                                                                             'fundsReducingPos']]).sort_values('fundNumPercentChange', 
-                                                                                                                               ascending = False)
-
+os.chdir('..\\')
+os.chdir('..\\')
+os.chdir('..\\Data\\Single Name Pulls')
 
 #%%
-os.chdir(main_dir + '\\\\Single Name Pulls')
-datenow = dt.datetime.today().strftime('%Y-%m-%d')
-filename = 'single_names {}.xlsx'.format(datenow)
-
-writer = pd.ExcelWriter(filename, engine='xlsxwriter')
-
-# Write each dataframe to a different worksheet.
-cad_dgi_scores.to_excel(writer, sheet_name='ca_dgi')
-us_dgi_score.to_excel(writer, sheet_name='us_dgi')
-leaps_annual.to_excel(writer, sheet_name='leaps_a')
-leaps_quarterly.to_excel(writer, sheet_name = 'leaps_q')
-
-# Close the Pandas Excel writer and output the Excel file.
-writer.save()
-
-picknames = 'name_picks {}.xlsx'.format(datenow)
-
-writer = pd.ExcelWriter(picknames, engine='xlsxwriter')
-
-# Write each dataframe to a different worksheet.
-us_dgi_picks.to_excel(writer, sheet_name='us_dgi')
-annual_leaps.to_excel(writer, sheet_name='leaps_a')
-quarterly_leaps.to_excel(writer, sheet_name = 'leaps_q')
-
-
-writer.save()
-os.chdir(main_dir)
+if __name__ == "__main__":
+    cad_dgi_scores = dgi_scores(cad_annual, cad_keystats, 4)
+    
+    us_dgi_score = dgi_scores(us_annual, us_keystats, 5)
+    us_dgi_score.head(20).join(us_keystats[['forwardPE','forwardEps','pegRatio']]).sort_values('roRank')
+    
+    us_dgi_picks = us_dgi_score.head(20).join(us_keystats[['forwardPE',
+                                            'forwardEps',
+                                            'pegRatio']]).sort_values('roRank').join(hedgeFunds[['numOfFirmsHoldingInTop10',
+                                                                                                 'numOfHolders',
+                                                                                                 'fundNumPercentChange',
+                                                                                                 'fundsCreatingNewPos',
+                                                                                                 'fundsAddingPos',
+                                                                                                 'fundsClosingPos',
+                                                                                                 'fundsReducingPos']]).sort_values('fundNumPercentChange', 
+                                                                                                                                   ascending = False)
+    
+    
+    
+    datenow = dt.datetime.today().strftime('%Y-%m-%d')
+    filename = 'dgi_names {}.xlsx'.format(datenow)
+    
+    writer = pd.ExcelWriter(filename, engine='xlsxwriter')
+    
+    # Write each dataframe to a different worksheet.
+    cad_dgi_scores.to_excel(writer, sheet_name='ca_dgi_scores')
+    us_dgi_score.to_excel(writer, sheet_name='us_dgi_scores')
+    us_dgi_picks.to_excel(writer, sheet_name='us_dgi_picks')
+    # Close the Pandas Excel writer and output the Excel file.
+    writer.save()
+    os.chdir(main_dir)
