@@ -8,9 +8,6 @@ Created on Wed Oct 17 21:22:30 2018
 import os
 import pandas as pd
 import datetime as dt
-from pandas import ExcelWriter
-from pandas import ExcelFile
-from openpyxl import load_workbook
 
 main_dir = 'C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Trading\Modules\\DataCollection'
 os.chdir(main_dir)
@@ -130,3 +127,6 @@ if __name__ == '__main__':
     earnings_df.to_csv('cad_quarterly_{}.csv'.format(datenow))
     annual_df.to_csv('cad_annual_{}.csv'.format(datenow))
     keyStats_df.to_csv('cad_keystats_{}.csv'.format(datenow))
+    os.chdir(main_dir)
+    
+    del earnings_df, annual_df, keyStats_df, failed_list, datenow
