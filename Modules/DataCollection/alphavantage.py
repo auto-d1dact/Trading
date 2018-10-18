@@ -62,4 +62,4 @@ def check_mkt_corr(rolling_window, plot_window):
 
     plt.legend(h1+h2, l1+l2, loc=2)
     plt.show()
-    return df_corr
+    return df_corr, df
