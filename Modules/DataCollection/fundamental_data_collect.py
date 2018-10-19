@@ -72,7 +72,7 @@ def download_yahoo_data(ticker_list, retries = 10):
     total_length = len(ticker_list)
     failed_list = []
 
-    for ticker in ticker_list:
+    for ticker in ticker_list[:10]:
         try:
             curr_earnings, curr_annual_info, curr_keyStats = pull_data(ticker)
             earnings_lst.append(curr_earnings)
@@ -98,7 +98,7 @@ def download_yahoo_data(ticker_list, retries = 10):
 
     earnings_df = pd.concat(earnings_lst, axis = 0)
     annual_df = pd.concat(annual_lst, axis = 0)
-    earnings_df = earnings_df.reset_index()[earnings_df.columns]
+    earnings_df = earnings_df[earnings_df.columns]
     keyStats_df = pd.concat(keyStats_lst, axis = 0)
 
     return earnings_df, annual_df, keyStats_df, failed_list

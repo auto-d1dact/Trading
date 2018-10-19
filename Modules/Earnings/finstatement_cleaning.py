@@ -31,7 +31,7 @@ os.chdir('..\\')
 os.chdir('..\\')
 os.chdir('..\\Data\\Historical Queries\\US')
 
-file_date = '2018-10-18'
+file_date = '2018-10-14'
 
 annual_reports = pd.read_csv('us_annual_{}.csv'.format(file_date), index_col = 0)
 annual_reports['index'] = pd.to_datetime(annual_reports.index)
@@ -130,7 +130,7 @@ for ticker in fin_statements['Underlying'].drop_duplicates().tolist():
         curr_earnings.columns = ['CallTime','PostEarningsReturn', 'IndustryBeta',
                                  'MarketBeta','Stock52WeekReturn','SPY52WeekReturn',
                                  'Industry52WeekReturn']
-        curr_earnings['Ticker'] = ticker
+        curr_earnings['Underlying'] = ticker
         earnings_rets.append(curr_earnings)
     except:
         continue
@@ -141,13 +141,15 @@ earnings_rets = pd.concat(earnings_rets, axis = 0)
 os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Stock Prices')
 earnings_rets.to_csv('earnings_returns_{}.csv'.format(file_date))
 
+earnings_rets['EarningsDate'] = pd.to_datetime(earnings_rets.index)
+
 #%%
 #earnings_rets = pd.read_csv('returns_cleaned.csv', index_col = 0)
 #earnings_rets['Earnings_Date'] = pd.to_datetime(earnings_rets['Earnings_Date'])
 
 for idx, row in earnings_rets.iterrows():
     
-    curr_date = row.Earnings_Date.date()
+    curr_date = idx.date()
     
     if curr_date.month <= 3:
         qend = dt.date(curr_date.year, 3, 31)
@@ -165,9 +167,10 @@ for idx, row in earnings_rets.iterrows():
 
 earnings_rets['index'] = pd.to_datetime(earnings_rets['index'])
 
+#%% 
 for idx, row in fin_statements.iterrows():
     
-    curr_date = idx.date()
+    curr_date = row['index'].date()
     
     if curr_date.month <= 3:
         qend = dt.date(curr_date.year, 3, 31)
@@ -183,7 +186,8 @@ for idx, row in fin_statements.iterrows():
         
     fin_statements.loc[idx, 'index'] = qend
     
-    
+
+#%%
 quarter_ends = []
 keys = []
 
@@ -211,13 +215,11 @@ cleaned_data = pd.merge(fin_statements, earnings_rets,  how='left',
                         left_on=['index','Underlying'], right_on = ['index','Underlying'])
 
 cleaned_data = cleaned_data.replace([np.inf, -np.inf], np.nan)
-#
-#cleaned_data.isnull().sum().T.sort_values()
 
-cleaned2 = cleaned_data[(cleaned_data.return_1day_after.isnull() == False) &
-             (cleaned_data.week_return.isnull() == False) &
-             (cleaned_data.two_week_return.isnull() == False) &
-             (cleaned_data.month_return.isnull() == False)].reset_index(drop = True)
+cleaned_data = cleaned_data[(cleaned_data.PostEarningsReturn.isnull() == False)].dropna().reset_index(drop = True)
 
-small_data = cleaned2[list(filter(lambda x: x not in cleaned2.isnull().sum().T.sort_values().tail(30).index.tolist(),
-         cleaned2.columns.tolist()))].dropna().reset_index(drop = True)
+os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Stock Prices')
+file_date = '2018-10-14'
+cleaned_data.to_csv('earnings_input_data-{}.csv'.format(file_date))
+
+os.chdir(main_dir)
