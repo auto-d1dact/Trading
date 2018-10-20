@@ -72,7 +72,7 @@ def download_yahoo_data(ticker_list, retries = 10):
     total_length = len(ticker_list)
     failed_list = []
 
-    for ticker in ticker_list[:10]:
+    for ticker in ticker_list:
         try:
             curr_earnings, curr_annual_info, curr_keyStats = pull_data(ticker)
             earnings_lst.append(curr_earnings)
