@@ -5,6 +5,37 @@ Created on Wed Oct 17 23:40:55 2018
 @author: Fang
 """
 
+# Factors to add
+'''
+Earnings Growth past 3 years
+Earnings Growth past 3 quarters
+Profit Margins past 3 years
+Profit Margins past 3 quarters
+Return on Equity past 3 years
+Return on Equtiy past 3 quarters
+Stock, sector, market performance past 52 weeks
+Stock, sector, market performance past 26 weeks
+Stock, sector, market performance past 12 weeks
+Stock, sector, market performance past 4 weeks
+
+Stock vs Sector correlation past 200, 60, 20 days
+Stock vs Market correlation past 200, 60, 20 days
+
+Stock volatility past 52, 26, 12, 4 weeks
+Stock downside volatility past 52, 26, 12, 4 weeks
+
+Market Cap
+Price to Equity
+Debt to Equity
+
+Buy, Hold, Sell ratings
+
+Current Price/52 Week High of stock
+
+RSI last 4 weeks
+RSI last 12 weeks
+
+'''
 # xlu Utilities 
 # xlre Real Estate
 # xly Consumer Cyclical
