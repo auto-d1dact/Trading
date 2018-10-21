@@ -36,6 +36,7 @@ RSI last 4 weeks
 RSI last 12 weeks
 
 '''
+
 # xlu Utilities 
 # xlre Real Estate
 # xly Consumer Cyclical
@@ -62,7 +63,7 @@ os.chdir('..\\')
 os.chdir('..\\')
 os.chdir('..\\Data\\Historical Queries\\US')
 
-file_date = '2018-10-14'
+file_date = '2018-10-20'
 us_annual = pd.read_csv('us_annual_{}.csv'.format(file_date), index_col = 0)
 us_keystats = pd.read_csv('us_keystats_{}.csv'.format(file_date), index_col = 0)
 us_quarterly = pd.read_csv('us_quarterly_{}.csv'.format(file_date), index_col = 0)
