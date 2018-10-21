@@ -74,9 +74,10 @@ fsq_columns = ['Underlying','totalCurrentLiabilities', 'totalStockholderEquity',
 ks_columns = ['sector','forwardPE','forwardEps','pegRatio','recommendationKey','shortPercentOfFloat',
               'shortRatio','sharesOutstanding','currentPrice']
 
-us_annual = pd.read_csv('us_annual_{}.csv'.format(file_date), index_col = 0)[fsa_columns]
+us_annual = pd.read_csv('us_annual_{}.csv'.format(file_date), index_col = 0)[fsa_columns].sort_index(ascending = True)
 us_keystats = pd.read_csv('us_keystats_{}.csv'.format(file_date), index_col = 0)[ks_columns]
-us_quarterly = pd.read_csv('us_quarterly_{}.csv'.format(file_date), index_col = 0)[fsq_columns]
+us_keystats['mktCap'] = us_keystats['currentPrice']*us_keystats['sharesOutstanding']
+us_quarterly = pd.read_csv('us_quarterly_{}.csv'.format(file_date), index_col = 0)[fsq_columns].sort_index(ascending = True)
 
 #%%
 
@@ -86,10 +87,10 @@ def finratios(df):
     else:
         fin = df[['Underlying','netIncome','totalRevenue']]
         
-    fin['total_debt_equity_ratio'] = np.array(df['totalCurrentLiabilities'])/np.array(df['totalStockholderEquity'])
-    fin['total_liabilities_total_assets'] = np.array(df['totalLiab'])/np.array(df['totalAssets'])
+    fin['debtToEquity'] = np.array(df['totalCurrentLiabilities'])/np.array(df['totalStockholderEquity'])
+    fin['liabilitiesToAssets'] = np.array(df['totalLiab'])/np.array(df['totalAssets'])
     fin['gross_margin'] = np.array(df['grossProfit'])/np.array(df['totalRevenue'])
-    fin['net_profit_margin'] = np.array(df['netIncome'])/np.array(df['totalRevenue'])
+    fin['profit_margin'] = np.array(df['netIncome'])/np.array(df['totalRevenue'])
     
     return fin
 
@@ -100,13 +101,6 @@ quarterly = finratios(us_quarterly)
 
 
 #%%
-df['total_debt_equity_ratio'] = np.array(in_df['totalCurrentLiabilities'])/np.array(in_df['totalStockholderEquity'])
-df['total_liabilities_total_assets'] = np.array(in_df['totalLiab'])/np.array(in_df['totalAssets'])
-df['gross_margin'] = np.array(in_df['grossProfit'])/np.array(in_df['totalRevenue'])
-df['net_profit_margin'] = np.array(in_df['netIncome'])/np.array(in_df['totalRevenue'])
-
-'Underlying', 'earnings', 'netIncome','totalRevenue','totalStockholderEquity']
-'sector','forwardPE','forwardEps','pegRatio'
 
 for ticker in df.Underlying.drop_duplicates():
     curr_data = df[df.Underlying == ticker].sort_index()
@@ -126,7 +120,4 @@ for ticker in df.Underlying.drop_duplicates():
             leap_scores.loc[ticker, 'roe'] = 1
         if sum(curr_data.roe.pct_change() >= 0) == curr_len:
             leap_scores.loc[ticker, 'roeChange'] = 1
-
-df['profitMargin'] = df.netIncome/df.totalRevenue
-    df['roe'] = df.netIncome/df.totalStockholderEquity
 

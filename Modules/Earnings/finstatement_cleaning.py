@@ -132,7 +132,7 @@ def earnings_stock_returns(fin_statements):
             earnings_rets.append(curr_earnings)
         except:
             continue
-        print("completed: {} %".format('%.2f' % (len(earnings_rets)/len(fin_statements['Underlying'].drop_duplicates().tolist()))))
+        print("completed: {} %".format(ticker))#'%.2f' % (len(earnings_rets)/len(fin_statements['Underlying'].drop_duplicates().tolist()))))
         
     earnings_rets = pd.concat(earnings_rets, axis = 0)
     

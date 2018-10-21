@@ -35,7 +35,7 @@ from finstatement_cleaning import *
 def predict_earnings(date_lookup, file_date, return_bounds, test_size):
     latest_earnings = date_earnings(date_lookup)
     
-    latest_earnings_names = latest_earnings[latest_earnings['Call Time'] == 'Before Market Open'].index.tolist()
+    latest_earnings_names = latest_earnings.index.tolist()
     
     earnings_df, annual_df, keyStats_df, failed_list = download_yahoo_data(latest_earnings_names, retries = 3)
     
