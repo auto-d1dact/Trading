@@ -167,15 +167,6 @@ def finstatement_factors(ticker):
     
     return factors
 
-fs_factors = []
-
-for ticker in annual.Underlying.drop_duplicates():
-    fs_factors.append(finstatement_factors(ticker))
-    
-fs_factors = pd.concat(fs_factors, axis = 0)
-
-
-
 #%%
 
 ######## Return Factors ################
@@ -275,23 +266,80 @@ def stockprice_factors(ticker):
 
 
 #%%
-price_factors = []
 
-for ticker in annual.Underlying.drop_duplicates():
-    try:
-        price_factors.append(stockprice_factors(ticker))
-    except:
-        continue
+if __name__ == '__main__':
     
-price_factors = pd.concat(price_factors, axis = 0)
+    fs_factors = []
+    
+    for ticker in annual.Underlying.drop_duplicates():
+        fs_factors.append(finstatement_factors(ticker))
+        
+    fs_factors = pd.concat(fs_factors, axis = 0)
+    
+    price_factors = []
+    
+    i = 0
+    total_length = len(annual.Underlying.drop_duplicates())
+    for ticker in annual.Underlying.drop_duplicates():
+        try:
+            price_factors.append(stockprice_factors(ticker))
+        except:
+            continue
+        i += 1
+        print('{0:.2f}% Completed'.format(i/total_length*100))
+        
+    price_factors = pd.concat(price_factors, axis = 0)
+    
+    #%%
+    factors_df = fs_factors.join(price_factors)
+    
+    
+    os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Momentum Growth')
+    
+    datenow = dt.datetime.today().strftime('%Y-%m-%d')
+    
+    factors_df.to_csv('momentum_growth-{}.csv'.format(datenow))
+    
+    os.chdir(main_dir)
 
-factors_df = fs_factors.join(price_factors, axis = 1)
+#%%
+
+os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Single Name Pulls')
+
+filtered = factors_df[(factors_df['profit_margin Year 1'] > 0) &
+                      (factors_df['profit_margin Year 2'] > 0) &
+                      (factors_df['profit_margin Year 3'] > 0) &
+                      (factors_df['profit_margin Year 4'] > 0) &
+                      (factors_df['revGrowth Year 1'] > 0) &
+                      (factors_df['revGrowth Year 2'] > 0) &
+                      (factors_df['revGrowth Year 3'] > 0) &
+                      (factors_df['profitGrowth Year 1'] > 0) &
+                      (factors_df['profitGrowth Year 2'] > 0) &
+                      (factors_df['profitGrowth Year 3'] > 0) &
+                      (factors_df['profitMarginChange Year 2'] > 0) &
+                      (factors_df['profitMarginChange Year 3'] > 0) &
+                      (factors_df['profitMarginChange Year 4'] > 0) &
+                      (factors_df['debtEquityChange Year 2'] < 0) &
+                      (factors_df['debtEquityChange Year 3'] < 0) &
+                      (factors_df['debtEquityChange Year 4'] < 0) &
+                      (factors_df['26WeekStockReturn'] > 0) &
+                      (factors_df['12WeekStockReturn'] > 0) &
+                      (factors_df['4WeekStockReturn'] > 0)] #&
+                      #(factors_df['mktCap'] > 1000000) &
+                      #(factors_df['mktCap'] < 10000000000)]
+
+filtered['sortino52Week'] =  filtered['52WeekStockReturn']/filtered['52WeekDownsideVol']
+filtered['sortino26Week'] =  filtered['26WeekStockReturn']/filtered['26WeekDownsideVol']
+filtered['sortino12Week'] =  filtered['12WeekStockReturn']/filtered['12WeekDownsideVol']
+filtered['sortino4Week'] =  filtered['4WeekStockReturn']/filtered['4WeekDownsideVol']
+
+filtered['sharpe52Week'] =  filtered['52WeekStockReturn']/filtered['52WeekVol']
+filtered['sharpe26Week'] =  filtered['26WeekStockReturn']/filtered['26WeekVol']
+filtered['sharpe12Week'] =  filtered['12WeekStockReturn']/filtered['12WeekVol']
+filtered['sharpe4Week'] =  filtered['4WeekStockReturn']/filtered['4WeekVol']
+
+filtered = filtered[(filtered['PriceTo52WeekHigh'] > 0.9)]
 
 
-os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Momentum Growth')
 
-datenow = dt.datetime.today().strftime('%Y-%m-%d')
-
-factors_df.to_csv('momentum_growth-{}.csv'.format(datenow))
-
-os.chdir(main_dir)
+filtered.to_csv('momentum_growth_picks-{}.csv'.format(datenow))
