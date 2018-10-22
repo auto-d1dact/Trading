@@ -319,9 +319,9 @@ filtered = factors_df[(factors_df['profit_margin Year 1'] > 0) &
                       (factors_df['profitMarginChange Year 2'] > 0) &
                       (factors_df['profitMarginChange Year 3'] > 0) &
                       (factors_df['profitMarginChange Year 4'] > 0) &
-                      (factors_df['debtEquityChange Year 2'] < 0) &
-                      (factors_df['debtEquityChange Year 3'] < 0) &
-                      (factors_df['debtEquityChange Year 4'] < 0) &
+#                      (factors_df['debtEquityChange Year 2'] < 0) &
+#                      (factors_df['debtEquityChange Year 3'] < 0) &
+#                      (factors_df['debtEquityChange Year 4'] < 0) &
                       (factors_df['26WeekStockReturn'] > 0) &
                       (factors_df['12WeekStockReturn'] > 0) &
                       (factors_df['4WeekStockReturn'] > 0)] #&
@@ -343,3 +343,5 @@ filtered = filtered[(filtered['PriceTo52WeekHigh'] > 0.9)]
 
 
 filtered.to_csv('momentum_growth_picks-{}.csv'.format(datenow))
+
+os.chdir(main_dir)
