@@ -194,7 +194,7 @@ if __name__ == '__main__':
     
     os.chdir(main_dir)
     
-    # os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Stock Prices')
+    os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Stock Prices')
     datenow = dt.datetime.today().strftime('%Y-%m-%d')
     
     fin_statements = create_finstatements(annual_reports, quarterly_reports, key_stats)
