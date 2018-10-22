@@ -293,3 +293,5 @@ os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Qu
 datenow = dt.datetime.today().strftime('%Y-%m-%d')
 
 factors_df.to_csv('momentum_growth-{}.csv'.format(datenow))
+
+os.chdir(main_dir)
