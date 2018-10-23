@@ -302,7 +302,7 @@ def position_sim(position_df, holdings, shares,
 #%%
 
 def spx_put_backratios(dte_ub, dte_lb, moneyness, long_contracts, max_distance):
-    spxchain = all_options("^SPX",dte_ub,dte_lb,moneyness)
+    spxchain = all_greeks(all_options("^SPX",dte_ub,dte_lb,moneyness))
     
     puts = spxchain[(spxchain['Type'] == 'put') &
                     (spxchain['Strike'] <= spxchain['Underlying_Price'])].reset_index(drop = True)
@@ -316,11 +316,15 @@ def spx_put_backratios(dte_ub, dte_lb, moneyness, long_contracts, max_distance):
     
         for idx, row in curr_puts.iterrows():
             short = row
-            longs = curr_puts[(curr_puts.Strike < short.Strike) & (short.Strike - curr_puts.Strike <= 60)]
+            longs = curr_puts[(curr_puts.Strike < short.Strike) & (short.Strike - curr_puts.Strike <= max_distance)]
             if len(longs) > 0:
                 longs['Short_Strike'] = short.Strike
                 longs['Short_Mid'] = short.Mid
                 longs = longs[longs.Mid*long_contracts < longs.Short_Mid]
+                longs['S_Delta'] = longs.Delta*long_contracts - short.Delta
+                longs['S_Gamma'] = longs.Gamma*long_contracts - short.Gamma
+                longs['S_Vega'] = longs.Vega*long_contracts - short.Vega
+                longs['S_Theta'] = longs.Theta*long_contracts - short.Theta
                 ratios.append(longs)
     ratio_df = pd.concat(ratios, axis = 0)
     ratio_df['Credit'] = ratio_df['Short_Mid'] - ratio_df['Mid']*long_contracts
