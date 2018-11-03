@@ -181,7 +181,7 @@ sector_lst = []
 for indticker in spdr_lst:
     curr_etf = yahoo_query(indticker, start_date)
     curr_etf.hist_prices_query()
-    sector_lst.append(curr_etf.hist_prices[['{}_close'.format(ticker)]])
+    sector_lst.append(curr_etf.hist_prices[['{}_close'.format(indticker)]])
     
 sector_prices = pd.concat(sector_lst, axis = 1)
 sector_prices.columns = ['SPY','Utilities','Real Estate','Consumer Cyclical',

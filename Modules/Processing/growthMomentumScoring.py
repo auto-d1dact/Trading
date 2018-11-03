@@ -15,7 +15,7 @@ os.chdir(main_dir)
 from yahoo_query import *
 
 # Initializing Data
-file_date = '2018-10-21'
+file_date = '2018-10-28'
 
 os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Momentum Growth')
     
@@ -46,10 +46,10 @@ filtered = factors_df[(factors_df['profit_margin Year 1'] > 0) &
                       (factors_df['debtToEquity Year 1'] < 1) &
                       (factors_df['debtToEquity Year 2'] < 1) &
                       (factors_df['debtToEquity Year 3'] < 1) &
-                      (factors_df['debtToEquity Year 4'] < 1)]
-#                      (factors_df['26WeekStockReturn'] > 0) &
-#                      (factors_df['12WeekStockReturn'] > 0) &
-#                      (factors_df['4WeekStockReturn'] > 0) &
+                      (factors_df['debtToEquity Year 4'] < 1) &
+                      (factors_df['26WeekStockReturn'] > 0) &
+                      (factors_df['12WeekStockReturn'] > 0) &
+                      (factors_df['4WeekStockReturn'] > 0)]
 #                      (factors_df['mktCap'] > 1000000) &
 #                      (factors_df['mktCap'] < 10000000000)]
 
@@ -63,7 +63,7 @@ filtered = factors_df[(factors_df['profit_margin Year 1'] > 0) &
 #filtered['sharpe12Week'] =  filtered['12WeekStockReturn']/filtered['12WeekVol']
 #filtered['sharpe4Week'] =  filtered['4WeekStockReturn']/filtered['4WeekVol']
 #
-#filtered = filtered[(filtered['PriceTo52WeekHigh'] > 0.9)]
+filtered = filtered[(filtered['PriceTo52WeekHigh'] > 0.9)]
 
 #%%
 

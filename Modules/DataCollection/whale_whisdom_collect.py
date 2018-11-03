@@ -175,5 +175,5 @@ if __name__ == '__main__':
     
     os.chdir(main_dir)
     
-    del whales, currdate, whaledf_list, failed_ist
+    del whales, currdate, whaledf_list#, failed_ist
 

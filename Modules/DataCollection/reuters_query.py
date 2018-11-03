@@ -28,6 +28,12 @@ amex = pd.read_csv('AMEX.csv')['Symbol'].tolist()
 os.chdir(main_dir)
 
 #%%
+def to_float(string):
+            val = string.strip().replace(',','').replace('$','').replace('-','')
+            if val != '':
+                return float(val)
+            else:
+                return np.nan
 
 class reuters_query:
     
@@ -41,8 +47,66 @@ class reuters_query:
         self.financials = bs(requests.get(financials_url).text, 'lxml')
         self.analysts = bs(requests.get(analysts_url).text, 'lxml')
         
+        overview_raw = self.overview.find('div', 
+                                   {'id': 'content'}).select('div[class*="sectionContent"]')
+
+        financials_raw = self.financials.find('div', 
+                                               {'id': 'content'}).select('div[class*="sectionContent"]')
+        
+        analysts_raw = self.analysts.find('div', 
+                                           {'id': 'content'}).select('div[class*="sectionContent"]')
+        
+        
+        # Overview Tables
+        
+        if len(overview_raw) != 0:
+            
+            overall_dict = {}
+            
+            #### Latest Prices
+            header_table = overview_raw[1].select_one('div[id*="headerQuoteContainer"]').select('div[class*="sectionQuote"]')
+            
+            lastprice = header_table[0].select_one('span[style*="font-size"]')
+            lastprice = to_float(lastprice.contents[0])
+            
+            high52week = header_table[-2].find('span', {'class': "sectionQuoteDetailHigh"})
+            high52week = to_float(high52week.contents[0])
+            
+            low52week = header_table[-1].find('span', {'class': "sectionQuoteDetailLow"})
+            low52week = to_float(low52week.contents[0])
+            
+            overall_dict['LastPrice'] = lastprice
+            overall_dict['High52Week'] = high52week
+            overall_dict['Low52Week'] = low52week
+            
+            #### Latest Overview
+            overall_table = overview_raw[1].select_one('div[id*="overallRatios"]').find('table')
+            
+            for row in overall_table.find_all('tr'):
+                
+                row_cols = row.find_all('td')
+                overall_dict[row_cols[0].contents[0].replace(':','').strip()] = to_float(row_cols[-1].find('strong').contents[0])
+            
+            #### Latest Financials
+            overall_fins = overview_raw[1].select_one('div[id*="companyVsIndustry"]').find('table')
+            
+            for row in overall_fins.find_all('tr'):
+                
+                row_cols = row.find_all('td')
+                
+                if len(row_cols) != 0:
+                    
+                    fin_field = row_cols[0].contents[0].replace(':','').strip()
+                    
+                    overall_dict['{} Stock'.format(fin_field)] = to_float(row_cols[1].contents[0])
+                    overall_dict['{} Industry'.format(fin_field)] = to_float(row_cols[2].contents[0])
+                    overall_dict['{} Sector'.format(fin_field)] = to_float(row_cols[3].contents[0])
+                    
+                
+            self.overall_df = pd.DataFrame(overall_dict, index = [ticker])
 #%%
-ticker = 'AAPL'
+'''
+ticker = 'SWN'
 
 stock = reuters_query(ticker)
 
@@ -55,63 +119,6 @@ financials_raw = stock.financials.find('div',
 
 analysts_raw = stock.analysts.find('div', 
                                    {'id': 'content'}).select('div[class*="sectionContent"]')
-
-#%% Overview Tables
-
-def to_float(string):
-    val = string.strip().replace(',','').replace('$','').replace('-','')
-    if val != '':
-        return float(val)
-    else:
-        return np.nan
-
-
-if len(overview_raw) != 0:
-    
-    overall_dict = {}
-    
-    #### Latest Prices
-    header_table = overview_raw[1].select_one('div[id*="headerQuoteContainer"]').select('div[class*="sectionQuote"]')
-    
-    lastprice = header_table[0].select_one('span[style*="font-size"]')
-    lastprice = to_float(lastprice.contents[0])
-    
-    high52week = header_table[-2].find('span', {'class': "sectionQuoteDetailHigh"})
-    high52week = to_float(high52week.contents[0])
-    
-    low52week = header_table[-1].find('span', {'class': "sectionQuoteDetailLow"})
-    low52week = to_float(low52week.contents[0])
-    
-    overall_dict['LastPrice'] = lastprice
-    overall_dict['High52Week'] = high52week
-    overall_dict['Low52Week'] = low52week
-    
-    #### Latest Overview
-    overall_table = overview_raw[1].select_one('div[id*="overallRatios"]').find('table')
-    
-    for row in overall_table.find_all('tr'):
-        
-        row_cols = row.find_all('td')
-        overall_dict[row_cols[0].contents[0].replace(':','').strip()] = to_float(row_cols[-1].find('strong').contents[0])
-    
-    #### Latest Financials
-    overall_fins = overview_raw[1].select_one('div[id*="companyVsIndustry"]').find('table')
-    
-    for row in overall_fins.find_all('tr'):
-        
-        row_cols = row.find_all('td')
-        
-        if len(row_cols) != 0:
-            
-            fin_field = row_cols[0].contents[0].replace(':','').strip()
-            
-            overall_dict['{} Stock'.format(fin_field)] = to_float(row_cols[1].contents[0])
-            overall_dict['{} Industry'.format(fin_field)] = to_float(row_cols[2].contents[0])
-            overall_dict['{} Sector'.format(fin_field)] = to_float(row_cols[3].contents[0])
-            
-        
-    overall_df = pd.DataFrame(overall_dict, index = [ticker])
-
 
 #%% Financials Tables
 
@@ -149,7 +156,7 @@ if len(financials_raw) != 0:
             #fins_details_dict[table_title]
             break
 
-    
+'''
 
 #%%
 '''
