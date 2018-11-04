@@ -213,16 +213,16 @@ def stockprice_factors(ticker):
     daily_returns = stock_prices.pct_change()
     daily_returns.columns = ['stock','industry','market']
     
-    corr_factors = daily_returns[['stock']].rolling(200).corr(daily_returns.industry)
+    corr_factors = daily_returns[['stock']].rolling(200).cov(daily_returns.industry)/daily_returns[['industry']].rolling(200).var()
     corr_factors.columns = ['industryBeta200day']
     
-    corr_factors['marketBeta200day'] = daily_returns[['stock']].rolling(200).corr(daily_returns.market)
+    corr_factors['marketBeta200day'] = daily_returns[['stock']].rolling(200).cov(daily_returns.market)/daily_returns[['market']].rolling(200).var()
     
-    corr_factors['industryBeta60day'] = daily_returns[['stock']].rolling(60).corr(daily_returns.industry)
-    corr_factors['marketBeta60day'] = daily_returns[['stock']].rolling(60).corr(daily_returns.market)
+    corr_factors['industryBeta60day'] = daily_returns[['stock']].rolling(60).cov(daily_returns.industry)/daily_returns[['industry']].rolling(200).var()
+    corr_factors['marketBeta60day'] = daily_returns[['stock']].rolling(60).cov(daily_returns.market)/daily_returns[['market']].rolling(200).var()
     
-    corr_factors['industryBeta20day'] = daily_returns[['stock']].rolling(20).corr(daily_returns.industry)
-    corr_factors['marketBeta20day'] = daily_returns[['stock']].rolling(20).corr(daily_returns.market)
+    corr_factors['industryBeta20day'] = daily_returns[['stock']].rolling(20).cov(daily_returns.industry)/daily_returns[['industry']].rolling(200).var()
+    corr_factors['marketBeta20day'] = daily_returns[['stock']].rolling(20).cov(daily_returns.market)/daily_returns[['market']].rolling(200).var()
     
     
     vol_factors = daily_returns[['stock']].rolling(252).std()*np.sqrt(252)

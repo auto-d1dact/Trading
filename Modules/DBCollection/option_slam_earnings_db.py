@@ -88,7 +88,7 @@ def earnings_report(ticker, corr_window = 60):
     for etf in ['SPY', sector_dict[stock_sector]]:
         curr_etf = yahoo_query(etf, start_date)
         curr_etf.hist_prices_query()
-        curr_etf.minute_query()
+        #curr_etf.minute_query()
         daily_prices.append(curr_etf.hist_prices[['{}_close'.format(etf)]])
         #minute_prices.append(curr_etf.minute_prices[['{}_close'.format(etf)]])
 
@@ -98,8 +98,8 @@ def earnings_report(ticker, corr_window = 60):
     ret52Week = daily_prices.pct_change(252)
     ret52Week.columns = ['{}_52WeekReturn'.format(ticker),'SPY_52WeekReturn','{}_52WeekReturn'.format(sector_dict[stock_sector])]
     dailyRet = daily_prices.pct_change()
-    dailyRet['{} Beta'.format(stock_sector)] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).corr(dailyRet['{}_close'.format(sector_dict[stock_sector])])
-    dailyRet['MarketBeta'] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).corr(dailyRet['SPY_close'])
+    dailyRet['{} Beta'.format(stock_sector)] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).cov(dailyRet['{}_close'.format(sector_dict[stock_sector])])/dailyRet['{}_close'.format(sector_dict[stock_sector])].rolling(corr_window).var()
+    dailyRet['MarketBeta'] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).cov(dailyRet['SPY_close'])/dailyRet['SPY_close'].rolling(corr_window).var()
     dailyRet = dailyRet.dropna()
 
     del dailyRet['{}_close'.format(ticker)], dailyRet['SPY_close'], dailyRet['{}_close'.format(sector_dict[stock_sector])]
@@ -123,7 +123,11 @@ def earnings_report(ticker, corr_window = 60):
             except:
                 continue
                 
-    final_ret = dailyRet.tail(1)
-    final_ret.index = pd.DatetimeIndex([past_earnings.index[-1].date()])
+    #final_ret = dailyRet.tail(1)
+    #final_ret.index = pd.DatetimeIndex([past_earnings.index[-1].date()])
     
-    return past_earnings.join(pd.concat([dailyRet.shift(1), final_ret], axis = 0))
+    out_df = past_earnings.join(dailyRet)#.shift(1))
+    out_df.columns = ['CallTime','PostEarningsReturn','SectorBeta','MarketBeta','Stock52WeekReturn',
+                      'SPY52WeekReturn','Sector52WeekReturn']
+    out_df['Underlying'] = ticker
+    return out_df
