@@ -24,6 +24,17 @@ us_names = pd.read_csv('us_names.csv')['Symbol'].tolist()
 os.chdir(main_dir)
 
 #%%
+ticker = 'AAPL'
+site = 'https://whalewisdom.com/stock/' + ticker
+soup = bs(requests.get(site).text, 'lxml')
+
+#%%
+table = soup.select('table[class="table"]')[0]
+
+#%%
+
+
+#%%
 def whale_scrape(ticker):
     site = 'https://whalewisdom.com/stock/' + ticker
     soup = bs(requests.get(site).text, 'lxml')
