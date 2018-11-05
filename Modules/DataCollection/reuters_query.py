@@ -433,6 +433,35 @@ def revisions_table(revisions_module, ticker):
         earnings_revisions_df['Underlying'] = ticker
         return rev_revisions_df, earnings_revisions_df
 
+########### Insider Tables Parse
+def insiders_table(insider_details, ticker):
+    
+    detail_table = insider_details.find('table')
+                
+    if len(detail_table) != 0:
+        curr_table_dict = {}
+        
+        i = 1
+        for row in detail_table.find_all('tr'):
+            if i == 1:
+                headers = [x.text.replace('\n','') for x in row.find_all('th')]
+                for header in headers:
+                    curr_table_dict[header] = []
+                i = 0
+                continue
+            else:
+                curr_cols = [x.text.strip() for x in row.find_all('td')]
+                if len(curr_cols) != 1:
+                    curr_table_dict[headers[0]].append(dt.datetime.strptime(curr_cols[0], '%d %b %Y').date())
+                    curr_table_dict[headers[1]].append(curr_cols[1])
+                    curr_table_dict[headers[2]].append(curr_cols[2])
+                    curr_table_dict[headers[3]].append(curr_cols[3])
+                    curr_table_dict[headers[4]].append(to_float(curr_cols[4]))
+                    curr_table_dict[headers[5]].append(to_float(curr_cols[5]))
+    insiders_df = pd.DataFrame(curr_table_dict)
+    insiders_df['Underlying'] = ticker
+    return insiders_df
+    
 
 #%%
 class reuters_query:
@@ -442,10 +471,15 @@ class reuters_query:
         overview_url = 'https://www.reuters.com/finance/stocks/overview/' + ticker
         financials_url = 'https://www.reuters.com/finance/stocks/financial-highlights/' + ticker
         analysts_url = 'https://www.reuters.com/finance/stocks/analyst/' + ticker
+        insiders_url = 'https://www.reuters.com/finance/stocks/insider-trading/' + ticker
         
         overview = bs(requests.get(overview_url).text, 'lxml')
         financials = bs(requests.get(financials_url).text, 'lxml')
         analysts = bs(requests.get(analysts_url).text, 'lxml')
+        insiders = bs(requests.get(insiders_url).text, 'lxml')
+
+        insiders_raw = insiders.find('div', 
+                                     {'id': 'content'}).select('div[class*="sectionContent"]')
         
         overview_raw = overview.find('div', 
                                      {'id': 'content'}).select('div[class*="sectionContent"]')
@@ -495,7 +529,37 @@ class reuters_query:
             self.sales_trend, self.earnings_trend = standard_analyst_table(analyst_details[4], ticker, ltgrowth = False)
             
             self.revenue_revisions, self.earnings_revisions = revisions_table(analyst_details[5], ticker)
+            
+        # Insiders Table
+        if len(insiders_raw) != 0:
+            insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+            
+            insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
+            
+            if insider_pages_numbers != None:
+                insider_pages_numbers = int(insider_pages_numbers.text.strip()[-1])
         
+#%%
+ticker = 'DVAX'
+
+
+
+
+
+#%%
+if len(insiders_raw) != 0:
+    insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+    
+    insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
+    
+    if insider_pages_numbers != None:
+        insider_pages_numbers = int(insider_pages_numbers.text.strip()[-1])
+        
+        page_urls = []
+        for i in range(2, insider_pages_numbers + 1):
+            page_urls.append("?symbol=&amp;name=&amp;pn={}&amp;sortDir=&amp;sortBy=".format(i))
+
+    
 #%%
 '''
 ticker = 'AAPL'
