@@ -582,6 +582,8 @@ class reuters_query:
                 
             try:
                 self.sales_surprises, self.earnings_surprises = standard_analyst_table(analyst_details[3], ticker, ltgrowth = False)
+                self.earnings_surprises['Surprise %'] = (self.earnings_surprises['Actual'] - self.earnings_surprises['Estimate'])/abs(self.earnings_surprises['Estimate'])
+                self.sales_surprises['Surprise %'] = (self.sales_surprises['Actual'] - self.sales_surprises['Estimate'])/abs(self.sales_surprises['Estimate'])
             except:
                 print('No sales_surprises for {}'.format(ticker))
                 
