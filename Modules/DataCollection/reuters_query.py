@@ -501,64 +501,125 @@ class reuters_query:
             fins_details = financials_raw[1].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')
             fins_sums = financials_raw[1].select_one('div[class*="column2 gridPanel"]').select('div[class="module"]')
             
-            self.revenues_eps_df = revenues_eps_table(fins_details[0], ticker)
+            try:
+                self.revenues_eps_df = revenues_eps_table(fins_details[0], ticker)
+            except:
+                print('No revenues for {}'.format(ticker))
             
-            self.sales_ests, self.earnings_ests, self.LTgrowth_ests = consensus_ests(fins_details[1], ticker)
+            try:
+                self.sales_ests, self.earnings_ests, self.LTgrowth_ests = consensus_ests(fins_details[1], ticker)
+            except:
+                print('No estimates for {}'.format(ticker))
             
-            self.valuations = standard_fin_table(fins_details[2], ticker)
-            self.dividends = standard_fin_table(fins_details[3], ticker)
-            self.growthrate = standard_fin_table(fins_details[4], ticker)
-            self.finstrength = standard_fin_table(fins_details[5], ticker)
-            self.profitability = standard_fin_table(fins_details[6], ticker)
-            self.efficiency = standard_fin_table(fins_details[7], ticker)
-            self.management = standard_fin_table(fins_details[8], ticker)
+            try:
+                self.valuations = standard_fin_table(fins_details[2], ticker)
+            except:
+                print('No valuations for {}'.format(ticker))
             
-            self.growth_summary = standard_fin_table(fins_sums[0], ticker)
-            self.performance_summary = performance_table(fins_sums[1], ticker)
-            self.institution_holdings = institution_holding_table(fins_sums[3], ticker)
+            try:
+                self.dividends = standard_fin_table(fins_details[3], ticker)
+            except:
+                print('No dividends for {}'.format(ticker))
+                
+            try:
+                self.growthrate = standard_fin_table(fins_details[4], ticker)
+            except:
+                print('No growthrate for {}'.format(ticker))
+             
+            try:
+                self.finstrength = standard_fin_table(fins_details[5], ticker)
+            except:
+                print('No finstrength for {}'.format(ticker))
+                
+            try:
+                self.profitability = standard_fin_table(fins_details[6], ticker)
+            except:
+                print('No profitability for {}'.format(ticker))
+            
+            try:
+                self.efficiency = standard_fin_table(fins_details[7], ticker)
+            except:
+                print('No efficiency for {}'.format(ticker))
+            
+            try:
+                self.management = standard_fin_table(fins_details[8], ticker)
+            except:
+                print('No management for {}'.format(ticker))
+            
+            try:
+                self.growth_summary = standard_fin_table(fins_sums[0], ticker)
+            except:
+                print('No growth_summary for {}'.format(ticker))
+            
+            try:
+                self.performance_summary = performance_table(fins_sums[1], ticker)
+            except:
+                print('No performance_summary for {}'.format(ticker))
+                
+            try:
+                self.institution_holdings = institution_holding_table(fins_sums[3], ticker)
+            except:
+                print('No institution_holdings for {}'.format(ticker))
             
         # Analyst Tables
         if len(analysts_raw) != 0:
             analyst_details = analysts_raw[1].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')
             
-            self.recommendations = recommendation_table(analyst_details[0], ticker)
-            self.analyst_recs = analyst_rec_table(analyst_details[1], ticker)
-            
-            self.sales_analysis, self.earnings_analysis, self.LTgrowth_analysis = standard_analyst_table(analyst_details[2], ticker, ltgrowth = True)
-            self.sales_surprises, self.earnings_surprises = standard_analyst_table(analyst_details[3], ticker, ltgrowth = False)
-            self.sales_trend, self.earnings_trend = standard_analyst_table(analyst_details[4], ticker, ltgrowth = False)
-            
-            self.revenue_revisions, self.earnings_revisions = revisions_table(analyst_details[5], ticker)
-            
+            try:
+                self.recommendations = recommendation_table(analyst_details[0], ticker)
+            except:
+                print('No recommendations for {}'.format(ticker))
+                
+            try:
+                self.analyst_recs = analyst_rec_table(analyst_details[1], ticker)
+            except:
+                print('No analyst_recs for {}'.format(ticker))
+                
+            try:
+                self.sales_analysis, self.earnings_analysis, self.LTgrowth_analysis = standard_analyst_table(analyst_details[2], ticker, ltgrowth = True)
+            except:
+                print('No sales_analysis for {}'.format(ticker))
+                
+            try:
+                self.sales_surprises, self.earnings_surprises = standard_analyst_table(analyst_details[3], ticker, ltgrowth = False)
+            except:
+                print('No sales_surprises for {}'.format(ticker))
+                
+            try:
+                self.sales_trend, self.earnings_trend = standard_analyst_table(analyst_details[4], ticker, ltgrowth = False)
+            except:
+                print('No sales_trend for {}'.format(ticker))
+                
+            try:
+                self.revenue_revisions, self.earnings_revisions = revisions_table(analyst_details[5], ticker)
+            except:
+                print('No revenue_revisions for {}'.format(ticker))
+                
         # Insiders Table
-        if len(insiders_raw) != 0:
-            insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+        if len(insiders_raw) > 2:
             
-            insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
+            try:
+                insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+                
+                insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
+                
+                insiders_dflist = [insiders_table(insider_details, ticker)]
+                if insider_pages_numbers != None:
+                    insider_pages_numbers = int(insider_pages_numbers.text.strip()[-1])
+                    
+                    for i in range(2, insider_pages_numbers + 1):
+                        page_url = insiders_url + "?symbol=&amp;name=&amp;pn={}&amp;sortDir=&amp;sortBy=".format(i)
+                        next_insider_page = bs(requests.get(page_url).text, 'lxml')
+                        next_insider_raw = next_insider_page.find('div', 
+                                                                  {'id': 'content'}).select('div[class*="sectionContent"]')
+                        next_insider_details = next_insider_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+                        next_insiders_df = insiders_table(next_insider_details, ticker)
+                        insiders_dflist.append(next_insiders_df)
+                        
+                self.insiders_txns = pd.concat(insiders_dflist, axis = 0).reset_index(drop = True)
+            except:
+                print('No insiders_txns for {}'.format(ticker))
             
-            if insider_pages_numbers != None:
-                insider_pages_numbers = int(insider_pages_numbers.text.strip()[-1])
-        
-#%%
-ticker = 'DVAX'
-
-
-
-
-
-#%%
-if len(insiders_raw) != 0:
-    insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
-    
-    insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
-    
-    if insider_pages_numbers != None:
-        insider_pages_numbers = int(insider_pages_numbers.text.strip()[-1])
-        
-        page_urls = []
-        for i in range(2, insider_pages_numbers + 1):
-            page_urls.append("?symbol=&amp;name=&amp;pn={}&amp;sortDir=&amp;sortBy=".format(i))
-
     
 #%%
 '''

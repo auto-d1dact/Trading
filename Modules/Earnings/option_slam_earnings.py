@@ -98,8 +98,8 @@ def earnings_report(ticker, corr_window = 60):
     ret52Week = daily_prices.pct_change(252)
     ret52Week.columns = ['{}_52WeekReturn'.format(ticker),'SPY_52WeekReturn','{}_52WeekReturn'.format(sector_dict[stock_sector])]
     dailyRet = daily_prices.pct_change()
-    dailyRet['{} Beta'.format(stock_sector)] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).corr(dailyRet['{}_close'.format(sector_dict[stock_sector])])
-    dailyRet['MarketBeta'] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).corr(dailyRet['SPY_close'])
+    dailyRet['{} Beta'.format(stock_sector)] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).cov(dailyRet['{}_close'.format(sector_dict[stock_sector])])/dailyRet['{}_close'.format(sector_dict[stock_sector])].rolling(corr_window).var()
+    dailyRet['MarketBeta'] = dailyRet['{}_close'.format(ticker)].rolling(corr_window).cov(dailyRet['SPY_close'])/dailyRet['SPY_close'].rolling(corr_window).var()
     dailyRet = dailyRet.dropna()
 
     del dailyRet['{}_close'.format(ticker)], dailyRet['SPY_close'], dailyRet['{}_close'.format(sector_dict[stock_sector])]
