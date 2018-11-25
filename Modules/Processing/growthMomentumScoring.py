@@ -15,7 +15,7 @@ os.chdir(main_dir)
 from yahoo_query import *
 
 # Initializing Data
-file_date = '2018-10-28'
+file_date = '2018-11-24'
 
 os.chdir('C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Data\\Historical Queries\\Momentum Growth')
     
