@@ -11,7 +11,7 @@ from sqlalchemy import *
 from sqlalchemy import create_engine
 import os
 import datetime as dt
-
+import calendar
 import time
 
 #%%
@@ -292,6 +292,319 @@ def update_yahoo(ticker, curr_yahoo):
     
     return
 
+
+def update_reuters(curr_reuters):
+    def datefromstring(datestring):
+        
+        curr_date = dt.datetime.strptime(datestring.replace("'",''), '%b %y')
+        date_range = calendar.monthrange(curr_date.year,curr_date.month)
+        date = dt.datetime(curr_date.year,curr_date.month,date_range[1])
+        
+        return date
+    
+    reuters_engine = create_engine('sqlite:///reuters.db', echo=False)
+    
+    
+    try:
+        overall_df = curr_reuters.overall_df
+        overall_df['PullDate'] = dt.datetime.now().date()
+        overall_df['PullDate'] = pd.to_datetime(overall_df['PullDate'])
+        overall_df.index.names = ['Underlying']
+        table_name = 'overviews'
+        index_column = 'Underlying'
+        update_table(reuters_engine, overall_df, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        revenues_eps_df = curr_reuters.revenues_eps_df.copy()
+        revenues_eps_df['Quarter'] = revenues_eps_df['Quarter'].apply(lambda x: datefromstring(x))
+        revenues_eps_df = revenues_eps_df.set_index('Underlying')
+        revenues_eps_df.columns = revenues_eps_df.columns.tolist()[:-1] + ['Fiscal Year']
+        table_name = 'epsAndRevenues'
+        index_column = 'Underlying'
+        update_table(reuters_engine, revenues_eps_df, table_name, index_column, True, False, Quarter = 'Quarter')
+    except:
+        None
+    
+    try:
+        sales_ests = curr_reuters.sales_ests
+        sales_ests = sales_ests.set_index('Underlying')
+        sales_ests['PullDate'] = dt.datetime.now().date()
+        sales_ests['PullDate'] = pd.to_datetime(sales_ests['PullDate'])
+        table_name = 'salesEstimates'
+        index_column = 'Underlying'
+        update_table(reuters_engine, sales_ests, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        earnings_ests = curr_reuters.earnings_ests
+        earnings_ests = earnings_ests.set_index('Underlying')
+        earnings_ests['PullDate'] = dt.datetime.now().date()
+        earnings_ests['PullDate'] = pd.to_datetime(earnings_ests['PullDate'])
+        table_name = 'earningsEstimates'
+        index_column = 'Underlying'
+        update_table(reuters_engine, earnings_ests, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        LTgrowth_ests = curr_reuters.LTgrowth_ests
+        LTgrowth_ests['PullDate'] = dt.datetime.now().date()
+        LTgrowth_ests['PullDate'] = pd.to_datetime(LTgrowth_ests['PullDate'])
+        LTgrowth_ests.index.names = ['Underlying']
+        table_name = 'longTermGrowthEstimates'
+        index_column = 'Underlying'
+        update_table(reuters_engine, LTgrowth_ests, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+        
+    try:    
+        valuations = curr_reuters.valuations
+        valuations['PullDate'] = dt.datetime.now().date()
+        valuations['PullDate'] = pd.to_datetime(valuations['PullDate'])
+        valuations = valuations.set_index('Underlying')
+        table_name = 'valuations'
+        index_column = 'Underlying'
+        update_table(reuters_engine, valuations, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+        
+    try:
+        dividends = curr_reuters.dividends
+        dividends['PullDate'] = dt.datetime.now().date()
+        dividends['PullDate'] = pd.to_datetime(dividends['PullDate'])
+        dividends = dividends.set_index('Underlying')
+        table_name = 'dividends'
+        index_column = 'Underlying'
+        update_table(reuters_engine, dividends, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        growthrate = curr_reuters.growthrate
+        growthrate['PullDate'] = dt.datetime.now().date()
+        growthrate['PullDate'] = pd.to_datetime(growthrate['PullDate'])
+        growthrate = growthrate.set_index('Underlying')
+        table_name = 'growthRates'
+        index_column = 'Underlying'
+        update_table(reuters_engine, growthrate, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        finstrength = curr_reuters.finstrength
+        finstrength['PullDate'] = dt.datetime.now().date()
+        finstrength['PullDate'] = pd.to_datetime(finstrength['PullDate'])
+        finstrength = finstrength.set_index('Underlying')
+        table_name = 'financialStrength'
+        index_column = 'Underlying'
+        update_table(reuters_engine, finstrength, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        profitability = curr_reuters.profitability
+        profitability['PullDate'] = dt.datetime.now().date()
+        profitability['PullDate'] = pd.to_datetime(profitability['PullDate'])
+        profitability = profitability.set_index('Underlying')
+        table_name = 'profitability'
+        index_column = 'Underlying'
+        update_table(reuters_engine, profitability, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        efficiency = curr_reuters.efficiency
+        efficiency['PullDate'] = dt.datetime.now().date()
+        efficiency['PullDate'] = pd.to_datetime(efficiency['PullDate'])
+        efficiency = efficiency.set_index('Underlying')
+        table_name = 'efficiency'
+        index_column = 'Underlying'
+        update_table(reuters_engine, efficiency, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        management = curr_reuters.management
+        management['PullDate'] = dt.datetime.now().date()
+        management['PullDate'] = pd.to_datetime(management['PullDate'])
+        management = management.set_index('Underlying')
+        table_name = 'managementAbilities'
+        index_column = 'Underlying'
+        update_table(reuters_engine, management, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        growth_summary = curr_reuters.growth_summary
+        growth_summary['PullDate'] = dt.datetime.now().date()
+        growth_summary['PullDate'] = pd.to_datetime(growth_summary['PullDate'])
+        growth_summary = growth_summary.set_index('Underlying')
+        table_name = 'growthSummary'
+        index_column = 'Underlying'
+        update_table(reuters_engine, growth_summary, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        performance_summary = curr_reuters.performance_summary
+        performance_summary['PullDate'] = dt.datetime.now().date()
+        performance_summary['PullDate'] = pd.to_datetime(performance_summary['PullDate'])
+        performance_summary = performance_summary.set_index('Underlying')
+        table_name = 'performanceSummary'
+        index_column = 'Underlying'
+        update_table(reuters_engine, performance_summary, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        institution_holdings = curr_reuters.institution_holdings
+        institution_holdings['PullDate'] = dt.datetime.now().date()
+        institution_holdings['PullDate'] = pd.to_datetime(institution_holdings['PullDate'])
+        institution_holdings.index.names = ['Underlying']
+        table_name = 'institutionHoldings'
+        index_column = 'Underlying'
+        update_table(reuters_engine, institution_holdings, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        recommendations = curr_reuters.recommendations
+        recommendations['PullDate'] = dt.datetime.now().date()
+        recommendations['PullDate'] = pd.to_datetime(recommendations['PullDate'])
+        recommendations.index.names = ['Underlying']
+        table_name = 'recommendations'
+        index_column = 'Underlying'
+        update_table(reuters_engine, recommendations, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        analyst_recs = curr_reuters.analyst_recs
+        analyst_recs['PullDate'] = dt.datetime.now().date()
+        analyst_recs['PullDate'] = pd.to_datetime(analyst_recs['PullDate'])
+        analyst_recs = analyst_recs.set_index('Underlying')
+        table_name = 'analystRecommendations'
+        index_column = 'Underlying'
+        update_table(reuters_engine, analyst_recs, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        sales_analysis = curr_reuters.sales_analysis
+        sales_analysis['PullDate'] = dt.datetime.now().date()
+        sales_analysis['PullDate'] = pd.to_datetime(sales_analysis['PullDate'])
+        sales_analysis = sales_analysis.set_index('Underlying')
+        table_name = 'salesAnalysis'
+        index_column = 'Underlying'
+        update_table(reuters_engine, sales_analysis, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        earnings_analysis = curr_reuters.earnings_analysis
+        earnings_analysis['PullDate'] = dt.datetime.now().date()
+        earnings_analysis['PullDate'] = pd.to_datetime(earnings_analysis['PullDate'])
+        earnings_analysis = earnings_analysis.set_index('Underlying')
+        table_name = 'earningsAnalysis'
+        index_column = 'Underlying'
+        update_table(reuters_engine, earnings_analysis, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        LTgrowth_analysis = curr_reuters.LTgrowth_analysis
+        LTgrowth_analysis['PullDate'] = dt.datetime.now().date()
+        LTgrowth_analysis['PullDate'] = pd.to_datetime(LTgrowth_analysis['PullDate'])
+        LTgrowth_analysis.index.names = ['Underlying']
+        table_name = 'longTermGrowthAnalysis'
+        index_column = 'Underlying'
+        update_table(reuters_engine, LTgrowth_analysis, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        sales_surprises = curr_reuters.sales_surprises
+        sales_surprises['PullDate'] = dt.datetime.now().date()
+        sales_surprises['PullDate'] = pd.to_datetime(sales_surprises['PullDate'])
+        sales_surprises = sales_surprises.set_index('Underlying')
+        table_name = 'salesSurprises'
+        index_column = 'Underlying'
+        update_table(reuters_engine, sales_surprises, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        earnings_surprises = curr_reuters.earnings_surprises
+        earnings_surprises['PullDate'] = dt.datetime.now().date()
+        earnings_surprises['PullDate'] = pd.to_datetime(earnings_surprises['PullDate'])
+        earnings_surprises = earnings_surprises.set_index('Underlying')
+        table_name = 'earningsSurprises'
+        index_column = 'Underlying'
+        update_table(reuters_engine, earnings_surprises, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        sales_trend = curr_reuters.sales_trend
+        sales_trend['PullDate'] = dt.datetime.now().date()
+        sales_trend['PullDate'] = pd.to_datetime(sales_trend['PullDate'])
+        sales_trend = sales_trend.set_index('Underlying')
+        table_name = 'salesTrend'
+        index_column = 'Underlying'
+        update_table(reuters_engine, sales_trend, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        earnings_trend = curr_reuters.earnings_trend
+        earnings_trend['PullDate'] = dt.datetime.now().date()
+        earnings_trend['PullDate'] = pd.to_datetime(earnings_trend['PullDate'])
+        earnings_trend = earnings_trend.set_index('Underlying')
+        table_name = 'earningsTrend'
+        index_column = 'Underlying'
+        update_table(reuters_engine, earnings_trend, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        revenue_revisions = curr_reuters.revenue_revisions
+        revenue_revisions['PullDate'] = dt.datetime.now().date()
+        revenue_revisions['PullDate'] = pd.to_datetime(revenue_revisions['PullDate'])
+        revenue_revisions = revenue_revisions.set_index('Underlying')
+        table_name = 'revenueRevisions'
+        index_column = 'Underlying'
+        update_table(reuters_engine, revenue_revisions, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        earnings_revisions = curr_reuters.earnings_revisions
+        earnings_revisions['PullDate'] = dt.datetime.now().date()
+        earnings_revisions['PullDate'] = pd.to_datetime(earnings_revisions['PullDate'])
+        earnings_revisions = earnings_revisions.set_index('Underlying')
+        table_name = 'earningsRevisions'
+        index_column = 'Underlying'
+        update_table(reuters_engine, earnings_revisions, table_name, index_column, False, False, PullDate = 'PullDate')
+    except:
+        None
+    
+    try:
+        insiders_txns = curr_reuters.insiders_txns
+        insiders_txns['Trading Date'] = pd.to_datetime(insiders_txns['Trading Date'])
+        insiders_txns = insiders_txns.set_index('Underlying')
+        insiders_txns.columns = [x.replace(' ','') for x in insiders_txns.columns.tolist()]
+        insiders_txns = insiders_txns.groupby(['Name','Title','TradingDate','Type']).agg({'Price':'mean','SharesTraded':'sum'}).reset_index()
+        insiders_txns['Underlying'] = ticker
+        insiders_txns = insiders_txns.set_index('Underlying')
+        table_name = 'insiderTxns'
+        index_column = 'Underlying'
+        update_table(reuters_engine, insiders_txns, table_name, index_column, False, False, TradingDate = 'TradingDate')
+    except:
+        None
+
 #%% Collecting Data
 
 
@@ -301,18 +614,26 @@ for ticker in ['MOMO','PDCO','GME','NVDA']:
     
     try:
         curr_reuters = reuters_query(ticker)
-        
+        update_reuters(curr_reuters)
+    except:
+        print("Reuters Failed on {}".format(ticker))
+    
+    try:
         curr_yahoo = yahoo_query(ticker, start_date = dt.datetime(2016,1,1))
         curr_yahoo.full_info_query()
         update_yahoo(ticker, curr_yahoo)
+    except:
+        print("Yahoo Failed on {}".format(ticker))
         
+    try:
         curr_alphaquery = alphaquery(ticker)
         alphaquery_update(curr_alphaquery)
-        
+    except:
+        print("AQ Failed on {}".format(ticker))
+    
+    try:
         curr_earnings_history = earnings_report(ticker).dropna()
-        
         earnHistory_update(curr_earnings_history, ticker)
-        
     except:
         print("Failed on {}".format(ticker))
 
@@ -321,146 +642,4 @@ print("--- %s seconds ---" % (time.time() - start_time))
 
 
 #%%
-reuters_engine = create_engine('sqlite:///reuters.db', echo=False)
-
-try:
-    overall_df = curr_reuters.overall_df
-    overall_df['PullDate'] = dt.datetime.now().date()
-    overall_df['PullDate'] = pd.to_datetime(overall_df['PullDate'])
-    overall_df.index.names = ['Underlying']
-    table_name = 'finData'
-    index_column = 'Underlying'
-    update_table(reuters_engine, overall_df, table_name, index_column, False, False, PullDate = 'PullDate')
-except:
-    None
-
-try:
-    revenues_eps_df = curr_reuters.revenues_eps_df
-except:
-    None
-
-try:
-    sales_ests = curr_reuters.sales_ests
-except:
-    None
-
-try:
-    earnings_ests = curr_reuters.earnings_ests
-except:
-    None
-
-try:
-    LTgrowth_ests = curr_reuters.LTgrowth_ests
-except:
-    None
-    
-try:    
-    valuations = curr_reuters.valuations
-except:
-    None
-    
-try:
-    dividends = curr_reuters.dividends
-except:
-    None
-
-try:
-    growthrate = curr_reuters.growthrate
-except:
-    None
-
-try:
-    finstrength = curr_reuters.finstrength
-except:
-    None
-
-try:
-    profitability = curr_reuters.profitability
-except:
-    None
-
-try:
-    efficiency = curr_reuters.efficiency
-except:
-    None
-
-try:
-    management = curr_reuters.management
-except:
-    None
-
-try:
-    growth_summary = curr_reuters.growth_summary
-except:
-    None
-
-try:
-    performance_summary = curr_reuters.performance_summary
-except:
-    None
-
-try:
-    institution_holdings = curr_reuters.institution_holdings
-except:
-    None
-
-try:
-    recommendations = curr_reuters.recommendations
-except:
-    None
-
-try:
-    analyst_recs = curr_reuters.analyst_recs
-except:
-    None
-
-try:
-    sales_analysis = curr_reuters.sales_analysis
-except:
-    None
-
-try:
-    earnings_analysis = curr_reuters.earnings_analysis
-except:
-    None
-
-try:
-    LTgrowth_analysis = curr_reuters.LTgrowth_analysis
-except:
-    None
-
-try:
-    sales_surprises = curr_reuters.sales_surprises
-except:
-    None
-
-try:
-    earnings_surprises = curr_reuters.earnings_surprises
-except:
-    None
-
-try:
-    sales_trend = curr_reuters.sales_trend
-except:
-    None
-
-try:
-    earnings_trend = curr_reuters.earnings_trend
-except:
-    None
-
-try:
-    revenue_revisions = curr_reuters.revenue_revisions
-except:
-    None
-
-try:
-    earnings_revisions = curr_reuters.earnings_revisions
-except:
-    None
-
-try:
-    insiders_txns = curr_reuters.insiders_txns
-except:
-    None
 
