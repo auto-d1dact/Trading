@@ -28,12 +28,12 @@ os.chdir('..\\')
 os.chdir('..\\')
 os.chdir('..\\Data\\Stock Universe')
 
-tsx = pd.read_csv('TSX.csv')['Symbol'].tolist()
-nyse = pd.read_csv('NYSE.csv')['Symbol'].tolist()
-nasdaq = pd.read_csv('NASDAQ.csv')['Symbol'].tolist()
-amex = pd.read_csv('AMEX.csv')['Symbol'].tolist()
+#tsx = pd.read_csv('TSX.csv')['Symbol']#.tolist()
+nyse = pd.read_csv('NYSE.csv')['Symbol']#.tolist()
+nasdaq = pd.read_csv('NASDAQ.csv')['Symbol']#.tolist()
+amex = pd.read_csv('AMEX.csv')['Symbol']#.tolist()
 
-us_names = nyse + nasdaq + amex
+us_names = pd.concat([nyse,nasdaq,amex]).drop_duplicates().values.tolist()
 
 os.chdir('..\\DBs')
 
@@ -607,39 +607,40 @@ def update_reuters(curr_reuters):
 
 #%% Collecting Data
 
-
-start_time = time.time()
-
-for ticker in ['MOMO','PDCO','GME','NVDA']:
+if __name__ == '__main__':
     
-    try:
-        curr_reuters = reuters_query(ticker)
-        update_reuters(curr_reuters)
-    except:
-        print("Reuters Failed on {}".format(ticker))
-    
-    try:
-        curr_yahoo = yahoo_query(ticker, start_date = dt.datetime(2016,1,1))
-        curr_yahoo.full_info_query()
-        update_yahoo(ticker, curr_yahoo)
-    except:
-        print("Yahoo Failed on {}".format(ticker))
+    start_time = time.time()
+    i = 0
+    total_length = len(us_names)
+    for ticker in us_names:
         
-    try:
-        curr_alphaquery = alphaquery(ticker)
-        alphaquery_update(curr_alphaquery)
-    except:
-        print("AQ Failed on {}".format(ticker))
+        try:
+            curr_reuters = reuters_query(ticker)
+            update_reuters(curr_reuters)
+        except:
+            print("Reuters Failed on {}".format(ticker))
+        
+        try:
+            curr_yahoo = yahoo_query(ticker, start_date = dt.datetime(2016,1,1))
+            curr_yahoo.full_info_query()
+            update_yahoo(ticker, curr_yahoo)
+        except:
+            print("Yahoo Failed on {}".format(ticker))
+            
+        try:
+            curr_alphaquery = alphaquery(ticker)
+            alphaquery_update(curr_alphaquery)
+        except:
+            print("AQ Failed on {}".format(ticker))
+        
+        try:
+            curr_earnings_history = earnings_report(ticker).dropna()
+            earnHistory_update(curr_earnings_history, ticker)
+        except:
+            print("Failed on {}".format(ticker))
+        i += 1
+        print('{0:.2f}% Completed'.format(i/total_length*100))
+
+    print("Completed in %s seconds" % (time.time() - start_time))
     
-    try:
-        curr_earnings_history = earnings_report(ticker).dropna()
-        earnHistory_update(curr_earnings_history, ticker)
-    except:
-        print("Failed on {}".format(ticker))
-
-print("--- %s seconds ---" % (time.time() - start_time))
-    
-
-
-#%%
 
