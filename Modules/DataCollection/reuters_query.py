@@ -31,11 +31,11 @@ os.chdir(main_dir)
 
 #%% Functions for Parsing Reuters html
 def to_float(string):
-            val = string.strip().replace(',','').replace('$','').replace('--','')
-            if val != '':
-                return float(val)
-            else:
-                return np.nan
+    val = string.strip().replace(',','').replace('$','').replace('--','')
+    if val != '':
+        return float(val)
+    else:
+        return np.nan
 
 def overview_tables(overview_raw, ticker):
     overall_dict = {}
@@ -607,10 +607,10 @@ class reuters_query:
                 
                 insiders_dflist = [insiders_table(insider_details, ticker)]
                 if insider_pages_numbers != None:
-                    insider_pages_numbers = int(insider_pages_numbers.text.strip()[-1])
+                    insider_pages_numbers = int(insider_pages_numbers.text.strip().split(' ')[-1])
                     
                     for i in range(2, insider_pages_numbers + 1):
-                        page_url = insiders_url + "?symbol=&amp;name=&amp;pn={}&amp;sortDir=&amp;sortBy=".format(i)
+                        page_url = insiders_url + "?symbol=&name=&pn={}&sortDir=&sortBy=".format(i)
                         next_insider_page = bs(requests.get(page_url).text, 'lxml')
                         next_insider_raw = next_insider_page.find('div', 
                                                                   {'id': 'content'}).select('div[class*="sectionContent"]')
