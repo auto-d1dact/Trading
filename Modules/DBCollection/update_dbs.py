@@ -605,6 +605,111 @@ def update_reuters(curr_reuters):
     except:
         None
 
+#%%
+########### Insider Tables Parse
+
+def get_reuters_insiders(ticker):
+    
+    from bs4 import BeautifulSoup as bs
+    import requests
+    def to_float(string):
+        val = string.strip().replace(',','').replace('$','').replace('--','')
+        if val != '':
+            return float(val)
+        else:
+            return np.nan
+        
+        
+    def insiders_table(insider_details, ticker):
+        
+        detail_table = insider_details.find('table')
+                    
+        if len(detail_table) != 0:
+            curr_table_dict = {}
+            
+            i = 1
+            for row in detail_table.find_all('tr'):
+                if i == 1:
+                    headers = [x.text.replace('\n','') for x in row.find_all('th')]
+                    for header in headers:
+                        curr_table_dict[header] = []
+                    i = 0
+                    continue
+                else:
+                    curr_cols = [x.text.strip() for x in row.find_all('td')]
+                    if len(curr_cols) != 1:
+                        curr_table_dict[headers[0]].append(dt.datetime.strptime(curr_cols[0], '%d %b %Y').date())
+                        curr_table_dict[headers[1]].append(curr_cols[1])
+                        curr_table_dict[headers[2]].append(curr_cols[2])
+                        curr_table_dict[headers[3]].append(curr_cols[3])
+                        curr_table_dict[headers[4]].append(to_float(curr_cols[4]))
+                        curr_table_dict[headers[5]].append(to_float(curr_cols[5]))
+        insiders_df = pd.DataFrame(curr_table_dict)
+        insiders_df['Underlying'] = ticker
+        return insiders_df
+    
+    # Insiders Table
+    
+    
+    insiders_url = 'https://www.reuters.com/finance/stocks/insider-trading/' + ticker
+    
+    insiders = bs(requests.get(insiders_url).text, 'lxml')
+    
+    insiders_raw = insiders.find('div', 
+                                 {'id': 'content'}).select('div[class*="sectionContent"]')
+            
+    if len(insiders_raw) > 2:
+        
+        try:
+            insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+            
+            insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
+            
+            insiders_dflist = [insiders_table(insider_details, ticker)]
+            if insider_pages_numbers != None:
+                insider_pages_numbers = int(insider_pages_numbers.text.strip().split(' ')[-1])
+                
+                for i in range(2, insider_pages_numbers + 1):
+                    page_url = insiders_url + "?symbol=&name=&pn={}&sortDir=&sortBy=".format(i)
+                    next_insider_page = bs(requests.get(page_url).text, 'lxml')
+                    next_insider_raw = next_insider_page.find('div', 
+                                                              {'id': 'content'}).select('div[class*="sectionContent"]')
+                    next_insider_details = next_insider_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+                    next_insiders_df = insiders_table(next_insider_details, ticker)
+                    insiders_dflist.append(next_insiders_df)
+                    
+            insiders_txns = pd.concat(insiders_dflist, axis = 0).reset_index(drop = True)
+            
+            insiders_txns['Trading Date'] = pd.to_datetime(insiders_txns['Trading Date'])
+            insiders_txns = insiders_txns.set_index('Underlying')
+            insiders_txns.columns = [x.replace(' ','') for x in insiders_txns.columns.tolist()]
+            insiders_txns = insiders_txns.groupby(['Name','Title','TradingDate','Type']).agg({'Price':'mean','SharesTraded':'sum'}).reset_index()
+            insiders_txns['Underlying'] = ticker
+            insiders_txns = insiders_txns.set_index('Underlying')
+            return insiders_txns
+        except:
+            print('No insiders_txns for {}'.format(ticker))
+            return []
+    else:
+        return []
+
+insiders_dflist = []
+i = 0
+total_length = len(us_names)
+for ticker in us_names:
+    curr_insiders = get_reuters_insiders(ticker)
+    if len(curr_insiders) != 0:
+        insiders_dflist.append(curr_insiders)
+        print("Reuters Failed on {}".format(ticker))
+    i += 1
+    print('{0:.2f}% Completed'.format(i/total_length*100))
+    
+
+insiders_df = pd.concat(insiders_dflist,axis = 0)
+
+reuters_engine = create_engine('sqlite:///reuters.db', echo=False)
+insiders_df.to_sql('insiderTxns', con=reuters_engine, if_exists='replace', index_label = 'Underlying')
+
 #%% Collecting Data
 
 if __name__ == '__main__':
