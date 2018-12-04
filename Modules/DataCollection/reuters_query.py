@@ -461,7 +461,75 @@ def insiders_table(insider_details, ticker):
     insiders_df = pd.DataFrame(curr_table_dict)
     insiders_df['Underlying'] = ticker
     return insiders_df
+
+############ Full insider table parse
+def reuters_insiders(ticker):
     
+    ########### Insider Tables Parse
+    def insiders_table(detail_table, ticker):
+
+        def to_float(string):
+            val = string.strip().replace(',','').replace('$','').replace('--','')
+            if val != '':
+                return float(val)
+            else:
+                return np.nan
+
+        if len(detail_table) != 0:
+            curr_table_dict = {}
+
+            i = 1
+            for row in detail_table.find_all('tr'):
+                if i == 1:
+                    headers = [x.text.replace('\n','') for x in row.find_all('th')]
+                    for header in headers:
+                        curr_table_dict[header] = []
+                    i = 0
+                    continue
+                else:
+                    curr_cols = [x.text.strip() for x in row.find_all('td')]
+                    if len(curr_cols) != 1:
+                        curr_table_dict[headers[0]].append(dt.datetime.strptime(curr_cols[0], '%d %b %Y').date())
+                        curr_table_dict[headers[1]].append(curr_cols[1])
+                        curr_table_dict[headers[2]].append(curr_cols[2])
+                        curr_table_dict[headers[3]].append(curr_cols[3])
+                        curr_table_dict[headers[4]].append(to_float(curr_cols[4]))
+                        curr_table_dict[headers[5]].append(to_float(curr_cols[5]))
+        insiders_df = pd.DataFrame(curr_table_dict)
+        insiders_df['Underlying'] = ticker
+        return insiders_df
+    
+    insiders_base_url = 'https://www.reuters.com/finance/stocks/insider-trading/'
+    insiders_url = insiders_base_url + ticker
+    insiders = bs(requests.get(insiders_url).text, 'lxml')
+    new_ticker = insiders.find('h1').text.split(' ')[-1].replace('(','').replace(')','')
+    
+    insiderTxns_lst = []
+    
+    try:
+        total_pages = int(insiders.select_one('span[class="pageStatus"]').text.strip().split(' ')[-1])
+        current_page = int(insiders.select_one('span[class="pageStatus"]').text.strip().split(' ')[1])
+
+        for i in range(1,total_pages + 1):
+            page_url = insiders_base_url + new_ticker + '?symbol=&name=&pn={}&sortDir=&sortBy='.format(i)
+            insiders = bs(requests.get(page_url).text, 'lxml')
+            #print(page_url)
+            total_pages = int(insiders.select_one('span[class="pageStatus"]').text.strip().split(' ')[-1])
+            current_page = int(insiders.select_one('span[class="pageStatus"]').text.strip().split(' ')[1])
+
+            if insiders.select_one('div[class*="insiderTradingHeader"]') != None:
+                insider_details = insiders.select_one('div[class*="insiderTradingHeader"]').findNext('table')
+
+                if current_page == i:
+                    insiderTxns_lst.append(insiders_table(insider_details, ticker))
+    except:
+        None
+    
+    if len(insiderTxns_lst) > 0:
+        return pd.concat(insiderTxns_lst, axis = 0).reset_index(drop = True)
+    else:
+        return
+
 
 #%%
 class reuters_query:
@@ -471,16 +539,16 @@ class reuters_query:
         overview_url = 'https://www.reuters.com/finance/stocks/overview/' + ticker
         financials_url = 'https://www.reuters.com/finance/stocks/financial-highlights/' + ticker
         analysts_url = 'https://www.reuters.com/finance/stocks/analyst/' + ticker
-        insiders_url = 'https://www.reuters.com/finance/stocks/insider-trading/' + ticker
+#        insiders_url = 'https://www.reuters.com/finance/stocks/insider-trading/' + ticker
         
         overview = bs(requests.get(overview_url).text, 'lxml')
         financials = bs(requests.get(financials_url).text, 'lxml')
         analysts = bs(requests.get(analysts_url).text, 'lxml')
-        insiders = bs(requests.get(insiders_url).text, 'lxml')
-
-        insiders_raw = insiders.find('div', 
-                                     {'id': 'content'}).select('div[class*="sectionContent"]')
-        
+#        insiders = bs(requests.get(insiders_url).text, 'lxml')
+#
+#        insiders_raw = insiders.find('div', 
+#                                     {'id': 'content'}).select('div[class*="sectionContent"]')
+#        
         overview_raw = overview.find('div', 
                                      {'id': 'content'}).select('div[class*="sectionContent"]')
 
@@ -598,29 +666,29 @@ class reuters_query:
                 print('No revenue_revisions for {}'.format(ticker))
                 
         # Insiders Table
-        if len(insiders_raw) > 2:
+#        if len(insiders_raw) > 2:
             
-            try:
-                insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
-                
-                insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
-                
-                insiders_dflist = [insiders_table(insider_details, ticker)]
-                if insider_pages_numbers != None:
-                    insider_pages_numbers = int(insider_pages_numbers.text.strip().split(' ')[-1])
-                    
-                    for i in range(2, insider_pages_numbers + 1):
-                        page_url = insiders_url + "?symbol=&name=&pn={}&sortDir=&sortBy=".format(i)
-                        next_insider_page = bs(requests.get(page_url).text, 'lxml')
-                        next_insider_raw = next_insider_page.find('div', 
-                                                                  {'id': 'content'}).select('div[class*="sectionContent"]')
-                        next_insider_details = next_insider_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
-                        next_insiders_df = insiders_table(next_insider_details, ticker)
-                        insiders_dflist.append(next_insiders_df)
+        try:
+#                insider_details = insiders_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+#                
+#                insider_pages_numbers = insider_details.find('span', {'class':'pageStatus'})
+#                
+#                insiders_dflist = [insiders_table(insider_details, ticker)]
+#                if insider_pages_numbers != None:
+#                    insider_pages_numbers = int(insider_pages_numbers.text.strip().split(' ')[-1])
+#                    
+#                    for i in range(2, insider_pages_numbers + 1):
+#                        page_url = insiders_url + "?symbol=&name=&pn={}&sortDir=&sortBy=".format(i)
+#                        next_insider_page = bs(requests.get(page_url).text, 'lxml')
+#                        next_insider_raw = next_insider_page.find('div', 
+#                                                                  {'id': 'content'}).select('div[class*="sectionContent"]')
+#                        next_insider_details = next_insider_raw[2].select_one('div[class*="column1 gridPanel"]').select('div[class="module"]')[0]
+#                        next_insiders_df = insiders_table(next_insider_details, ticker)
+#                        insiders_dflist.append(next_insiders_df)
                         
-                self.insiders_txns = pd.concat(insiders_dflist, axis = 0).reset_index(drop = True)
-            except:
-                print('No insiders_txns for {}'.format(ticker))
+            self.insiders_txns = reuters_insiders(ticker)
+        except:
+            print('No insiders_txns for {}'.format(ticker))
             
     
 #%%
