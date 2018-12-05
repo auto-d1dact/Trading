@@ -81,4 +81,3 @@ class alphaquery:
         self.vol_df['Underlying'] = ticker
         
         
-        

@@ -51,7 +51,11 @@ https://query1.finance.yahoo.com/v10/finance/quoteSummary/AAPL?modules=assetProf
 Querying for: assetProfile and earningsHistory
 
 '''
-
+def convert_row(raw_json):
+        try:
+            return pd.DataFrame(raw_json).loc['raw']
+        except:
+            return pd.DataFrame(index = raw_json.keys())
 
 # Creating class for querying yahoo data
 # yahoo_query(str[self.ticker], datetime.date([starting_date]), datetime.date([ending_date])):
@@ -114,14 +118,14 @@ class yahoo_query:
             data = json.loads(url.read().decode())
                         
             ########## Creating earnings_history dataframe
-            earnings_annual = pd.concat([pd.DataFrame(earnings).loc['raw'] for 
+            earnings_annual = pd.concat([convert_row(earnings) for 
                                          earnings in 
                                          data['quoteSummary']['result'][0]['earnings']['financialsChart']['yearly']], axis = 1).T
             earnings_annual.index = earnings_annual.date
             self.earnings_annual = earnings_annual.drop(['date'], axis = 1)
             
             
-            earnings_quarterly = pd.concat([pd.DataFrame(quarter_earnings).loc['raw'] for 
+            earnings_quarterly = pd.concat([convert_row(quarter_earnings) for 
                                             quarter_earnings in 
                                             data['quoteSummary']['result'][0]['earningsHistory']['history']],
                                          axis = 1).T
@@ -141,7 +145,7 @@ class yahoo_query:
             
             try:
                 ########### Creating executives profile dataframe
-                executives = pd.concat([pd.DataFrame(executive).loc['raw'] for 
+                executives = pd.concat([convert_row(executive) for 
                                         executive in data['quoteSummary']['result'][0]['assetProfile']['companyOfficers']],
                                        axis = 1).T
                 executives.index = executives.title
@@ -150,14 +154,14 @@ class yahoo_query:
                 pass
             
             ########### Creating historical cashflow statements dataframe
-            cashFlowStatementAnnual = pd.concat([pd.DataFrame(cfstatement).loc['raw'] for cfstatement in 
+            cashFlowStatementAnnual = pd.concat([convert_row(cfstatement) for cfstatement in 
                                                  data['quoteSummary']['result'][0]['cashflowStatementHistory']['cashflowStatements']],
                                                 axis = 1).T
             cashFlowStatementAnnual.index = pd.to_datetime([dt.datetime.utcfromtimestamp(int(x)).date() for 
                                                             x in cashFlowStatementAnnual['endDate'].tolist()])
             self.cashFlowStatementAnnual = cashFlowStatementAnnual.drop(['endDate', 'maxAge'], axis = 1)
             
-            cashFlowStatementQuarter = pd.concat([pd.DataFrame(cfstatement).loc['raw'] for cfstatement in 
+            cashFlowStatementQuarter = pd.concat([convert_row(cfstatement) for cfstatement in 
                                                   data['quoteSummary']['result'][0]['cashflowStatementHistoryQuarterly']['cashflowStatements']],
                                                  axis = 1).T
             cashFlowStatementQuarter.index = pd.to_datetime([dt.datetime.utcfromtimestamp(int(x)).date() for 
@@ -166,7 +170,7 @@ class yahoo_query:
             
             try:
                 ########### Creating institutional ownership information for company
-                institutionOwn = pd.concat([pd.DataFrame(owners).loc['raw'] for owners in 
+                institutionOwn = pd.concat([convert_row(owners) for owners in 
                                             data['quoteSummary']['result'][0]['institutionOwnership']['ownershipList']],
                                           axis = 1).T
                 institutionOwn.reportDate = pd.to_datetime([dt.datetime.utcfromtimestamp(int(x)).date() for
@@ -214,7 +218,7 @@ class yahoo_query:
                 pass
             
             ########### Creating historical income statement dataframe
-            incomeStatementAnnual = pd.concat([pd.DataFrame(incomeStatement).loc['raw'] for 
+            incomeStatementAnnual = pd.concat([convert_row(incomeStatement) for 
                                    incomeStatement in 
                                    data['quoteSummary']['result'][0]['incomeStatementHistory']['incomeStatementHistory']],
                                   axis = 1).T
@@ -224,7 +228,7 @@ class yahoo_query:
             self.incomeStatementAnnual = incomeStatementAnnual.drop('endDate', axis = 1)
 
 
-            incomeStatementQuarter = pd.concat([pd.DataFrame(incomeStatement).loc['raw'] for 
+            incomeStatementQuarter = pd.concat([convert_row(incomeStatement) for 
                                                 incomeStatement in 
                                                 data['quoteSummary']['result'][0]['incomeStatementHistoryQuarterly']['incomeStatementHistory']],
                                                axis = 1).T
@@ -234,7 +238,7 @@ class yahoo_query:
             self.incomeStatementQuarter = incomeStatementQuarter.drop('endDate', axis = 1)
             
             ############ Creating historical balance sheet statement dataframe
-            balanceSheetAnnual = pd.concat([pd.DataFrame(balanceSheet).loc['raw'] for 
+            balanceSheetAnnual = pd.concat([convert_row(balanceSheet) for 
                                    balanceSheet in 
                                    data['quoteSummary']['result'][0]['balanceSheetHistory']['balanceSheetStatements']],
                                   axis = 1).T
@@ -244,7 +248,7 @@ class yahoo_query:
             self.balanceSheetAnnual = balanceSheetAnnual.drop('endDate', axis = 1)
 
 
-            balanceSheetQuarter = pd.concat([pd.DataFrame(balanceSheet).loc['raw'] for 
+            balanceSheetQuarter = pd.concat([convert_row(balanceSheet) for 
                                                 balanceSheet in 
                                                 data['quoteSummary']['result'][0]['balanceSheetHistoryQuarterly']['balanceSheetStatements']],
                                                axis = 1).T
@@ -255,7 +259,7 @@ class yahoo_query:
             
             try:
                 ############ Creating fund ownership dataframe
-                self.fundOwnership = pd.concat([pd.DataFrame(fundOwner).loc['raw'] for 
+                self.fundOwnership = pd.concat([convert_row(fundOwner) for 
                                                 fundOwner in 
                                                 data['quoteSummary']['result'][0]['fundOwnership']['ownershipList']],
                                                axis = 1).T.drop('maxAge', axis = 1)
@@ -268,7 +272,7 @@ class yahoo_query:
             
             try:
                 ############ Creating insider holders dataframe
-                self.insiderHolders = pd.concat([pd.DataFrame(holder).loc['raw'] for 
+                self.insiderHolders = pd.concat([convert_row(holder) for 
                                                  holder in data['quoteSummary']['result'][0]['insiderHolders']['holders']],
                                                 axis = 1).T.drop('maxAge', axis = 1)
                 self.insiderHolders.index = range(len(self.insiderHolders))
@@ -285,7 +289,7 @@ class yahoo_query:
             
             try:
                 ############ Creating earnings estimate dataframe
-                earningEsts = pd.concat([pd.DataFrame(estimate).loc['raw'] for estimate in 
+                earningEsts = pd.concat([convert_row(estimate) for estimate in 
                                          data['quoteSummary']['result'][0]['earningsTrend']['trend']],
                                         axis = 1).T.dropna(subset=['endDate'])
                 earningEsts.index = pd.to_datetime([dt.datetime.strptime(date,'%Y-%m-%d').date() for date in earningEsts.endDate])
@@ -331,4 +335,3 @@ class yahoo_query:
         with urlreq.urlopen(self.fin_statements_url) as url:
             data = json.loads(url.read().decode())
             self.financials = pd.DataFrame(data['quoteResponse']['result'][0], index = [self.ticker])
-            

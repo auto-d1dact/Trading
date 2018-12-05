@@ -15,9 +15,11 @@ import calendar
 import time
 
 #%%
-module_dir = 'C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Trading\Modules\\DataCollection'
+module_dir = 'C:\\Users\\Fang\\Desktop\\Python Trading\\Trading\\Trading\\Modules\\DataCollection'
+
 os.chdir(module_dir)
 
+print(os.getcwd())
 from reuters_query import reuters_query
 from option_slam_earnings import earnings_report
 from alphaquery import alphaquery
