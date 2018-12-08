@@ -105,7 +105,7 @@ class yahoo_query:
     def hist_prices_query(self):
         with urlreq.urlopen(self.hist_price_url) as url:
             data = json.loads(url.read().decode())
-            self.hist_prices = pd.DataFrame(data['chart']['result'][0]['indicators']['quote'][0],
+            self.hist_prices = pd.DataFrame({**data['chart']['result'][0]['indicators']['quote'][0], **data['chart']['result'][0]['indicators']['adjclose'][0]},
                                             index = [dt.datetime.utcfromtimestamp(int(x)).date() for x in 
                                                      data['chart']['result'][0]['timestamp']])
             self.hist_prices.index = pd.to_datetime(self.hist_prices.index)
