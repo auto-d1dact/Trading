@@ -528,7 +528,7 @@ def reuters_insiders(ticker):
     if len(insiderTxns_lst) > 0:
         return pd.concat(insiderTxns_lst, axis = 0).reset_index(drop = True)
     else:
-        return
+        return []
 
 
 #%%
@@ -537,11 +537,20 @@ class reuters_query:
     def __init__(self, ticker):
         
         overview_url = 'https://www.reuters.com/finance/stocks/overview/' + ticker
+        overview = bs(requests.get(overview_url).text, 'lxml')
+        
+        new_ticker = overview.find('h1').text.split(' ')[-1].replace('(','').replace(')','')
+        
+        if '.' in new_ticker:
+            check = new_ticker.split('.')[0]
+            if check == ticker:
+                ticker = new_ticker
+        
         financials_url = 'https://www.reuters.com/finance/stocks/financial-highlights/' + ticker
         analysts_url = 'https://www.reuters.com/finance/stocks/analyst/' + ticker
 #        insiders_url = 'https://www.reuters.com/finance/stocks/insider-trading/' + ticker
         
-        overview = bs(requests.get(overview_url).text, 'lxml')
+        
         financials = bs(requests.get(financials_url).text, 'lxml')
         analysts = bs(requests.get(analysts_url).text, 'lxml')
 #        insiders = bs(requests.get(insiders_url).text, 'lxml')

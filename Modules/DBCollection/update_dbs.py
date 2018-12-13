@@ -134,6 +134,10 @@ def update_yahoo(ticker, curr_yahoo, db_dict):
             return np.nan
     
     for attr, value in curr_yahoo.__dict__.items():
+        
+        if len(value) == 0:
+            continue
+        
         if attr not in db_dict.keys():
             continue
         
@@ -227,6 +231,10 @@ def update_reuters(curr_reuters, ticker, db_dict):
         return date
     
     for attr, value in curr_reuters.__dict__.items():
+        
+        if len(value) == 0:
+            continue
+        
         if attr not in db_dict.keys():
             continue
         curr_table_props = db_dict[attr]
@@ -305,6 +313,10 @@ if __name__ == '__main__':
     
     start_time = time.time()
     i = 0
+    failed_reuters = []
+    failed_yahoo = []
+    failed_earnings = []
+    
     total_length = len(us_names)
     for ticker in us_names:
         
@@ -313,6 +325,7 @@ if __name__ == '__main__':
             update_reuters(curr_reuters, ticker, reuters_table_dict)
         except:
             print("Reuters Failed on {}".format(ticker))
+            failed_reuters.append(ticker)
         
         try:
             curr_yahoo = yahoo_query(ticker, start_date = dt.datetime(2016,1,1))
@@ -320,6 +333,7 @@ if __name__ == '__main__':
             update_yahoo(ticker, curr_yahoo, yahoo_table_dict)
         except:
             print("Yahoo Failed on {}".format(ticker))
+            failed_yahoo.append(ticker)
             
         try:
             curr_alphaquery = alphaquery(ticker)
@@ -333,8 +347,14 @@ if __name__ == '__main__':
             earnHistory_update(curr_earnings_history, ticker)
         except:
             print("Failed on {}".format(ticker))
+            failed_earnings.append(ticker)
+            
         i += 1
         print('{0:.2f}% Completed'.format(i/total_length*100))
-
+    
+    pd.DataFrame(index = failed_reuters).to_csv('failed_reuters.csv')
+    pd.DataFrame(index = failed_yahoo).to_csv('failed_yahoo.csv')
+    pd.DataFrame(index = failed_earnings).to_csv('failed_earnings.csv')
+    
     print("Completed in %s seconds" % (time.time() - start_time))
     
