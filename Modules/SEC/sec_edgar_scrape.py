@@ -129,9 +129,9 @@ def latest_sec_db_links(formtype, year, qtr, engine):
 start_time = time.time()
 sec_engine = create_engine('sqlite:///SEC.db', echo=False)
 
-for year in range(2005, 2019):
+for year in range(2008, 2019):
     for qtr in range(1, 5):
-        if year == 2005 and qtr < 2:
+        if year == 2008 and qtr < 4:
             continue
         else:
             latest_db_f4 = latest_sec_db_links('F4', year, qtr, sec_engine)
