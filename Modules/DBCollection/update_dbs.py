@@ -36,6 +36,8 @@ nasdaq = pd.read_csv('NASDAQ.csv')['Symbol']#.tolist()
 amex = pd.read_csv('AMEX.csv')['Symbol']#.tolist()
 
 us_names = pd.concat([nyse,nasdaq,amex]).drop_duplicates().values.tolist()
+exclude_names = pd.read_csv('exclude_names.csv').iloc[:,0].tolist()
+us_names = list(filter(lambda x: x not in exclude_names, us_names))
 
 os.chdir('..\\DBs')
 
