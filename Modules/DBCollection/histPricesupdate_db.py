@@ -30,6 +30,7 @@ amex = pd.read_csv('AMEX.csv')['Symbol']#.tolist()
 
 us_names = pd.concat([nyse,nasdaq,amex]).drop_duplicates().values.tolist()
 
+
 price_db = 'D:\\Price Data'
 os.chdir(price_db)
 
