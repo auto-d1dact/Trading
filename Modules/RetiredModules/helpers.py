@@ -159,7 +159,7 @@ def maturities(date):
     curr_third_wed = next_third_fri - dt.timedelta(30)
     
     # Finding Term: When current date is after expiry, should be 100% of spot/f1
-    if today < curr_third_wed:
+    if today <= curr_third_wed:
         dte = curr_third_wed - today
         term = curr_third_wed - last_third_wed
     else:
