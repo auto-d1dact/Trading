@@ -54,7 +54,7 @@ def date_earnings(earnings_date_string):
                                   table_div.find('h3').findAll('span')))[-1]).replace('</span>','').split('results')[-2]
     total_names = int(total_names.strip().split(' ')[-1])
     
-    table = table_div.find('table', {'class': 'data-table'}).find('tbody')
+    table = table_div.find('table', {'class': 'W(100%)'}).find('tbody')
     
     initial_table = yahoo_earnings_table(table)
     
@@ -66,7 +66,7 @@ def date_earnings(earnings_date_string):
             site = requests.get(offset_link)
             soup = bs(site.text, 'lxml')
             table_div = soup.find('div', {'id':'fin-cal-table'})
-            table = table_div.find('table', {'class': 'data-table'}).find('tbody')
+            table = table_div.find('table', {'class': 'W(100%)'}).find('tbody')
             
             all_earnings.append(yahoo_earnings_table(table))
         
