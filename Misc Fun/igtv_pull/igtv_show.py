@@ -13,8 +13,6 @@ cwd = os.getcwd()
 
 import igtv_helpers
 
-os.chdir(cwd)
-
 #%%
 class igtv_show:
     

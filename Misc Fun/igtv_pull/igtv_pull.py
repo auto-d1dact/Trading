@@ -56,7 +56,6 @@ def igtv_main():
     print('\n')
     print('Show Summaries Completed in {} seconds'.format(time.time() - start_time_full))
     
-    #%%
     show_engagement_summaries = pd.concat([show.summary_engagements for show in shows], axis = 0)
     all_show_posts = pd.concat([show.posts for show in shows], axis = 0).reset_index(drop = True)
     
@@ -66,7 +65,6 @@ def igtv_main():
     all_show_posts['caption'] = np.nan
     all_show_posts['upload_date'] = np.nan
     
-    #%%
     print('\n')
     print('Pulling IGTV Post Details')
     print('\n')
@@ -95,7 +93,6 @@ def igtv_main():
     print('Post Data Pull Completed in {} seconds'.format(time.time() - start_time_posts))
     
     
-    #%%
     currdate = dt.datetime.today().strftime('%Y-%m-%d')
     
     log_filename = cwd + '\\Logs\\igtv_extract_log_{}.csv'.format(currdate)
