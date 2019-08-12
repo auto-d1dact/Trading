@@ -36,21 +36,3 @@ class igtv_show:
         if self.can_pull_sources:
             self.posts = pd.concat([igtv_helpers.get_show_posts_df(self.ig_handle, source) for source in self.post_source_list], axis = 0)
             self.posts = self.posts.drop_duplicates().reset_index(drop = True)
-            
-        
-    def __str__(self):
-        output_string = '''Show IG URL: {0} \n Summary Engagements: {1} \n Post Counts {2}'''
-        
-        if self.summary_engagements == None:
-            engagement_summary = None
-        else:
-            engagement_summary = str(self.summary_engagements)
-        
-        if self.posts == None:
-            post_counts = None
-        else:
-            post_counts = len(self.posts)
-        
-        return output_string.format(self.show_url,
-                                    engagement_summary,
-                                    post_counts)
