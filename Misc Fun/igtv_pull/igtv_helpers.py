@@ -163,7 +163,7 @@ def get_post_details(post_url, ig_handle, igtv_code):
             views = np.nan
         
         try:
-            uploadDate = post_json['uploadDate'].split('T')[0]
+            uploadDate = post_json['uploadDate']#.split('T')[0]
         except:
             uploadDate = np.nan
             
@@ -212,3 +212,10 @@ def get_post_details(post_url, ig_handle, igtv_code):
                  'upload_date': uploadDate}
     
     return pd.DataFrame(post_dict, index = [0])
+
+#%%
+post_url = 'https://www.instagram.com/tv/B0_RD72Bkll/'
+
+post_soup = bs(requests.get(post_url).text, 'lxml')
+    
+post_json = post_soup.find('script', type = 'application/ld+json')
