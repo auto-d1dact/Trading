@@ -126,6 +126,7 @@ def scrape_igtv(show, return_df = False, code_sleep_time = 0.1):
     
     time.sleep(5)
     browser.implicitly_wait(30)
+    
     posts = browser.find_elements_by_class_name('_bz0w')
     posts = list(filter(lambda x: x.get_attribute('href') != None, posts))
     post_df, failed_posts = get_post_df(browser, posts)
