@@ -1,0 +1,394 @@
+,Address,Neighbourhood,Price,Beds,Baths,Sqft,BuiltIn,Url,PullDate,City,SqftDollar,Preference
+0,"12121 101a Avenue, Surrey, BC",Cedar Hills,1500000.0,7 bed,8 bath,5251 sqft,2013,https://www.zolo.ca/surrey-real-estate/12121-101a-avenue,2020-04-04,Surrey,285.6598743096553,0
+1,"10032 174a Street, Surrey, BC",Fraser Heights,1599888.0,11 bed,10 bath,5590 sqft,2020,https://www.zolo.ca/surrey-real-estate/10032-174a-street,2020-04-04,Surrey,286.205366726297,0
+2,"12129 100 Avenue, Surrey, BC",Cedar Hills,1249000.0,4 bed,3 bath,4357 sqft,9999,https://www.zolo.ca/surrey-real-estate/12129-100-avenue,2020-04-04,Surrey,286.66513656185447,0
+3,"10229 145 Street, Surrey, BC",Guildford,1951000.0,10 bed,8 bath,6719 sqft,2019,https://www.zolo.ca/surrey-real-estate/10229-145-street,2020-04-04,Surrey,290.37059086173537,0
+4,"12376 103a Avenue, Surrey, BC",Cedar Hills,1699000.0,7 bed,6 bath,5834 sqft,2019,https://www.zolo.ca/surrey-real-estate/12376-103a-avenue,2020-04-04,Surrey,291.22386013027085,0
+5,"11679 96 Avenue, Surrey, BC",Royal Heights,1789000.0,9 bed,8 bath,6042 sqft,2017,https://www.zolo.ca/surrey-real-estate/11679-96-avenue,2020-04-04,Surrey,296.0940086064217,0
+6,"10024 174a Street, Surrey, BC",Fraser Heights,1568000.0,9 bed,7 bath,5294 sqft,2019,https://www.zolo.ca/surrey-real-estate/10024-174a-street,2020-04-04,Surrey,296.18435965243674,0
+7,"17375 100 Avenue, Surrey, BC",Fraser Heights,1688888.0,8 bed,9 bath,5649 sqft,2019,https://www.zolo.ca/surrey-real-estate/17375-100-avenue,2020-04-04,Surrey,298.9711453354576,0
+8,"17716 102 Avenue, Surrey, BC",Fraser Heights,1348800.0,7 bed,6 bath,4454 sqft,2011,https://www.zolo.ca/surrey-real-estate/17716-102-avenue,2020-04-04,Surrey,302.82891782667264,0
+9,"10050 172 Street, Surrey, BC",Fraser Heights,1649000.0,9 bed,8 bath,5355 sqft,2020,https://www.zolo.ca/surrey-real-estate/10050-172-street,2020-04-04,Surrey,307.93650793650795,0
+10,"16411 104 Avenue, Surrey, BC",Fraser Heights,1499000.0,8 bed,8 bath,4835 sqft,2016,https://www.zolo.ca/surrey-real-estate/16411-104-avenue,2020-04-04,Surrey,310.0310237849018,0
+11,"10028 174 Street, Surrey, BC",Fraser Heights,1525000.0,6 bed,6 bath,4911 sqft,2020,https://www.zolo.ca/surrey-real-estate/10028-174-street,2020-04-04,Surrey,310.5273874974547,0
+12,"12598 62 Avenue, Surrey, BC",Panorama Ridge,1464000.0,8 bed,7 bath,4705 sqft,2013,https://www.zolo.ca/surrey-real-estate/12598-62-avenue,2020-04-04,Surrey,311.15834218916046,0
+13,"6210 128 Street, Surrey, BC",Panorama Ridge,1299000.0,6 bed,6 bath,4122 sqft,2020,https://www.zolo.ca/surrey-real-estate/6210-128-street,2020-04-04,Surrey,315.13828238719066,0
+14,"13371 61a Avenue, Surrey, BC",Panorama Ridge,1669000.0,8 bed,8 bath,5236 sqft,2017,https://www.zolo.ca/surrey-real-estate/13371-61a-avenue,2020-04-04,Surrey,318.7547746371276,0
+15,"12570 97a Avenue, Surrey, BC",Cedar Hills,1678800.0,10 bed,8 bath,5235 sqft,2013,https://www.zolo.ca/surrey-real-estate/12570-97a-avenue,2020-04-04,Surrey,320.68767908309457,0
+16,"13372 62 Avenue, Surrey, BC",Panorama Ridge,1699000.0,8 bed,8 bath,5132 sqft,2018,https://www.zolo.ca/surrey-real-estate/13372-62-avenue,2020-04-04,Surrey,331.0600155884645,0
+17,"12295 99 Avenue, Surrey, BC",Cedar Hills,1869888.0,10 bed,9 bath,5641 sqft,2019,https://www.zolo.ca/surrey-real-estate/12295-99-avenue,2020-04-04,Surrey,331.48165218932814,0
+18,"11542 80 Avenue, Delta, BC",Scottsdale,1359879.0,7 bed,6 bath,4055 sqft,2018,https://www.zolo.ca/delta-real-estate/11542-80-avenue,2020-04-04,Delta,335.3585696670777,y
+19,"8073 114 Street, Delta, BC",Scottsdale,1699900.0,7 bed,7 bath,5006 sqft,2017,https://www.zolo.ca/delta-real-estate/8073-114-street,2020-04-04,Delta,339.5725129844187,y
+20,"18193 97a Avenue, Surrey, BC",Fraser Heights,1349900.0,7 bed,6 bath,3975 sqft,2020,https://www.zolo.ca/surrey-real-estate/18193-97a-avenue,2020-04-04,Surrey,339.5974842767296,0
+21,"2151 156 Street, Surrey, BC",King George Corridor,2099000.0,7 bed,8 bath,6140 sqft,2018,https://www.zolo.ca/surrey-real-estate/2151-156-street,2020-04-04,Surrey,341.85667752443,0
+22,"14910 35a Avenue, Surrey, BC",Morgan Creek,1524900.0,6 bed,7 bath,4458 sqft,2020,https://www.zolo.ca/surrey-real-estate/14910-35a-avenue,2020-04-04,Surrey,342.0592193808883,0
+23,"9717 182 Street, Surrey, BC",Fraser Heights,1388800.0,6 bed,7 bath,4056 sqft,2020,https://www.zolo.ca/surrey-real-estate/9717-182-street,2020-04-04,Surrey,342.4063116370809,0
+24,"11325 89a Avenue, Delta, BC",Annieville,1565000.0,8 bed,7 bath,4563 sqft,2017,https://www.zolo.ca/delta-real-estate/11325-89a-avenue,2020-04-04,Delta,342.97611220688145,y
+25,"12723 104a Avenue, Surrey, BC",Cedar Hills,1418000.0,8 bed,7 bath,4131 sqft,2019,https://www.zolo.ca/surrey-real-estate/12723-104a-avenue,2020-04-04,Surrey,343.25829097070925,0
+26,"9727 182a Street, Surrey, BC",Fraser Heights,1239000.0,6 bed,6 bath,3608 sqft,2020,https://www.zolo.ca/surrey-real-estate/9727-182a-street,2020-04-04,Surrey,343.40354767184033,0
+27,"13429 56 Avenue, Surrey, BC",Panorama Ridge,2899800.0,7 bed,8 bath,8435 sqft,2017,https://www.zolo.ca/surrey-real-estate/13429-56-avenue,2020-04-04,Surrey,343.78186129223474,0
+28,"1580 Chestnut Street, White Rock, BC",White Rock,1888000.0,7 bed,8 bath,5490 sqft,2018,https://www.zolo.ca/white-rock-real-estate/1580-chestnut-street,2020-04-04,White Rock,343.89799635701274,y
+29,"15-3103 160 Street, Surrey, BC",Morgan Creek,1138000.0,4 bed,4 bath,3297 sqft,2015,https://www.zolo.ca/surrey-real-estate/3103-160-street/15,2020-04-04,Surrey,345.1622687291477,0
+30,"12639 Cameron Drive, Richmond, BC",East Cambie,1048000.0,5 bed,5 bath,3018 sqft,2019,https://www.zolo.ca/richmond-real-estate/12639-cameron-drive,2020-04-04,Richmond,347.2498343273691,n
+31,"14068 Coldicutt Avenue, White Rock, BC",White Rock,2680000.0,8 bed,8 bath,7690 sqft,2013,https://www.zolo.ca/white-rock-real-estate/14068-coldicutt-avenue,2020-04-04,White Rock,348.5045513654096,y
+32,"3-12320 No. 3 Road, Richmond, BC",Gilmore,3180000.0,9 bed,11 bath,9111 sqft,2019,https://www.zolo.ca/richmond-real-estate/12320-no-3-road/3,2020-04-04,Richmond,349.0286466908133,n
+33,"5129 Wilson Drive, Delta, BC",Tsawwassen Central,2388000.0,5 bed,7 bath,6748 sqft,2018,https://www.zolo.ca/delta-real-estate/5129-wilson-drive,2020-04-04,Delta,353.88263189093067,yy
+34,"12707 104a Avenue, Surrey, BC",Cedar Hills,1429000.0,7 bed,7 bath,4027 sqft,2019,https://www.zolo.ca/surrey-real-estate/12707-104a-avenue,2020-04-04,Surrey,354.8547305686615,0
+35,"12749 104a Avenue, Surrey, BC",Cedar Hills,1429000.0,7 bed,7 bath,3973 sqft,2019,https://www.zolo.ca/surrey-real-estate/12749-104a-avenue,2020-04-04,Surrey,359.67782532091616,0
+36,"15832 Prospect Crescent, White Rock, BC",White Rock,2088000.0,6 bed,6 bath,5801 sqft,2017,https://www.zolo.ca/white-rock-real-estate/15832-prospect-crescent,2020-04-04,White Rock,359.93794173418377,n
+37,"6010 131a Street, Surrey, BC",Panorama Ridge,1460000.0,8 bed,6 bath,4029 sqft,2013,https://www.zolo.ca/surrey-real-estate/6010-131a-street,2020-04-04,Surrey,362.37279722015387,0
+38,"13107 98a Avenue, Surrey, BC",Cedar Hills,2398998.0,9 bed,9 bath,6564 sqft,2017,https://www.zolo.ca/surrey-real-estate/13107-98a-avenue,2020-04-04,Surrey,365.4780621572212,0
+39,"3593 150 Street, Surrey, BC",Morgan Creek,1479000.0,5 bed,5 bath,4030 sqft,2019,https://www.zolo.ca/surrey-real-estate/3593-150-street,2020-04-04,Surrey,366.9975186104218,0
+40,"12768 97a Avenue, Surrey, BC",Cedar Hills,1599000.0,6 bed,5 bath,4337 sqft,2018,https://www.zolo.ca/surrey-real-estate/12768-97a-avenue,2020-04-04,Surrey,368.68803320267466,0
+41,"14918 35a Avenue, Surrey, BC",Morgan Creek,1593024.0,6 bed,7 bath,4306 sqft,2020,https://www.zolo.ca/surrey-real-estate/14918-35a-avenue,2020-04-04,Surrey,369.9544821179749,0
+42,"13150 20 Avenue, Surrey, BC",Crescent Bch Ocean Pk.,1999000.0,7 bed,7 bath,5396 sqft,2020,https://www.zolo.ca/surrey-real-estate/13150-20-avenue,2020-04-04,Surrey,370.45959970348406,0
+43,"9646 153a Street, Surrey, BC",Fraser Heights,1588000.0,7 bed,7 bath,4276 sqft,2016,https://www.zolo.ca/surrey-real-estate/9646-153a-street,2020-04-04,Surrey,371.3751169317119,0
+44,"14896 35a Avenue, Surrey, BC",Morgan Creek,1498000.0,6 bed,6 bath,4004 sqft,2020,https://www.zolo.ca/surrey-real-estate/14896-35a-avenue,2020-04-04,Surrey,374.12587412587413,0
+45,"11101 64a Avenue, Delta, BC",Sunshine Hills Woods,2088000.0,8 bed,9 bath,5575 sqft,2016,https://www.zolo.ca/delta-real-estate/11101-64a-avenue,2020-04-04,Delta,374.5291479820628,yy
+46,"8841 Stegavik Court, Delta, BC",Nordel,1499000.0,5 bed,6 bath,4002 sqft,2015,https://www.zolo.ca/delta-real-estate/8841-stegavik-court,2020-04-04,Delta,374.56271864067963,y
+47,"16688 19th Avenue, White Rock, BC",,1498000.0,6 bed,6 bath,3974 sqft,2020,https://www.zolo.ca/white-rock-real-estate/16688-19th-avenue,2020-04-04,White Rock,376.95017614494213,n
+48,"1554 Bergstrom Road, White Rock, BC",White Rock,2488000.0,6 bed,7 bath,6571 sqft,2018,https://www.zolo.ca/white-rock-real-estate/1554-bergstrom-road,2020-04-04,White Rock,378.633389134074,y - no yard
+49,"1360 Maple Street, White Rock, BC",White Rock,2150000.0,9 bed,9 bath,5661 sqft,2015,https://www.zolo.ca/white-rock-real-estate/1360-maple-street,2020-04-04,White Rock,379.7915562621445,y
+50,"14879 35a Avenue, Surrey, BC",Morgan Creek,1538000.0,6 bed,6 bath,4002 sqft,2019,https://www.zolo.ca/surrey-real-estate/14879-35a-avenue,2020-04-04,Surrey,384.30784607696154,0
+51,"11586 84b Avenue, Delta, BC",Annieville,1799808.0,8 bed,7 bath,4672 sqft,2020,https://www.zolo.ca/delta-real-estate/11586-84b-avenue,2020-04-04,Delta,385.2328767123288,n
+52,"5663 Abbey Drive, Delta, BC",Sunshine Hills Woods,1850000.0,8 bed,5 bath,4777 sqft,2020,https://www.zolo.ca/delta-real-estate/5663-abbey-drive,2020-04-04,Delta,387.2723466610844,n
+53,"16115 16a Avenue, Surrey, BC",King George Corridor,1480000.0,6 bed,6 bath,3811 sqft,2011,https://www.zolo.ca/surrey-real-estate/16115-16a-avenue,2020-04-04,Surrey,388.3495145631068,0
+54,"14078 North Bluff Road, White Rock, BC",White Rock,2379000.0,6 bed,8 bath,6070 sqft,2019,https://www.zolo.ca/white-rock-real-estate/14078-north-bluff-road,2020-04-04,White Rock,391.9275123558484,yy
+55,"9880 Huckleberry Drive, Surrey, BC",Fraser Heights,1299000.0,6 bed,6 bath,3303 sqft,2019,https://www.zolo.ca/surrey-real-estate/9880-huckleberry-drive,2020-04-04,Surrey,393.27883742052677,0
+56,"14926 35a Avenue, Surrey, BC",Morgan Creek,1649000.0,7 bed,6 bath,4180 sqft,2017,https://www.zolo.ca/surrey-real-estate/14926-35a-avenue,2020-04-04,Surrey,394.4976076555024,0
+57,"15711 Roper Avenue, White Rock, BC",White Rock,1998000.0,7 bed,8 bath,5047 sqft,2017,https://www.zolo.ca/white-rock-real-estate/15711-roper-avenue,2020-04-04,White Rock,395.87873984545274,y
+58,"12825 62 Avenue, Surrey, BC",Panorama Ridge,1299000.0,6 bed,5 bath,3281 sqft,2020,https://www.zolo.ca/surrey-real-estate/12825-62-avenue,2020-04-04,Surrey,395.9158793050899,0
+59,"5483 15b Avenue, Delta, BC",Cliff Drive,1999999.0,6 bed,5 bath,5043 sqft,2020,https://www.zolo.ca/delta-real-estate/5483-15b-avenue,2020-04-04,Delta,396.58913345231014,y
+60,"8923 112 Street, Delta, BC",Annieville,1399999.0,7 bed,6 bath,3530 sqft,2019,https://www.zolo.ca/delta-real-estate/8923-112-street,2020-04-04,Delta,396.60028328611895,y
+61,"5957 124a Street, Surrey, BC",Panorama Ridge,1489606.0,4 bed,4 bath,3754 sqft,2012,https://www.zolo.ca/surrey-real-estate/5957-124a-street,2020-04-04,Surrey,396.80500799147575,0
+62,"17528 102 Avenue, Surrey, BC",Fraser Heights,2625000.0,7 bed,8 bath,6606 sqft,2019,https://www.zolo.ca/surrey-real-estate/17528-102-avenue,2020-04-04,Surrey,397.36603088101725,0
+63,"15932 105 Avenue, Surrey, BC",Fraser Heights,1198000.0,6 bed,5 bath,3010 sqft,2016,https://www.zolo.ca/surrey-real-estate/15932-105-avenue,2020-04-04,Surrey,398.0066445182724,0
+64,"15785 Cranley Drive, Surrey, BC",King George Corridor,1249000.0,4 bed,4 bath,3119 sqft,2019,https://www.zolo.ca/surrey-real-estate/15785-cranley-drive,2020-04-04,Surrey,400.4488618146842,0
+65,"1560 Maple Street, White Rock, BC",White Rock,1850000.0,5 bed,6 bath,4591 sqft,2016,https://www.zolo.ca/white-rock-real-estate/1560-maple-street,2020-04-04,White Rock,402.9623175778697,y
+66,"16663 103 Avenue, Surrey, BC",Fraser Heights,1336095.0,4 bed,4 bath,3315 sqft,2020,https://www.zolo.ca/surrey-real-estate/16663-103-avenue,2020-04-04,Surrey,403.0452488687783,0
+67,"11692 94 Avenue, Delta, BC",Annieville,1999999.0,7 bed,9 bath,4951 sqft,2019,https://www.zolo.ca/delta-real-estate/11692-94-avenue,2020-04-04,Delta,403.95859422338924,n
+68,"3577 150 Street, Surrey, BC",Morgan Creek,1479000.0,5 bed,5 bath,3608 sqft,2019,https://www.zolo.ca/surrey-real-estate/3577-150-street,2020-04-04,Surrey,409.92239467849225,0
+69,"3592 149a Street, Surrey, BC",Morgan Creek,1449000.0,5 bed,5 bath,3516 sqft,2019,https://www.zolo.ca/surrey-real-estate/3592-149a-street,2020-04-04,Surrey,412.1160409556314,0
+70,"14899 35a Avenue, Surrey, BC",Morgan Creek,1489900.0,5 bed,6 bath,3612 sqft,2019,https://www.zolo.ca/surrey-real-estate/14899-35a-avenue,2020-04-04,Surrey,412.4861572535991,0
+71,"14885 35a Avenue, Surrey, BC",Morgan Creek,1498000.0,5 bed,5 bath,3623 sqft,2019,https://www.zolo.ca/surrey-real-estate/14885-35a-avenue,2020-04-04,Surrey,413.4695004140215,0
+72,"13176 20 Avenue, Surrey, BC",Crescent Bch Ocean Pk.,1989000.0,6 bed,8 bath,4783 sqft,2018,https://www.zolo.ca/surrey-real-estate/13176-20-avenue,2020-04-04,Surrey,415.8477942713778,0
+73,"5173 2 Avenue, Delta, BC",Pebble Hill,1998888.0,5 bed,6 bath,4798 sqft,2017,https://www.zolo.ca/delta-real-estate/5173-2-avenue,2020-04-04,Delta,416.608586911213,y
+74,"3578 149a Street, Surrey, BC",Morgan Creek,1454888.0,5 bed,5 bath,3470 sqft,2019,https://www.zolo.ca/surrey-real-estate/3578-149a-street,2020-04-04,Surrey,419.2760806916427,0
+75,"14411 Mann Park Crescent, White Rock, BC",White Rock,3499999.0,7 bed,10 bath,8343 sqft,2019,https://www.zolo.ca/white-rock-real-estate/14411-mann-park-crescent,2020-04-04,White Rock,419.513244636222,yy
+76,"3588 149a Street, Surrey, BC",Morgan Creek,1449000.0,5 bed,5 bath,3454 sqft,2019,https://www.zolo.ca/surrey-real-estate/3588-149a-street,2020-04-04,Surrey,419.51360741169657,0
+77,"14129 Blackburn Avenue, White Rock, BC",White Rock,2449000.0,5 bed,7 bath,5835 sqft,2018,https://www.zolo.ca/white-rock-real-estate/14129-blackburn-avenue,2020-04-04,White Rock,419.70865467009423,y
+78,"10535 159b Street, Surrey, BC",Fraser Heights,1595000.0,6 bed,6 bath,3798 sqft,2016,https://www.zolo.ca/surrey-real-estate/10535-159b-street,2020-04-04,Surrey,419.9578725645076,0
+79,"3585 150 Street, Surrey, BC",Morgan Creek,1479000.0,5 bed,5 bath,3498 sqft,2019,https://www.zolo.ca/surrey-real-estate/3585-150-street,2020-04-04,Surrey,422.8130360205832,0
+80,"5760 130 Street, Surrey, BC",Panorama Ridge,2988888.0,7 bed,9 bath,7066 sqft,2013,https://www.zolo.ca/surrey-real-estate/5760-130-street,2020-04-04,Surrey,422.99575431644496,0
+81,"1892 King George Boulevard, Surrey, BC",King George Corridor,1375000.0,6 bed,5 bath,3237 sqft,2016,https://www.zolo.ca/surrey-real-estate/1892-king-george-boulevard,2020-04-04,Surrey,424.7760271856657,0
+82,"15920 Vine Avenue, White Rock, BC",White Rock,1699900.0,6 bed,5 bath,3994 sqft,2018,https://www.zolo.ca/white-rock-real-estate/15920-vine-avenue,2020-04-04,White Rock,425.61342013019527,y
+83,"15590 17a Avenue, Surrey, BC",King George Corridor,1799000.0,5 bed,6 bath,4224 sqft,2019,https://www.zolo.ca/surrey-real-estate/15590-17a-avenue,2020-04-04,Surrey,425.8996212121212,0
+84,"2368 Boeing Avenue, Richmond, BC",Sea Island,1780000.0,6 bed,6 bath,4171 sqft,2020,https://www.zolo.ca/richmond-real-estate/2368-boeing-avenue,2020-04-04,Richmond,426.7561735794773,n
+85,"14907 35a Avenue, Surrey, BC",Morgan Creek,1478000.0,4 bed,6 bath,3460 sqft,2019,https://www.zolo.ca/surrey-real-estate/14907-35a-avenue,2020-04-04,Surrey,427.1676300578035,0
+86,"1959 128 Street, Surrey, BC",Crescent Bch Ocean Pk.,2295900.0,6 bed,6 bath,5340 sqft,2017,https://www.zolo.ca/surrey-real-estate/1959-128-street,2020-04-04,Surrey,429.9438202247191,0
+87,"16053 8a Avenue, Surrey, BC",King George Corridor,1848000.0,6 bed,5 bath,4270 sqft,2020,https://www.zolo.ca/surrey-real-estate/16053-8a-avenue,2020-04-04,Surrey,432.78688524590166,0
+88,"10048 172a Street, Surrey, BC",Fraser Heights,1379000.0,5 bed,5 bath,3175 sqft,2020,https://www.zolo.ca/surrey-real-estate/10048-172a-street,2020-04-04,Surrey,434.3307086614173,0
+89,"1026 Pacific Place, Delta, BC",English Bluff,2988000.0,8 bed,8 bath,6874 sqft,2017,https://www.zolo.ca/delta-real-estate/1026-pacific-place,2020-04-04,Delta,434.6814082048298,yy
+90,"15440 Roper Avenue, White Rock, BC",White Rock,2188000.0,6 bed,6 bath,5008 sqft,2019,https://www.zolo.ca/white-rock-real-estate/15440-roper-avenue,2020-04-04,White Rock,436.9009584664537,y
+91,"3452 164 Street, White Rock, BC",Morgan Creek,3380000.0,6 bed,8 bath,7655 sqft,2014,https://www.zolo.ca/white-rock-real-estate/3452-164-street,2020-04-04,White Rock,441.54147615937296,yy
+92,"13698 Blackburn Avenue, White Rock, BC",White Rock,2398000.0,6 bed,7 bath,5417 sqft,2016,https://www.zolo.ca/white-rock-real-estate/13698-blackburn-avenue,2020-04-04,White Rock,442.68045043381943,y
+93,"5330 Bentley Crescent, Delta, BC",Hawthorne,1598000.0,4 bed,4 bath,3609 sqft,2011,https://www.zolo.ca/delta-real-estate/5330-bentley-crescent,2020-04-04,Delta,442.7819340537545,yy
+94,"15823 Buena Vista Avenue, White Rock, BC",White Rock,2598000.0,5 bed,8 bath,5834 sqft,2018,https://www.zolo.ca/white-rock-real-estate/15823-buena-vista-avenue,2020-04-04,White Rock,445.3205347960233,yy
+95,"5032 Walker Avenue, Delta, BC",Pebble Hill,2288000.0,6 bed,6 bath,5128 sqft,2017,https://www.zolo.ca/delta-real-estate/5032-walker-avenue,2020-04-04,Delta,446.1778471138846,y
+96,"12798 26b Avenue, Surrey, BC",Crescent Bch Ocean Pk.,2080000.0,7 bed,7 bath,4645 sqft,2016,https://www.zolo.ca/surrey-real-estate/12798-26b-avenue,2020-04-04,Surrey,447.7933261571582,0
+97,"1571 136 Street, Surrey, BC",Crescent Bch Ocean Pk.,1888000.0,5 bed,6 bath,4214 sqft,2015,https://www.zolo.ca/surrey-real-estate/1571-136-street,2020-04-04,Surrey,448.03037494067394,0
+98,"4977 Linden Drive, Delta, BC",Hawthorne,1785000.0,5 bed,5 bath,3935 sqft,2013,https://www.zolo.ca/delta-real-estate/4977-linden-drive,2020-04-04,Delta,453.6213468869123,n
+99,"10961 Westview Place, Delta, BC",Sunshine Hills Woods,1850000.0,5 bed,6 bath,4055 sqft,2019,https://www.zolo.ca/delta-real-estate/10961-westview-place,2020-04-04,Delta,456.2268803945746,y
+100,"1560 Brearley Street, White Rock, BC",White Rock,2798800.0,7 bed,8 bath,6072 sqft,2018,https://www.zolo.ca/white-rock-real-estate/1560-brearley-street,2020-04-04,White Rock,460.935441370224,yy
+101,"5747 134 Street, Surrey, BC",Panorama Ridge,2249000.0,7 bed,4 bath,4875 sqft,2017,https://www.zolo.ca/surrey-real-estate/5747-134-street,2020-04-04,Surrey,461.3333333333333,0
+102,"1588 Kerfoot Road, White Rock, BC",White Rock,2375000.0,8 bed,6 bath,5144 sqft,2018,https://www.zolo.ca/white-rock-real-estate/1588-kerfoot-road,2020-04-04,White Rock,461.70295489891134,yy
+103,"12753 15 Avenue, Surrey, BC",Crescent Bch Ocean Pk.,1699900.0,5 bed,4 bath,3570 sqft,2013,https://www.zolo.ca/surrey-real-estate/12753-15-avenue,2020-04-04,Surrey,476.1624649859944,0
+104,"1166 Keil Crescent, White Rock, BC",White Rock,2380000.0,5 bed,8 bath,4951 sqft,2016,https://www.zolo.ca/white-rock-real-estate/1166-keil-crescent,2020-04-04,White Rock,480.7109674813169,n
+105,"14465 Saturna Drive, White Rock, BC",White Rock,2498000.0,6 bed,6 bath,5194 sqft,2015,https://www.zolo.ca/white-rock-real-estate/14465-saturna-drive,2020-04-04,White Rock,480.9395456295726,yy
+106,"2249 154 Street, White Rock, BC",King George Corridor,1698000.0,5 bed,5 bath,3520 sqft,2019,https://www.zolo.ca/white-rock-real-estate/2249-154-street,2020-04-04,White Rock,482.3863636363636,y
+107,"1630 Ocean Park Road, Surrey, BC",Crescent Bch Ocean Pk.,1799000.0,5 bed,4 bath,3728 sqft,2013,https://www.zolo.ca/surrey-real-estate/1630-ocean-park-road,2020-04-04,Surrey,482.56437768240346,0
+108,"16355 108 Avenue, Surrey, BC",Fraser Heights,1549000.0,4 bed,6 bath,3200 sqft,2019,https://www.zolo.ca/surrey-real-estate/16355-108-avenue,2020-04-04,Surrey,484.0625,0
+109,"4651 54a Street, Delta, BC",Delta Manor,1698000.0,7 bed,6 bath,3496 sqft,2020,https://www.zolo.ca/delta-real-estate/4651-54a-street,2020-04-04,Delta,485.6979405034325,n
+110,"14195 Wheatley Avenue, Surrey, BC",White Rock,2998800.0,7 bed,9 bath,6139 sqft,2017,https://www.zolo.ca/surrey-real-estate/14195-wheatley-avenue,2020-04-04,Surrey,488.48346636259976,0
+111,"14237 Vine Avenue, White Rock, BC",White Rock,2496000.0,6 bed,6 bath,5011 sqft,2018,https://www.zolo.ca/white-rock-real-estate/14237-vine-avenue,2020-04-04,White Rock,498.1041708241868,yy
+112,"14262 Malabar Avenue, White Rock, BC",White Rock,3580000.0,5 bed,7 bath,7151 sqft,2019,https://www.zolo.ca/white-rock-real-estate/14262-malabar-avenue,2020-04-04,White Rock,500.6292826178157,yy
+113,"2121 128a Street, Surrey, BC",White Rock,2350000.0,5 bed,5 bath,4620 sqft,2013,https://www.zolo.ca/surrey-real-estate/2121-128a-street,2020-04-04,Surrey,508.65800865800867,0
+114,"15587 Columbia Avenue, White Rock, BC",White Rock,2188000.0,7 bed,6 bath,4248 sqft,2016,https://www.zolo.ca/white-rock-real-estate/15587-columbia-avenue,2020-04-04,White Rock,515.0659133709981,n
+115,"1156 Habgood Street, White Rock, BC",White Rock,3199000.0,6 bed,8 bath,6208 sqft,2019,https://www.zolo.ca/white-rock-real-estate/1156-habgood-street,2020-04-04,White Rock,515.3028350515464,y
+116,"2287 154 Street, Surrey, BC",King George Corridor,2198000.0,5 bed,5 bath,4219 sqft,2020,https://www.zolo.ca/surrey-real-estate/2287-154-street,2020-04-04,Surrey,520.9765347238682,0
+117,"5137 44 Avenue, Delta, BC",Ladner Elementary,1788888.0,6 bed,6 bath,3413 sqft,2019,https://www.zolo.ca/delta-real-estate/5137-44-avenue,2020-04-04,Delta,524.1394667447993,y
+118,"14407 Blackburn Crescent, White Rock, BC",White Rock,2298000.0,5 bed,5 bath,4357 sqft,2011,https://www.zolo.ca/white-rock-real-estate/14407-blackburn-crescent,2020-04-04,White Rock,527.4271287583199,n
+119,"13859 Blackburn Avenue, White Rock, BC",White Rock,2978000.0,8 bed,7 bath,5596 sqft,2019,https://www.zolo.ca/white-rock-real-estate/13859-blackburn-avenue,2020-04-04,White Rock,532.1658327376698,yy
+120,"14459 Mann Park Crescent, White Rock, BC",White Rock,3388000.0,6 bed,7 bath,6350 sqft,2019,https://www.zolo.ca/white-rock-real-estate/14459-mann-park-crescent,2020-04-04,White Rock,533.5433070866142,y
+121,"12713 24 Avenue, Surrey, BC",Crescent Bch Ocean Pk.,2498000.0,5 bed,6 bath,4668 sqft,2015,https://www.zolo.ca/surrey-real-estate/12713-24-avenue,2020-04-04,Surrey,535.1328191945158,0
+122,"14858 Prospect Avenue, White Rock, BC",White Rock,4288000.0,22 bed,6 bath,7992 sqft,9999,https://www.zolo.ca/white-rock-real-estate/14858-prospect-avenue,2020-04-04,White Rock,536.5365365365366,n
+123,"13158 57 Avenue, Surrey, BC",Panorama Ridge,4200079.0,9 bed,9 bath,7641 sqft,2019,https://www.zolo.ca/surrey-real-estate/13158-57-avenue,2020-04-04,Surrey,549.6766130087685,0
+124,"5211 Wallace Avenue, Tsawwassen, BC",Pebble Hill,2180000.0,6 bed,5 bath,3948 sqft,2014,https://www.zolo.ca/tsawwassen-real-estate/5211-wallace-avenue,2020-04-04,Tsawwassen,552.1783181357649,n
+125,"1251 Kent Street, White Rock, BC",White Rock,2388000.0,4 bed,5 bath,4286 sqft,2020,https://www.zolo.ca/white-rock-real-estate/1251-kent-street,2020-04-04,White Rock,557.1628558096127,n
+126,"3823 156a Street, Surrey, BC",Morgan Creek,2988000.0,5 bed,7 bath,5347 sqft,2017,https://www.zolo.ca/surrey-real-estate/3823-156a-street,2020-04-04,Surrey,558.818028801197,0
+127,"2341 153a Street, Surrey, BC",King George Corridor,2158000.0,5 bed,6 bath,3849 sqft,2018,https://www.zolo.ca/surrey-real-estate/2341-153a-street,2020-04-04,Surrey,560.665107820213,0
+128,"4-8191 No. 4 Road, Richmond, BC",Garden City,1920000.0,4 bed,3 bath,3417 sqft,2011,https://www.zolo.ca/richmond-real-estate/8191-no-4-road/4,2020-04-04,Richmond,561.8964003511852,n
+129,"5171 Dennison Drive, Delta, BC",Tsawwassen Central,1999000.0,4 bed,5 bath,3550 sqft,2016,https://www.zolo.ca/delta-real-estate/5171-dennison-drive,2020-04-04,Delta,563.0985915492957,n
+130,"15767 Pacific Avenue, White Rock, BC",White Rock,3649900.0,8 bed,8 bath,6386 sqft,2014,https://www.zolo.ca/white-rock-real-estate/15767-pacific-avenue,2020-04-04,White Rock,571.5471343564046,y
+131,"2621 Bobolink Avenue, Vancouver, BC",Fraserview VE,2798000.0,8 bed,6 bath,4890 sqft,2016,https://www.zolo.ca/vancouver-real-estate/2621-bobolink-avenue,2020-04-04,Vancouver,572.1881390593047,0
+132,"15031 Victoria Avenue, White Rock, BC",White Rock,3488000.0,5 bed,7 bath,6079 sqft,2016,https://www.zolo.ca/white-rock-real-estate/15031-victoria-avenue,2020-04-04,White Rock,573.778582003619,yyy
+133,"3188 43rd Avenue E, Vancouver, BC",Killarney VE,2588000.0,6 bed,6 bath,4506 sqft,2020,https://www.zolo.ca/vancouver-real-estate/3188-east-43rd-avenue,2020-04-04,Vancouver,574.3453173546383,0
+134,"7278 Adera Street, Vancouver, BC",Kerrisdale,2789000.0,5 bed,5 bath,4853 sqft,9999,https://www.zolo.ca/vancouver-real-estate/7278-adera-street,2020-04-04,Vancouver,574.6960642901298,0
+135,"14093 Marine Drive, White Rock, BC",White Rock,3980000.0,6 bed,8 bath,6922 sqft,2018,https://www.zolo.ca/white-rock-real-estate/14093-marine-drive,2020-04-04,White Rock,574.9783299624386,n
+136,"13529 14 Avenue, Surrey, BC",Crescent Bch Ocean Pk.,2380000.0,4 bed,5 bath,4136 sqft,2015,https://www.zolo.ca/surrey-real-estate/13529-14-avenue,2020-04-04,Surrey,575.4352030947775,0
+137,"13161 15a Avenue, Surrey, BC",Crescent Bch Ocean Pk.,2350000.0,5 bed,5 bath,4066 sqft,2017,https://www.zolo.ca/surrey-real-estate/13161-15a-avenue,2020-04-04,Surrey,577.9636005902607,0
+138,"15969 39a Avenue, Surrey, BC",Morgan Creek,3500000.0,5 bed,6 bath,6004 sqft,2017,https://www.zolo.ca/surrey-real-estate/15969-39a-avenue,2020-04-04,Surrey,582.9447035309794,0
+139,"5393 1a Avenue, Delta, BC",Pebble Hill,3388800.0,5 bed,7 bath,5810 sqft,2019,https://www.zolo.ca/delta-real-estate/5393-1a-avenue,2020-04-04,Delta,583.2702237521514,y
+140,"15368 Victoria Avenue, White Rock, BC",White Rock,2700000.0,4 bed,6 bath,4629 sqft,2016,https://www.zolo.ca/white-rock-real-estate/15368-victoria-avenue,2020-04-04,White Rock,583.2793259883344,yy
+141,"858 51 Street, Delta, BC",Tsawwassen Central,2100000.0,6 bed,6 bath,3571 sqft,2016,https://www.zolo.ca/delta-real-estate/858-51-street,2020-04-04,Delta,588.0705684682162,y
+142,"353 55 Street, Delta, BC",Pebble Hill,3588000.0,7 bed,6 bath,6061 sqft,2019,https://www.zolo.ca/delta-real-estate/353-55-street,2020-04-04,Delta,591.981521201122,yyy
+143,"15437 Kyle Court, White Rock, BC",White Rock,2899000.0,5 bed,6 bath,4893 sqft,2017,https://www.zolo.ca/white-rock-real-estate/15437-kyle-court,2020-04-04,White Rock,592.4790517065195,yyy
+144,"2137 46th Avenue E, Vancouver, BC",Killarney VE,2988000.0,8 bed,8 bath,5025 sqft,2019,https://www.zolo.ca/vancouver-real-estate/2137-east-46th-avenue,2020-04-04,Vancouver,594.6268656716418,0
+145,"11200 Westminster Highway, Richmond, BC",McLennan,3580000.0,7 bed,7 bath,6020 sqft,2018,https://www.zolo.ca/richmond-real-estate/11200-westminster-highway,2020-04-04,Richmond,594.6843853820598,n
+146,"4-2620 No 4 Road No, Richmond, BC",Bridgeport RI,2688000.0,7 bed,5 bath,4488 sqft,2018,https://www.zolo.ca/richmond-real-estate/2620-north-no-4-road/4,2020-04-04,Richmond,598.9304812834224,y
+147,"10640 Gilmore Crescent, Richmond, BC",Bridgeport RI,2298000.0,6 bed,7 bath,3800 sqft,2019,https://www.zolo.ca/richmond-real-estate/10640-gilmore-crescent,2020-04-04,Richmond,604.7368421052631,y
+148,"9533 Swansea Drive, Richmond, BC",South Arm,2398888.0,5 bed,6 bath,3966 sqft,2012,https://www.zolo.ca/richmond-real-estate/9533-swansea-drive,2020-04-04,Richmond,604.8633383761977,y
+149,"13555 13a Avenue, Surrey, BC",Crescent Bch Ocean Pk.,3160000.0,9 bed,9 bath,5212 sqft,2014,https://www.zolo.ca/surrey-real-estate/13555-13a-avenue,2020-04-04,Surrey,606.2931696085956,0
+150,"6526 Dawson Street, Vancouver, BC",Killarney VE,2868000.0,9 bed,7 bath,4704 sqft,2013,https://www.zolo.ca/vancouver-real-estate/6526-dawson-street,2020-04-04,Vancouver,609.6938775510204,0
+151,"5253 1 Avenue, Delta, BC",Pebble Hill,2378888.0,4 bed,5 bath,3890 sqft,2019,https://www.zolo.ca/delta-real-estate/5253-1-avenue,2020-04-04,Delta,611.5393316195373,y
+152,"10028 Granville Avenue, Richmond, BC",McLennan,4680000.0,6 bed,8 bath,7593 sqft,2011,https://www.zolo.ca/richmond-real-estate/10028-granville-avenue,2020-04-04,Richmond,616.357171078625,n
+153,"5095 1 Avenue, Delta, BC",Pebble Hill,3900000.0,5 bed,7 bath,6321 sqft,2017,https://www.zolo.ca/delta-real-estate/5095-1-avenue,2020-04-04,Delta,616.9909824394874,yyy
+154,"9620 Pinewell Crescent, Richmond, BC",Saunders,3490000.0,5 bed,6 bath,5641 sqft,2015,https://www.zolo.ca/richmond-real-estate/9620-pinewell-crescent,2020-04-04,Richmond,618.6846303846836,y
+155,"10140 Albion Road, Richmond, BC",McNair,2380000.0,6 bed,8 bath,3839 sqft,2013,https://www.zolo.ca/richmond-real-estate/10140-albion-road,2020-04-04,Richmond,619.953112789789,n
+156,"1037 50th Avenue E, Vancouver, BC",South Vancouver,2380000.0,9 bed,7 bath,3740 sqft,2012,https://www.zolo.ca/vancouver-real-estate/1037-east-50th-avenue,2020-04-04,Vancouver,636.3636363636364,0
+157,"496 56th Avenue E, Vancouver, BC",South Vancouver,2899990.0,6 bed,8 bath,4545 sqft,2017,https://www.zolo.ca/vancouver-real-estate/496-east-56th-avenue,2020-04-04,Vancouver,638.0616061606161,0
+158,"14283 Marine Drive, White Rock, BC",White Rock,4388000.0,6 bed,6 bath,6859 sqft,2016,https://www.zolo.ca/white-rock-real-estate/14283-marine-drive,2020-04-04,White Rock,639.7434028284007,y
+159,"14458 Blackburn Crescent, White Rock, BC",White Rock,4749800.0,5 bed,7 bath,7381 sqft,2019,https://www.zolo.ca/white-rock-real-estate/14458-blackburn-crescent,2020-04-04,White Rock,643.5171385991058,n
+160,"9599 Saunders Road, Richmond, BC",Saunders,2390000.0,5 bed,4 bath,3711 sqft,2012,https://www.zolo.ca/richmond-real-estate/9599-saunders-road,2020-04-04,Richmond,644.0312584209108,n
+161,"12371 Flury Drive, Richmond, BC",East Cambie,2488000.0,7 bed,5 bath,3860 sqft,2019,https://www.zolo.ca/richmond-real-estate/12371-flury-drive,2020-04-04,Richmond,644.5595854922279,n
+162,"1523 133b Street, Surrey, BC",Crescent Bch Ocean Pk.,2298000.0,5 bed,5 bath,3555 sqft,2019,https://www.zolo.ca/surrey-real-estate/1523-133b-street,2020-04-04,Surrey,646.4135021097046,0
+163,"9831 Southgate Place, Richmond, BC",South Arm,2150000.0,5 bed,6 bath,3314 sqft,2020,https://www.zolo.ca/richmond-real-estate/9831-southgate-place,2020-04-04,Richmond,648.7628243814122,y
+164,"2127 46th Avenue E, Vancouver, BC",Killarney VE,2298000.0,5 bed,6 bath,3540 sqft,2019,https://www.zolo.ca/vancouver-real-estate/2127-east-46th-avenue,2020-04-04,Vancouver,649.1525423728814,0
+165,"4-10500 No. 4 Road, Richmond, BC",McNair,2388000.0,5 bed,6 bath,3662 sqft,2017,https://www.zolo.ca/richmond-real-estate/10500-no-4-road/4,2020-04-04,Richmond,652.1026761332605,y
+166,"3570 Morgan Creek Way, Surrey, BC",Morgan Creek,3188000.0,5 bed,6 bath,4880 sqft,2019,https://www.zolo.ca/surrey-real-estate/3570-morgan-creek-way,2020-04-04,Surrey,653.2786885245902,0
+167,"1626 58th Avenue W, Vancouver, BC",South Granville,3080000.0,5 bed,5 bath,4700 sqft,9999,https://www.zolo.ca/vancouver-real-estate/1626-west-58th-avenue,2020-04-04,Vancouver,655.3191489361702,0
+168,"10771 Maddocks Road, Richmond, BC",McNair,2280000.0,6 bed,7 bath,3465 sqft,2011,https://www.zolo.ca/richmond-real-estate/10771-maddocks-road,2020-04-04,Richmond,658.008658008658,n
+169,"6847 Sherbrooke Street, Vancouver, BC",South Vancouver,2298800.0,6 bed,6 bath,3492 sqft,2019,https://www.zolo.ca/vancouver-real-estate/6847-sherbrooke-street,2020-04-04,Vancouver,658.3046964490263,0
+170,"1-7080 No. 1 Road, Richmond, BC",Quilchena RI,2790000.0,5 bed,6 bath,4217 sqft,2013,https://www.zolo.ca/richmond-real-estate/7080-no-1-road/1,2020-04-04,Richmond,661.6077780412616,n
+171,"11740 Pintail Drive, Richmond, BC",Westwind,2588800.0,6 bed,6 bath,3886 sqft,2019,https://www.zolo.ca/richmond-real-estate/11740-pintail-drive,2020-04-04,Richmond,666.1863098301595,y
+172,"11220 Seaton Road, Richmond, BC",Ironwood,2380000.0,5 bed,5 bath,3562 sqft,2011,https://www.zolo.ca/richmond-real-estate/11220-seaton-road,2020-04-04,Richmond,668.1639528354857,n
+173,"10051 Springhill Crescent, Richmond, BC",Steveston North,2499000.0,5 bed,5 bath,3735 sqft,2012,https://www.zolo.ca/richmond-real-estate/10051-springhill-crescent,2020-04-04,Richmond,669.0763052208836,yy
+174,"6539 Azure Road, Richmond, BC",Granville,2110000.0,5 bed,6 bath,3149 sqft,2018,https://www.zolo.ca/richmond-real-estate/6539-azure-road,2020-04-04,Richmond,670.053985392188,n
+175,"11440 Pelican Court, Richmond, BC",Westwind,3288000.0,5 bed,6 bath,4897 sqft,2017,https://www.zolo.ca/richmond-real-estate/11440-pelican-court,2020-04-04,Richmond,671.4314886665305,yy
+176,"3131 Williams Road, Richmond, BC",Seafair,3288888.0,6 bed,8 bath,4895 sqft,2019,https://www.zolo.ca/richmond-real-estate/3131-williams-road,2020-04-04,Richmond,671.8872318692544,y
+177,"4080 Williams Road, Richmond, BC",Steveston North,2388800.0,5 bed,6 bath,3533 sqft,2019,https://www.zolo.ca/richmond-real-estate/4080-williams-road,2020-04-04,Richmond,676.1392584206058,yyy
+178,"14020 Marine Drive, White Rock, BC",White Rock,4988000.0,5 bed,6 bath,7322 sqft,2019,https://www.zolo.ca/white-rock-real-estate/14020-marine-drive,2020-04-04,White Rock,681.234635345534,y
+179,"3720 49th Avenue W, Vancouver, BC",Southlands,2999000.0,3 bed,4 bath,4400 sqft,2020,https://www.zolo.ca/vancouver-real-estate/3720-west-49th-avenue,2020-04-04,Vancouver,681.5909090909091,0
+180,"12557 26 Avenue, Surrey, BC",Crescent Bch Ocean Pk.,2788000.0,4 bed,4 bath,4025 sqft,2016,https://www.zolo.ca/surrey-real-estate/12557-26-avenue,2020-04-04,Surrey,692.6708074534162,0
+181,"1309 129a Street, Surrey, BC",Crescent Bch Ocean Pk.,2298000.0,4 bed,5 bath,3308 sqft,2014,https://www.zolo.ca/surrey-real-estate/1309-129a-street,2020-04-04,Surrey,694.6795646916565,0
+182,"3571 Newmore Avenue, Richmond, BC",Seafair,2489000.0,5 bed,6 bath,3578 sqft,2018,https://www.zolo.ca/richmond-real-estate/3571-newmore-avenue,2020-04-04,Richmond,695.6400223588597,y
+183,"6273 St. Catherines Street, Vancouver, BC",Fraser VE,2488000.0,9 bed,8 bath,3547 sqft,2018,https://www.zolo.ca/vancouver-real-estate/6273-st-catherines-street,2020-04-04,Vancouver,701.4378347899634,0
+184,"2031 Harrison Drive, Vancouver, BC",Fraserview VE,3799990.0,7 bed,8 bath,5373 sqft,2018,https://www.zolo.ca/vancouver-real-estate/2031-harrison-drive,2020-04-04,Vancouver,707.2380420621627,0
+185,"6415 Commercial Street, Vancouver, BC",Killarney VE,2398000.0,8 bed,7 bath,3376 sqft,2020,https://www.zolo.ca/vancouver-real-estate/6415-commercial-street,2020-04-04,Vancouver,710.3080568720379,0
+186,"10151 Ruskin Road, Richmond, BC",South Arm,2688000.0,5 bed,6 bath,3772 sqft,2017,https://www.zolo.ca/richmond-real-estate/10151-ruskin-road,2020-04-04,Richmond,712.6193001060445,y
+187,"1842 64th Avenue E, Vancouver, BC",Fraserview VE,2380000.0,7 bed,7 bath,3335 sqft,2017,https://www.zolo.ca/vancouver-real-estate/1842-east-64th-avenue,2020-04-04,Vancouver,713.6431784107946,0
+188,"9220 Diamond Road, Richmond, BC",Seafair,2588000.0,5 bed,6 bath,3620 sqft,2019,https://www.zolo.ca/richmond-real-estate/9220-diamond-road,2020-04-04,Richmond,714.9171270718232,yy
+189,"4280 Pendlebury Road, Richmond, BC",Boyd Park,2878000.0,5 bed,6 bath,4020 sqft,2013,https://www.zolo.ca/richmond-real-estate/4280-pendlebury-road,2020-04-04,Richmond,715.9203980099503,n
+190,"6831 Camsell Crescent, Richmond, BC",Granville,2888000.0,5 bed,5 bath,4032 sqft,2016,https://www.zolo.ca/richmond-real-estate/6831-camsell-crescent,2020-04-04,Richmond,716.2698412698413,n
+191,"8071 Seafair Drive, Richmond, BC",Seafair,2380000.0,5 bed,6 bath,3322 sqft,2012,https://www.zolo.ca/richmond-real-estate/8071-seafair-drive,2020-04-04,Richmond,716.4358819987959,n
+192,"7551 Francis Road, Richmond, BC",Broadmoor,2780000.0,5 bed,6 bath,3875 sqft,2018,https://www.zolo.ca/richmond-real-estate/7551-francis-road,2020-04-04,Richmond,717.4193548387096,y
+193,"10780 Maddocks Road, Richmond, BC",McNair,2380000.0,5 bed,5 bath,3315 sqft,2015,https://www.zolo.ca/richmond-real-estate/10780-maddocks-road,2020-04-04,Richmond,717.9487179487179,
+194,"5131 Williams Road, Richmond, BC",Lackner,2488000.0,4 bed,5 bath,3441 sqft,2014,https://www.zolo.ca/richmond-real-estate/5131-williams-road,2020-04-04,Richmond,723.0456262714328,n
+195,"8228 Cantley Road, Richmond, BC",Lackner,2899000.0,5 bed,6 bath,4001 sqft,2014,https://www.zolo.ca/richmond-real-estate/8228-cantley-road,2020-04-04,Richmond,724.5688577855536,yy
+196,"10720 Mortfield Road, Richmond, BC",South Arm,2999970.0,5 bed,6 bath,4137 sqft,2019,https://www.zolo.ca/richmond-real-estate/10720-mortfield-road,2020-04-04,Richmond,725.155910079768,y
+197,"3311 Blundell Road, Richmond, BC",Quilchena RI,2480000.0,5 bed,6 bath,3410 sqft,2016,https://www.zolo.ca/richmond-real-estate/3311-blundell-road,2020-04-04,Richmond,727.2727272727273,n
+198,"8351 Minler Road, Richmond, BC",Woodwards,2690000.0,5 bed,6 bath,3670 sqft,2012,https://www.zolo.ca/richmond-real-estate/8351-minler-road,2020-04-04,Richmond,732.9700272479564,yy
+199,"14857 Buena Vista Avenue, White Rock, BC",White Rock,2498000.0,4 bed,5 bath,3390 sqft,2019,https://www.zolo.ca/white-rock-real-estate/14857-buena-vista-avenue,2020-04-04,White Rock,736.8731563421829,yy
+200,"2488 Marine Drive SE, Vancouver, BC",,2488800.0,9 bed,6 bath,3363 sqft,2015,https://www.zolo.ca/vancouver-real-estate/2488-southeast-marine-drive,2020-04-04,Vancouver,740.0535236396075,0
+201,"5204 Chester Street, Vancouver, BC",Fraser VE,2330000.0,6 bed,7 bath,3142 sqft,2018,https://www.zolo.ca/vancouver-real-estate/5204-chester-street,2020-04-04,Vancouver,741.5658816040739,0
+202,"6911 Whiteoak Drive, Richmond, BC",Woodwards,2499900.0,5 bed,6 bath,3355 sqft,2012,https://www.zolo.ca/richmond-real-estate/6911-whiteoak-drive,2020-04-04,Richmond,745.1266766020865,n
+203,"7183 Quebec Street, Vancouver, BC",South Vancouver,2388000.0,9 bed,8 bath,3193 sqft,2020,https://www.zolo.ca/vancouver-real-estate/7183-quebec-street,2020-04-04,Vancouver,747.8860006263702,0
+204,"8657 Camden Crescent, Richmond, BC",Lackner,3188000.0,5 bed,6 bath,4259 sqft,2019,https://www.zolo.ca/richmond-real-estate/8657-camden-crescent,2020-04-04,Richmond,748.5325193707444,n
+205,"8117 Cantley Road, Richmond, BC",Lackner,2490000.0,4 bed,6 bath,3312 sqft,2012,https://www.zolo.ca/richmond-real-estate/8117-cantley-road,2020-04-04,Richmond,751.8115942028985,n
+206,"6880 Whiteoak Drive, Richmond, BC",Woodwards,2488000.0,4 bed,4 bath,3305 sqft,2014,https://www.zolo.ca/richmond-real-estate/6880-whiteoak-drive,2020-04-04,Richmond,752.7987897125568,y
+207,"5840 Granville Avenue, Richmond, BC",Granville,2999999.0,5 bed,6 bath,3984 sqft,2013,https://www.zolo.ca/richmond-real-estate/5840-granville-avenue,2020-04-04,Richmond,753.011797188755,n
+208,"8580 Osgoode Place, Richmond, BC",Saunders,2580000.0,4 bed,6 bath,3424 sqft,2019,https://www.zolo.ca/richmond-real-estate/8580-osgoode-place,2020-04-04,Richmond,753.5046728971963,n
+209,"8431 Rosehill Drive, Richmond, BC",South Arm,2298000.0,4 bed,5 bath,3046 sqft,2019,https://www.zolo.ca/richmond-real-estate/8431-rosehill-drive,2020-04-04,Richmond,754.4320420223244,y
+210,"1190 Jackson Way, Delta, BC",Tsawwassen East,2298800.0,4 bed,4 bath,3037 sqft,2018,https://www.zolo.ca/delta-real-estate/1190-jackson-way,2020-04-04,Delta,756.9311820875864,n
+211,"10071 Rosedene Crescent, Richmond, BC",South Arm,2288888.0,5 bed,6 bath,3009 sqft,2019,https://www.zolo.ca/richmond-real-estate/10071-rosedene-crescent,2020-04-04,Richmond,760.6806247922898,0
+212,"7680 Railway Avenue, Richmond, BC",Granville,3288800.0,5 bed,6 bath,4307 sqft,2015,https://www.zolo.ca/richmond-real-estate/7680-railway-avenue,2020-04-04,Richmond,763.5941490596703,0
+213,"7080 Francis Road, Richmond, BC",Broadmoor,2765000.0,5 bed,6 bath,3621 sqft,2019,https://www.zolo.ca/richmond-real-estate/7080-francis-road,2020-04-04,Richmond,763.6012151339409,0
+214,"4840 Mariposa Court, Richmond, BC",Riverdale RI,2988000.0,5 bed,6 bath,3911 sqft,2013,https://www.zolo.ca/richmond-real-estate/4840-mariposa-court,2020-04-04,Richmond,763.9989772436717,0
+215,"1020 Balsam Street, White Rock, BC",White Rock,4290000.0,4 bed,6 bath,5614 sqft,2017,https://www.zolo.ca/white-rock-real-estate/1020-balsam-street,2020-04-04,White Rock,764.1610260064125,0
+216,"7320 Nevis Drive, Richmond, BC",Broadmoor,3999000.0,5 bed,6 bath,5232 sqft,2018,https://www.zolo.ca/richmond-real-estate/7320-nevis-drive,2020-04-04,Richmond,764.3348623853211,0
+217,"8360 Alanmore Place, Richmond, BC",Seafair,2600000.0,5 bed,6 bath,3383 sqft,2018,https://www.zolo.ca/richmond-real-estate/8360-alanmore-place,2020-04-04,Richmond,768.5486254803429,0
+218,"7591 Ledway Road, Richmond, BC",Granville,2788000.0,5 bed,6 bath,3621 sqft,2011,https://www.zolo.ca/richmond-real-estate/7591-ledway-road,2020-04-04,Richmond,769.9530516431925,0
+219,"6260 Granville Avenue, Richmond, BC",Granville,2888000.0,5 bed,6 bath,3745 sqft,2018,https://www.zolo.ca/richmond-real-estate/6260-granville-avenue,2020-04-04,Richmond,771.1615487316421,0
+220,"7680 Steveston Highway, Richmond, BC",Gilmore,3488000.0,6 bed,8 bath,4517 sqft,2020,https://www.zolo.ca/richmond-real-estate/7680-steveston-highway,2020-04-04,Richmond,772.193934027009,0
+221,"66 56th Avenue E, Vancouver, BC",South Vancouver,2458000.0,9 bed,6 bath,3143 sqft,2017,https://www.zolo.ca/vancouver-real-estate/66-east-56th-avenue,2020-04-04,Vancouver,782.0553611199491,0
+222,"10060 Bamberton Drive, Richmond, BC",Broadmoor,2498000.0,4 bed,6 bath,3194 sqft,2020,https://www.zolo.ca/richmond-real-estate/10060-bamberton-drive,2020-04-04,Richmond,782.0914214151534,0
+223,"7591 Decourcy Crescent, Richmond, BC",Quilchena RI,2388000.0,4 bed,5 bath,3052 sqft,2020,https://www.zolo.ca/richmond-real-estate/7591-decourcy-crescent,2020-04-04,Richmond,782.437745740498,0
+224,"3731 Vinmore Avenue, Richmond, BC",Seafair,2650000.0,5 bed,6 bath,3375 sqft,2017,https://www.zolo.ca/richmond-real-estate/3731-vinmore-avenue,2020-04-04,Richmond,785.1851851851852,0
+225,"7988 Bowen Gate, Richmond, BC",Quilchena RI,2898000.0,5 bed,6 bath,3688 sqft,2019,https://www.zolo.ca/richmond-real-estate/7988-bowen-gate,2020-04-04,Richmond,785.7917570498915,0
+226,"8688 Foster Road, Richmond, BC",Broadmoor,3580000.0,5 bed,6 bath,4538 sqft,2017,https://www.zolo.ca/richmond-real-estate/8688-foster-road,2020-04-04,Richmond,788.8937858087263,0
+227,"45 53rd Avenue E, Vancouver, BC",South Vancouver,2688000.0,7 bed,7 bath,3400 sqft,2019,https://www.zolo.ca/vancouver-real-estate/45-east-53rd-avenue,2020-04-04,Vancouver,790.5882352941177,0
+228,"10133 Bridgeport Road, Richmond, BC",Bridgeport RI,2380000.0,8 bed,6 bath,3008 sqft,2014,https://www.zolo.ca/richmond-real-estate/10133-bridgeport-road,2020-04-04,Richmond,791.2234042553191,0
+229,"5751 Riverdale Drive, Richmond, BC",Riverdale RI,2986000.0,5 bed,6 bath,3772 sqft,2012,https://www.zolo.ca/richmond-real-estate/5751-riverdale-drive,2020-04-04,Richmond,791.6224814422058,0
+230,"6231 Danube Road, Richmond, BC",Woodwards,3180000.0,5 bed,6 bath,4000 sqft,2011,https://www.zolo.ca/richmond-real-estate/6231-danube-road,2020-04-04,Richmond,795.0,0
+231,"2-1148 Johnston Road, White Rock, BC",White Rock,2658000.0,3 bed,3 bath,3340 sqft,2019,https://www.zolo.ca/white-rock-real-estate/1148-johnston-road/2,2020-04-04,White Rock,795.8083832335329,0
+232,"9520 Chapmond Crescent, Richmond, BC",Seafair,2850000.0,5 bed,6 bath,3575 sqft,2017,https://www.zolo.ca/richmond-real-estate/9520-chapmond-crescent,2020-04-04,Richmond,797.2027972027972,0
+233,"8540 Elsmore Road, Richmond, BC",Seafair,2688000.0,5 bed,6 bath,3357 sqft,2020,https://www.zolo.ca/richmond-real-estate/8540-elsmore-road,2020-04-04,Richmond,800.7149240393209,0
+234,"9640 Bakerview Drive, Richmond, BC",Saunders,2988800.0,5 bed,6 bath,3729 sqft,2019,https://www.zolo.ca/richmond-real-estate/9640-bakerview-drive,2020-04-04,Richmond,801.5017430946634,0
+235,"8160 Cantley Road, Richmond, BC",Lackner,3298000.0,3 bed,6 bath,4114 sqft,2018,https://www.zolo.ca/richmond-real-estate/8160-cantley-road,2020-04-04,Richmond,801.6528925619834,0
+236,"3280 Lamond Avenue, Richmond, BC",Seafair,2688000.0,5 bed,6 bath,3350 sqft,2020,https://www.zolo.ca/richmond-real-estate/3280-lamond-avenue,2020-04-04,Richmond,802.3880597014926,0
+237,"4091 Granville Avenue, Richmond, BC",Riverdale RI,3698000.0,6 bed,7 bath,4605 sqft,2017,https://www.zolo.ca/richmond-real-estate/4091-granville-avenue,2020-04-04,Richmond,803.0401737242128,0
+238,"886 King Edward Avenue E, Vancouver, BC",Fraser VE,3188000.0,10 bed,8 bath,3964 sqft,2016,https://www.zolo.ca/vancouver-real-estate/886-east-king-edward-avenue,2020-04-04,Vancouver,804.2381432896065,0
+239,"6200 Skaha Crescent, Richmond, BC",Granville,2580000.0,6 bed,6 bath,3204 sqft,2011,https://www.zolo.ca/richmond-real-estate/6200-skaha-crescent,2020-04-04,Richmond,805.2434456928839,0
+240,"2471 Mcleod Avenue, Richmond, BC",Bridgeport RI,2500000.0,5 bed,5 bath,3100 sqft,2012,https://www.zolo.ca/richmond-real-estate/2471-mcleod-avenue,2020-04-04,Richmond,806.4516129032259,0
+241,"10560 Rosebrook Road, Richmond, BC",South Arm,2980000.0,5 bed,6 bath,3676 sqft,2019,https://www.zolo.ca/richmond-real-estate/10560-rosebrook-road,2020-04-04,Richmond,810.6637649619151,0
+242,"8271 Luton Road, Richmond, BC",Garden City,2998000.0,5 bed,6 bath,3670 sqft,2017,https://www.zolo.ca/richmond-real-estate/8271-luton-road,2020-04-04,Richmond,816.8937329700273,0
+243,"10060 Deagle Road, Richmond, BC",Broadmoor,3288000.0,5 bed,6 bath,4020 sqft,2016,https://www.zolo.ca/richmond-real-estate/10060-deagle-road,2020-04-04,Richmond,817.9104477611941,0
+244,"7431 Bassett Place, Richmond, BC",Granville,3288000.0,5 bed,6 bath,4019 sqft,2011,https://www.zolo.ca/richmond-real-estate/7431-bassett-place,2020-04-04,Richmond,818.1139586961931,0
+245,"8860 Citadel Crescent, Richmond, BC",Boyd Park,2480000.0,6 bed,6 bath,3016 sqft,2019,https://www.zolo.ca/richmond-real-estate/8860-citadel-crescent,2020-04-04,Richmond,822.2811671087533,0
+246,"6168 Bassett Road, Richmond, BC",Granville,2998000.0,5 bed,6 bath,3641 sqft,2014,https://www.zolo.ca/richmond-real-estate/6168-bassett-road,2020-04-04,Richmond,823.4001647898929,0
+247,"3400 Barmond Avenue, Richmond, BC",Seafair,2988000.0,5 bed,6 bath,3621 sqft,2019,https://www.zolo.ca/richmond-real-estate/3400-barmond-avenue,2020-04-04,Richmond,825.1864125932063,0
+248,"3004 King Edward Avenue W, Vancouver, BC",MacKenzie Heights,3800000.0,8 bed,7 bath,4547 sqft,2018,https://www.zolo.ca/vancouver-real-estate/3004-west-king-edward-avenue,2020-04-04,Vancouver,835.715856608753,0
+249,"7551 Greenlees Road, Richmond, BC",Broadmoor,2980000.0,4 bed,5 bath,3565 sqft,2015,https://www.zolo.ca/richmond-real-estate/7551-greenlees-road,2020-04-04,Richmond,835.9046283309958,0
+250,"10875 Springmont Gate, Richmond, BC",Steveston North,2598000.0,5 bed,5 bath,3104 sqft,2016,https://www.zolo.ca/richmond-real-estate/10875-springmont-gate,2020-04-04,Richmond,836.9845360824743,0
+251,"6231 Kalamalka Crescent, Richmond, BC",Granville,2680000.0,4 bed,4 bath,3195 sqft,2019,https://www.zolo.ca/richmond-real-estate/6231-kalamalka-crescent,2020-04-04,Richmond,838.8106416275431,0
+252,"14439 Magdalen Avenue, White Rock, BC",White Rock,3388800.0,5 bed,6 bath,4037 sqft,2020,https://www.zolo.ca/white-rock-real-estate/14439-magdalen-avenue,2020-04-04,White Rock,839.4352241763686,0
+253,"6691 Woodwards Road, Richmond, BC",Woodwards,2880000.0,5 bed,6 bath,3410 sqft,2013,https://www.zolo.ca/richmond-real-estate/6691-woodwards-road,2020-04-04,Richmond,844.5747800586511,0
+254,"9691 Bakerview Drive, Richmond, BC",Saunders,3260000.0,5 bed,6 bath,3849 sqft,2018,https://www.zolo.ca/richmond-real-estate/9691-bakerview-drive,2020-04-04,Richmond,846.9732398025461,0
+255,"6820 Gainsborough Drive, Richmond, BC",Woodwards,2799000.0,5 bed,5 bath,3302 sqft,2017,https://www.zolo.ca/richmond-real-estate/6820-gainsborough-drive,2020-04-04,Richmond,847.6680799515445,0
+256,"10777 Springmont Drive, Richmond, BC",Steveston North,3680000.0,6 bed,7 bath,4337 sqft,2016,https://www.zolo.ca/richmond-real-estate/10777-springmont-drive,2020-04-04,Richmond,848.5127968641918,0
+257,"5500 Clearwater Drive, Richmond, BC",Lackner,2960000.0,4 bed,5 bath,3483 sqft,2014,https://www.zolo.ca/richmond-real-estate/5500-clearwater-drive,2020-04-04,Richmond,849.8420901521677,0
+258,"1695 Marine Drive SW, Vancouver, BC",S.W. Marine,3799999.0,6 bed,7 bath,4470 sqft,2019,https://www.zolo.ca/vancouver-real-estate/1695-southwest-marine-drive,2020-04-04,Vancouver,850.1116331096197,0
+259,"6788 Corbould Road, Tsawwassen, BC",Boundary Beach,3199000.0,5 bed,6 bath,3753 sqft,2019,https://www.zolo.ca/tsawwassen-real-estate/6788-corbould-road,2020-04-04,Tsawwassen,852.384758859579,0
+260,"6320 Danube Road, Richmond, BC",Woodwards,3988000.0,5 bed,7 bath,4668 sqft,2018,https://www.zolo.ca/richmond-real-estate/6320-danube-road,2020-04-04,Richmond,854.3273350471294,0
+261,"9731 Bates Road, Richmond, BC",Broadmoor,2980000.0,5 bed,6 bath,3480 sqft,2018,https://www.zolo.ca/richmond-real-estate/9731-bates-road,2020-04-04,Richmond,856.3218390804598,0
+262,"5740 Lancing Road, Richmond, BC",Granville,3580000.0,5 bed,6 bath,4169 sqft,2019,https://www.zolo.ca/richmond-real-estate/5740-lancing-road,2020-04-04,Richmond,858.7191172943152,0
+263,"3160 Wardmore Place, Richmond, BC",Seafair,2850000.0,5 bed,6 bath,3311 sqft,2019,https://www.zolo.ca/richmond-real-estate/3160-wardmore-place,2020-04-04,Richmond,860.7671398369073,0
+264,"7500 Dampier Drive, Richmond, BC",Quilchena RI,2680000.0,5 bed,5 bath,3098 sqft,2012,https://www.zolo.ca/richmond-real-estate/7500-dampier-drive,2020-04-04,Richmond,865.0742414460942,0
+265,"6520 Constable Drive, Richmond, BC",Woodwards,2680000.0,4 bed,6 bath,3071 sqft,2018,https://www.zolo.ca/richmond-real-estate/6520-constable-drive,2020-04-04,Richmond,872.6799088244871,0
+266,"3884 26th Avenue W, Vancouver, BC",Dunbar,3480000.0,4 bed,3 bath,3985 sqft,9999,https://www.zolo.ca/vancouver-real-estate/3884-west-26th-avenue,2020-04-04,Vancouver,873.2747804265997,0
+267,"8751 Sierpina Drive, Richmond, BC",Saunders,2688000.0,4 bed,6 bath,3073 sqft,2019,https://www.zolo.ca/richmond-real-estate/8751-sierpina-drive,2020-04-04,Richmond,874.7152619589978,0
+268,"8071 Calder Road, Richmond, BC",Lackner,3298000.0,5 bed,6 bath,3763 sqft,2018,https://www.zolo.ca/richmond-real-estate/8071-calder-road,2020-04-04,Richmond,876.4283816104172,0
+269,"8400 Seafair Drive, Richmond, BC",Seafair,3188000.0,5 bed,6 bath,3637 sqft,2018,https://www.zolo.ca/richmond-real-estate/8400-seafair-drive,2020-04-04,Richmond,876.5466043442398,0
+270,"7640 Steveston Highway, Richmond, BC",Gilmore,5800000.0,5 bed,7 bath,6605 sqft,2019,https://www.zolo.ca/richmond-real-estate/7640-steveston-highway,2020-04-04,Richmond,878.1226343679031,0
+271,"460 45th Avenue W, Vancouver, BC",Oakridge VW,4488000.0,11 bed,11 bath,5109 sqft,2012,https://www.zolo.ca/vancouver-real-estate/460-west-45th-avenue,2020-04-04,Vancouver,878.4497944803288,0
+272,"9531 Saunders Road, Richmond, BC",Saunders,3280000.0,5 bed,6 bath,3732 sqft,2018,https://www.zolo.ca/richmond-real-estate/9531-saunders-road,2020-04-04,Richmond,878.8853161843516,0
+273,"2534 Cedar Drive, Surrey, BC",Crescent Bch Ocean Pk.,4500000.0,5 bed,6 bath,5113 sqft,2015,https://www.zolo.ca/surrey-real-estate/2534-cedar-drive,2020-04-04,Surrey,880.1095247408566,0
+274,"8200 Clifton Road, Richmond, BC",Lackner,3499000.0,5 bed,6 bath,3957 sqft,2020,https://www.zolo.ca/richmond-real-estate/8200-clifton-road,2020-04-04,Richmond,884.2557493050291,0
+275,"5180 Calderwood Crescent, Richmond, BC",Lackner,3579000.0,5 bed,6 bath,4044 sqft,2019,https://www.zolo.ca/richmond-real-estate/5180-calderwood-crescent,2020-04-04,Richmond,885.0148367952522,0
+276,"8580 Fairfax Crescent, Richmond, BC",Seafair,2980000.0,5 bed,6 bath,3351 sqft,2017,https://www.zolo.ca/richmond-real-estate/8580-fairfax-crescent,2020-04-04,Richmond,889.286780065652,0
+277,"3740 Royalmore Avenue, Richmond, BC",Seafair,2990000.0,5 bed,6 bath,3359 sqft,2019,https://www.zolo.ca/richmond-real-estate/3740-royalmore-avenue,2020-04-04,Richmond,890.1458767490325,0
+278,"3420 Trumond Avenue, Richmond, BC",Seafair,3100000.0,5 bed,6 bath,3461 sqft,2019,https://www.zolo.ca/richmond-real-estate/3420-trumond-avenue,2020-04-04,Richmond,895.6948858711355,0
+279,"14489 Marine Drive, White Rock, BC",White Rock,5300000.0,6 bed,7 bath,5830 sqft,2020,https://www.zolo.ca/white-rock-real-estate/14489-marine-drive,2020-04-04,White Rock,909.0909090909091,0
+280,"6431 Chelmsford Street, Richmond, BC",Granville,3288000.0,5 bed,6 bath,3604 sqft,2018,https://www.zolo.ca/richmond-real-estate/6431-chelmsford-street,2020-04-04,Richmond,912.3196448390677,0
+281,"7331 Bates Road, Richmond, BC",Broadmoor,3180000.0,5 bed,6 bath,3425 sqft,2013,https://www.zolo.ca/richmond-real-estate/7331-bates-road,2020-04-04,Richmond,928.4671532846716,0
+282,"3120 19 Avenue W, Vancouver, BC",Arbutus,3880000.0,5 bed,6 bath,4143 sqft,2013,https://www.zolo.ca/vancouver-real-estate/3120-west-19-avenue,2020-04-04,Vancouver,936.5194303644702,0
+283,"7622 French Street, Vancouver, BC",Marpole,3980000.0,7 bed,6 bath,4228 sqft,2011,https://www.zolo.ca/vancouver-real-estate/7622-french-street,2020-04-04,Vancouver,941.3434247871334,0
+284,"5871 Murchison Road, Richmond, BC",Riverdale RI,3788000.0,5 bed,6 bath,3992 sqft,2019,https://www.zolo.ca/richmond-real-estate/5871-murchison-road,2020-04-04,Richmond,948.8977955911823,0
+285,"102-5151 Brighouse Way, Richmond, BC",Brighouse,3690000.0,4 bed,5 bath,3885 sqft,2013,https://www.zolo.ca/richmond-real-estate/5151-brighouse-way/102,2020-04-04,Richmond,949.8069498069498,0
+286,"6811 Gibbons Drive, Richmond, BC",Riverdale RI,3998000.0,5 bed,7 bath,4161 sqft,2018,https://www.zolo.ca/richmond-real-estate/6811-gibbons-drive,2020-04-04,Richmond,960.8267243451094,0
+287,"4811 Cabot Drive, Richmond, BC",Quilchena RI,3599000.0,5 bed,6 bath,3724 sqft,2019,https://www.zolo.ca/richmond-real-estate/4811-cabot-drive,2020-04-04,Richmond,966.4339419978518,0
+288,"8180 Sunnywood Drive, Richmond, BC",Broadmoor,3588000.0,6 bed,6 bath,3700 sqft,2015,https://www.zolo.ca/richmond-real-estate/8180-sunnywood-drive,2020-04-04,Richmond,969.7297297297297,0
+289,"4028 Tucker Avenue, Richmond, BC",Riverdale RI,3680000.0,5 bed,6 bath,3781 sqft,2020,https://www.zolo.ca/richmond-real-estate/4028-tucker-avenue,2020-04-04,Richmond,973.2874900819888,0
+290,"6251 Woodwards Road, Richmond, BC",Woodwards,3788000.0,5 bed,6 bath,3882 sqft,2018,https://www.zolo.ca/richmond-real-estate/6251-woodwards-road,2020-04-04,Richmond,975.785677485832,0
+291,"865 60th Avenue W, Vancouver, BC",Marpole,2988000.0,5 bed,6 bath,3051 sqft,2011,https://www.zolo.ca/vancouver-real-estate/865-west-60th-avenue,2020-04-04,Vancouver,979.3510324483776,0
+292,"3231 33rd Avenue W, Vancouver, BC",MacKenzie Heights,3390000.0,8 bed,7 bath,3445 sqft,2020,https://www.zolo.ca/vancouver-real-estate/3231-west-33rd-avenue,2020-04-04,Vancouver,984.0348330914369,0
+293,"5851 Reeves Road, Richmond, BC",Riverdale RI,3888000.0,5 bed,6 bath,3950 sqft,2017,https://www.zolo.ca/richmond-real-estate/5851-reeves-road,2020-04-04,Richmond,984.3037974683544,0
+294,"2921 41st Avenue W, Vancouver, BC",Kerrisdale,4288000.0,6 bed,8 bath,4338 sqft,2015,https://www.zolo.ca/vancouver-real-estate/2921-west-41st-avenue,2020-04-04,Vancouver,988.4739511295528,0
+295,"7451 Ludlow Place, Richmond, BC",Granville,3580000.0,5 bed,6 bath,3606 sqft,2020,https://www.zolo.ca/richmond-real-estate/7451-ludlow-place,2020-04-04,Richmond,992.789794786467,0
+296,"5151 Chetwynd Avenue, Richmond, BC",Lackner,3688000.0,5 bed,6 bath,3706 sqft,2017,https://www.zolo.ca/richmond-real-estate/5151-chetwynd-avenue,2020-04-04,Richmond,995.1430113329735,0
+297,"705 54th Avenue W, Vancouver, BC",South Cambie,5580000.0,7 bed,7 bath,5607 sqft,2013,https://www.zolo.ca/vancouver-real-estate/705-west-54th-avenue,2020-04-04,Vancouver,995.1845906902087,0
+298,"7828 Sunnymede Crescent, Richmond, BC",Broadmoor,3388000.0,4 bed,5 bath,3388 sqft,2018,https://www.zolo.ca/richmond-real-estate/7828-sunnymede-crescent,2020-04-04,Richmond,1000.0,0
+299,"4120 Westminster Highway, Richmond, BC",Riverdale RI,4388000.0,5 bed,6 bath,4364 sqft,2017,https://www.zolo.ca/richmond-real-estate/4120-westminster-highway,2020-04-04,Richmond,1005.499541704858,0
+300,"95 47th Avenue W, Vancouver, BC",Oakridge VW,3498000.0,6 bed,7 bath,3447 sqft,2016,https://www.zolo.ca/vancouver-real-estate/95-west-47th-avenue,2020-04-04,Vancouver,1014.7954743255004,0
+301,"5500 Lancing Road, Richmond, BC",Granville,4680000.0,5 bed,6 bath,4589 sqft,2018,https://www.zolo.ca/richmond-real-estate/5500-lancing-road,2020-04-04,Richmond,1019.8300283286119,0
+302,"4691 Foxglove Crescent, Richmond, BC",Riverdale RI,3380000.0,6 bed,6 bath,3310 sqft,2020,https://www.zolo.ca/richmond-real-estate/4691-foxglove-crescent,2020-04-04,Richmond,1021.1480362537765,0
+303,"7620 Reeder Road, Richmond, BC",Broadmoor,3580000.0,5 bed,6 bath,3501 sqft,2019,https://www.zolo.ca/richmond-real-estate/7620-reeder-road,2020-04-04,Richmond,1022.564981433876,0
+304,"4128 Selkirk Street, Vancouver, BC",Shaughnessy,5388000.0,5 bed,9 bath,5244 sqft,2014,https://www.zolo.ca/vancouver-real-estate/4128-selkirk-street,2020-04-04,Vancouver,1027.4599542334097,0
+305,"1590 65th Avenue W, Vancouver, BC",S.W. Marine,3380000.0,6 bed,6 bath,3280 sqft,2019,https://www.zolo.ca/vancouver-real-estate/1590-west-65th-avenue,2020-04-04,Vancouver,1030.4878048780488,0
+306,"6331 Udy Road, Richmond, BC",Granville,3988888.0,5 bed,6 bath,3860 sqft,2018,https://www.zolo.ca/richmond-real-estate/6331-udy-road,2020-04-04,Richmond,1033.3906735751295,0
+307,"6880 Coltsfoot Drive, Richmond, BC",Riverdale RI,3688000.0,5 bed,6 bath,3555 sqft,2019,https://www.zolo.ca/richmond-real-estate/6880-coltsfoot-drive,2020-04-04,Richmond,1037.4120956399438,0
+308,"6691 Mang Road, Richmond, BC",Granville,4899000.0,5 bed,6 bath,4710 sqft,2016,https://www.zolo.ca/richmond-real-estate/6691-mang-road,2020-04-04,Richmond,1040.1273885350317,0
+309,"7165 Maple Street, Vancouver, BC",S.W. Marine,4988000.0,6 bed,8 bath,4782 sqft,2014,https://www.zolo.ca/vancouver-real-estate/7165-maple-street,2020-04-04,Vancouver,1043.0782099539942,0
+310,"1409 38th Avenue W, Vancouver, BC",Shaughnessy,5990000.0,6 bed,7 bath,5729 sqft,2018,https://www.zolo.ca/vancouver-real-estate/1409-west-38th-avenue,2020-04-04,Vancouver,1045.5576889509514,0
+311,"6778 Arbutus Street, Vancouver, BC",S.W. Marine,6998000.0,6 bed,8 bath,6688 sqft,2017,https://www.zolo.ca/vancouver-real-estate/6778-arbutus-street,2020-04-04,Vancouver,1046.3516746411483,0
+312,"5260 Lancing Road, Richmond, BC",Granville,4680000.0,5 bed,6 bath,4437 sqft,2020,https://www.zolo.ca/richmond-real-estate/5260-lancing-road,2020-04-04,Richmond,1054.7667342799189,0
+313,"5406 Maple Road, Richmond, BC",Lackner,4180000.0,5 bed,5 bath,3928 sqft,2017,https://www.zolo.ca/richmond-real-estate/5406-maple-road,2020-04-04,Richmond,1064.1547861507129,0
+314,"2721 24th Avenue W, Vancouver, BC",Arbutus,3990000.0,5 bed,6 bath,3731 sqft,2011,https://www.zolo.ca/vancouver-real-estate/2721-west-24th-avenue,2020-04-04,Vancouver,1069.4183864915572,0
+315,"759 50th Avenue W, Vancouver, BC",South Cambie,4698000.0,5 bed,6 bath,4367 sqft,2019,https://www.zolo.ca/vancouver-real-estate/759-west-50th-avenue,2020-04-04,Vancouver,1075.7957407831464,0
+316,"3292 37th Avenue W, Vancouver, BC",Kerrisdale,3688000.0,5 bed,6 bath,3420 sqft,2020,https://www.zolo.ca/vancouver-real-estate/3292-west-37th-avenue,2020-04-04,Vancouver,1078.3625730994152,0
+317,"7371 Grandy Road, Richmond, BC",Granville,4388000.0,5 bed,6 bath,4069 sqft,2015,https://www.zolo.ca/richmond-real-estate/7371-grandy-road,2020-04-04,Richmond,1078.3976406979602,0
+318,"101-5131 Brighouse Way, Richmond, BC",Brighouse,3980000.0,4 bed,5 bath,3688 sqft,2013,https://www.zolo.ca/richmond-real-estate/5131-brighouse-way/101,2020-04-04,Richmond,1079.175704989154,0
+319,"4951 Tilton Road, Richmond, BC",Riverdale RI,4388888.0,5 bed,6 bath,4051 sqft,2020,https://www.zolo.ca/richmond-real-estate/4951-tilton-road,2020-04-04,Richmond,1083.4085411009628,0
+320,"440 23rd Avenue W, Vancouver, BC",Cambie,4198000.0,6 bed,6 bath,3871 sqft,2017,https://www.zolo.ca/vancouver-real-estate/440-west-23rd-avenue,2020-04-04,Vancouver,1084.474296047533,0
+321,"352 18th Avenue W, Vancouver, BC",Cambie,3650000.0,5 bed,6 bath,3354 sqft,2013,https://www.zolo.ca/vancouver-real-estate/352-west-18th-avenue,2020-04-04,Vancouver,1088.2528324388788,0
+322,"7531 Montana Road, Richmond, BC",Quilchena RI,6388000.0,6 bed,8 bath,5834 sqft,2018,https://www.zolo.ca/richmond-real-estate/7531-montana-road,2020-04-04,Richmond,1094.960575934179,0
+323,"6880 Camsell Crescent, Richmond, BC",Granville,3650000.0,5 bed,5 bath,3322 sqft,2019,https://www.zolo.ca/richmond-real-estate/6880-camsell-crescent,2020-04-04,Richmond,1098.735701384708,0
+324,"3280 River Road, Richmond, BC",Terra Nova,3488000.0,5 bed,7 bath,3163 sqft,2013,https://www.zolo.ca/richmond-real-estate/3280-river-road,2020-04-04,Richmond,1102.75055327221,0
+325,"1538 60th Avenue W, Vancouver, BC",South Granville,4380000.0,6 bed,7 bath,3937 sqft,2015,https://www.zolo.ca/vancouver-real-estate/1538-west-60th-avenue,2020-04-04,Vancouver,1112.5222250444501,0
+326,"6520 Maple Street, Vancouver, BC",Kerrisdale,5180000.0,6 bed,8 bath,4641 sqft,2017,https://www.zolo.ca/vancouver-real-estate/6520-maple-street,2020-04-04,Vancouver,1116.1387631975867,0
+327,"3011 Blundell Road, Richmond, BC",Quilchena RI,3990000.0,4 bed,6 bath,3572 sqft,2018,https://www.zolo.ca/richmond-real-estate/3011-blundell-road,2020-04-04,Richmond,1117.0212765957447,0
+328,"3570 30th Avenue W, Vancouver, BC",Dunbar,4370000.0,5 bed,7 bath,3911 sqft,2011,https://www.zolo.ca/vancouver-real-estate/3570-west-30th-avenue,2020-04-04,Vancouver,1117.3612886729736,0
+329,"2565 15th Avenue W, Vancouver, BC",Kitsilano,4988000.0,6 bed,7 bath,4450 sqft,2014,https://www.zolo.ca/vancouver-real-estate/2565-west-15th-avenue,2020-04-04,Vancouver,1120.8988764044943,0
+330,"1688 59th Avenue W, Vancouver, BC",South Granville,4388000.0,5 bed,6 bath,3901 sqft,2014,https://www.zolo.ca/vancouver-real-estate/1688-west-59th-avenue,2020-04-04,Vancouver,1124.8397846705973,0
+331,"707 28th Avenue W, Vancouver, BC",Cambie,4800000.0,5 bed,6 bath,4250 sqft,2016,https://www.zolo.ca/vancouver-real-estate/707-west-28th-avenue,2020-04-04,Vancouver,1129.4117647058824,0
+332,"5840 Forsyth Crescent, Richmond, BC",Riverdale RI,4980000.0,5 bed,6 bath,4377 sqft,2017,https://www.zolo.ca/richmond-real-estate/5840-forsyth-crescent,2020-04-04,Richmond,1137.76559287183,0
+333,"1770 62nd Avenue W, Vancouver, BC",South Granville,5288000.0,5 bed,6 bath,4633 sqft,2016,https://www.zolo.ca/vancouver-real-estate/1770-west-62nd-avenue,2020-04-04,Vancouver,1141.377077487589,0
+334,"3073 35th Avenue W, Vancouver, BC",MacKenzie Heights,5280000.0,5 bed,7 bath,4602 sqft,2014,https://www.zolo.ca/vancouver-real-estate/3073-west-35th-avenue,2020-04-04,Vancouver,1147.3272490221643,0
+335,"302-5131 Brighouse Way, Richmond, BC",Brighouse,3888000.0,4 bed,5 bath,3380 sqft,2013,https://www.zolo.ca/richmond-real-estate/5131-brighouse-way/302,2020-04-04,Richmond,1150.2958579881656,0
+336,"8525 Wiltshire Street, Vancouver, BC",S.W. Marine,4998000.0,7 bed,6 bath,4333 sqft,2015,https://www.zolo.ca/vancouver-real-estate/8525-wiltshire-street,2020-04-04,Vancouver,1153.4733441033925,0
+337,"1067 47th Avenue W, Vancouver, BC",South Granville,5390000.0,6 bed,7 bath,4639 sqft,2014,https://www.zolo.ca/vancouver-real-estate/1067-west-47th-avenue,2020-04-04,Vancouver,1161.88833800388,0
+338,"4660 9th Avenue W, Vancouver, BC",Point Grey,5280000.0,5 bed,6 bath,4420 sqft,2011,https://www.zolo.ca/vancouver-real-estate/4660-west-9th-avenue,2020-04-04,Vancouver,1194.5701357466064,0
+339,"8TH-4568 W 8th Avenue W, Vancouver, BC",Point Grey,4788000.0,5 bed,6 bath,3962 sqft,2018,https://www.zolo.ca/vancouver-real-estate/4568-west-w-8th-avenue/8th,2020-04-04,Vancouver,1208.4805653710248,0
+340,"4489 Osler Street, Vancouver, BC",Shaughnessy,5680000.0,4 bed,6 bath,4696 sqft,2013,https://www.zolo.ca/vancouver-real-estate/4489-osler-street,2020-04-04,Vancouver,1209.5400340715503,0
+341,"4649 15th Avenue W, Vancouver, BC",Point Grey,4478000.0,7 bed,9 bath,3655 sqft,2020,https://www.zolo.ca/vancouver-real-estate/4649-west-15th-avenue,2020-04-04,Vancouver,1225.1709986320109,0
+342,"6520 Laburnum Street, Vancouver, BC",Kerrisdale,5380000.0,5 bed,7 bath,4367 sqft,2015,https://www.zolo.ca/vancouver-real-estate/6520-laburnum-street,2020-04-04,Vancouver,1231.967025417907,0
+343,"4061 38th Avenue W, Vancouver, BC",Dunbar,5980000.0,6 bed,7 bath,4853 sqft,2018,https://www.zolo.ca/vancouver-real-estate/4061-west-38th-avenue,2020-04-04,Vancouver,1232.2274881516587,0
+344,"6300 Riverdale Drive, Richmond, BC",Riverdale RI,4980000.0,5 bed,6 bath,4037 sqft,2020,https://www.zolo.ca/richmond-real-estate/6300-riverdale-drive,2020-04-04,Richmond,1233.5892989843944,0
+345,"4011 38th Avenue W, Vancouver, BC",Dunbar,5880000.0,5 bed,6 bath,4740 sqft,2016,https://www.zolo.ca/vancouver-real-estate/4011-west-38th-avenue,2020-04-04,Vancouver,1240.506329113924,0
+346,"4205 12th Avenue W, Vancouver, BC",Point Grey,4388000.0,8 bed,8 bath,3536 sqft,2017,https://www.zolo.ca/vancouver-real-estate/4205-west-12th-avenue,2020-04-04,Vancouver,1240.9502262443439,0
+347,"3008 34th Avenue W, Vancouver, BC",MacKenzie Heights,5380000.0,5 bed,7 bath,4334 sqft,2019,https://www.zolo.ca/vancouver-real-estate/3008-west-34th-avenue,2020-04-04,Vancouver,1241.3474850023074,0
+348,"6551 Donald Road, Richmond, BC",Granville,5680000.0,5 bed,6 bath,4559 sqft,2018,https://www.zolo.ca/richmond-real-estate/6551-donald-road,2020-04-04,Richmond,1245.887255977188,0
+349,"7551 Costain Court, Richmond, BC",Granville,5498000.0,5 bed,6 bath,4404 sqft,2015,https://www.zolo.ca/richmond-real-estate/7551-costain-court,2020-04-04,Richmond,1248.410535876476,0
+350,"3707 37th Avenue W, Vancouver, BC",Dunbar,5360000.0,5 bed,6 bath,4260 sqft,2018,https://www.zolo.ca/vancouver-real-estate/3707-west-37th-avenue,2020-04-04,Vancouver,1258.2159624413146,0
+351,"4028 11th Avenue W, Vancouver, BC",Point Grey,4683000.0,5 bed,6 bath,3653 sqft,2015,https://www.zolo.ca/vancouver-real-estate/4028-west-11th-avenue,2020-04-04,Vancouver,1281.9600328497127,0
+352,"2971 31st Avenue W, Vancouver, BC",MacKenzie Heights,5980000.0,5 bed,6 bath,4654 sqft,2015,https://www.zolo.ca/vancouver-real-estate/2971-west-31st-avenue,2020-04-04,Vancouver,1284.9162011173185,0
+353,"7187 Cypress Street, Vancouver, BC",Kerrisdale,6880000.0,6 bed,8 bath,5354 sqft,2017,https://www.zolo.ca/vancouver-real-estate/7187-cypress-street,2020-04-04,Vancouver,1285.0205453866267,0
+354,"7120 Maple Street, Vancouver, BC",S.W. Marine,5988000.0,7 bed,7 bath,4643 sqft,2017,https://www.zolo.ca/vancouver-real-estate/7120-maple-street,2020-04-04,Vancouver,1289.6833943570966,0
+355,"7531 Sunnybank Avenue, Richmond, BC",Broadmoor,5990000.0,5 bed,6 bath,4620 sqft,2016,https://www.zolo.ca/richmond-real-estate/7531-sunnybank-avenue,2020-04-04,Richmond,1296.5367965367966,0
+356,"1857 35th Avenue W, Vancouver, BC",Quilchena,6260000.0,6 bed,7 bath,4803 sqft,2012,https://www.zolo.ca/vancouver-real-estate/1857-west-35th-avenue,2020-04-04,Vancouver,1303.352071621903,0
+357,"4018 34th Avenue W, Vancouver, BC",Dunbar,5980000.0,5 bed,7 bath,4585 sqft,2017,https://www.zolo.ca/vancouver-real-estate/4018-west-34th-avenue,2020-04-04,Vancouver,1304.2529989094874,0
+358,"3893 34th Avenue W, Vancouver, BC",Dunbar,6080000.0,5 bed,7 bath,4605 sqft,2013,https://www.zolo.ca/vancouver-real-estate/3893-west-34th-avenue,2020-04-04,Vancouver,1320.3040173724212,0
+359,"3422 36 Avenue W, Vancouver, BC",Dunbar,5988000.0,5 bed,7 bath,4535 sqft,2020,https://www.zolo.ca/vancouver-real-estate/3422-west-36-avenue,2020-04-04,Vancouver,1320.3969128996691,0
+360,"3637 Marine Drive SW, Vancouver, BC",Southlands,5988800.0,8 bed,8 bath,4524 sqft,2014,https://www.zolo.ca/vancouver-real-estate/3637-southwest-marine-drive,2020-04-04,Vancouver,1323.7842617152962,0
+361,"6487 Mccleery Street, Vancouver, BC",Kerrisdale,7988000.0,6 bed,7 bath,6025 sqft,2016,https://www.zolo.ca/vancouver-real-estate/6487-mccleery-street,2020-04-04,Vancouver,1325.8091286307053,0
+362,"3829 30th Avenue W, Vancouver, BC",Dunbar,3990000.0,4 bed,5 bath,3003 sqft,2017,https://www.zolo.ca/vancouver-real-estate/3829-west-30th-avenue,2020-04-04,Vancouver,1328.6713286713286,0
+363,"4626 12th Avenue W, Vancouver, BC",Point Grey,6390000.0,7 bed,7 bath,4808 sqft,2019,https://www.zolo.ca/vancouver-real-estate/4626-west-12th-avenue,2020-04-04,Vancouver,1329.0349417637271,0
+364,"1121 Nanton Avenue, Vancouver, BC",Shaughnessy,5888000.0,6 bed,7 bath,4396 sqft,2018,https://www.zolo.ca/vancouver-real-estate/1121-nanton-avenue,2020-04-04,Vancouver,1339.3994540491356,0
+365,"4039 38th Avenue W, Vancouver, BC",Dunbar,6498000.0,5 bed,7 bath,4830 sqft,2018,https://www.zolo.ca/vancouver-real-estate/4039-west-38th-avenue,2020-04-04,Vancouver,1345.3416149068323,0
+366,"4810 Osler Street, Vancouver, BC",Shaughnessy,6990000.0,4 bed,6 bath,5174 sqft,2015,https://www.zolo.ca/vancouver-real-estate/4810-osler-street,2020-04-04,Vancouver,1350.985697719366,0
+367,"1460 Mcrae Avenue, Vancouver, BC",Shaughnessy,6075000.0,3 bed,4 bath,4494 sqft,2012,https://www.zolo.ca/vancouver-real-estate/1460-mcrae-avenue,2020-04-04,Vancouver,1351.8024032042724,0
+368,"2588 Edgar Crescent, Vancouver, BC",Quilchena,6380000.0,4 bed,6 bath,4668 sqft,2012,https://www.zolo.ca/vancouver-real-estate/2588-edgar-crescent,2020-04-04,Vancouver,1366.75235646958,0
+369,"5512 Wallace Street, Vancouver, BC",Dunbar,6890000.0,5 bed,7 bath,5019 sqft,2018,https://www.zolo.ca/vancouver-real-estate/5512-wallace-street,2020-04-04,Vancouver,1372.783422992628,0
+370,"1278 39th Avenue W, Vancouver, BC",Shaughnessy,7890000.0,7 bed,8 bath,5706 sqft,2016,https://www.zolo.ca/vancouver-real-estate/1278-west-39th-avenue,2020-04-04,Vancouver,1382.7549947423765,0
+371,"782 22nd Avenue W, Vancouver, BC",Cambie,4980000.0,5 bed,6 bath,3600 sqft,2015,https://www.zolo.ca/vancouver-real-estate/782-west-22nd-avenue,2020-04-04,Vancouver,1383.3333333333333,0
+372,"3635 20th Avenue W, Vancouver, BC",Dunbar,4388000.0,5 bed,7 bath,3140 sqft,2019,https://www.zolo.ca/vancouver-real-estate/3635-west-20th-avenue,2020-04-04,Vancouver,1397.4522292993631,0
+373,"2350 19th Avenue W, Vancouver, BC",Arbutus,5878000.0,5 bed,7 bath,4206 sqft,2020,https://www.zolo.ca/vancouver-real-estate/2350-west-19th-avenue,2020-04-04,Vancouver,1397.5273418925344,0
+374,"3875 14th Avenue W, Vancouver, BC",Point Grey,5590000.0,6 bed,7 bath,3989 sqft,2018,https://www.zolo.ca/vancouver-real-estate/3875-west-14th-avenue,2020-04-04,Vancouver,1401.3537227375282,0
+375,"4519 12th Avenue W, Vancouver, BC",Point Grey,6880000.0,5 bed,8 bath,4780 sqft,2020,https://www.zolo.ca/vancouver-real-estate/4519-west-12th-avenue,2020-04-04,Vancouver,1439.3305439330543,0
+376,"7740 Sunnydene Road, Richmond, BC",Broadmoor,5988000.0,5 bed,6 bath,4096 sqft,2020,https://www.zolo.ca/richmond-real-estate/7740-sunnydene-road,2020-04-04,Richmond,1461.9140625,0
+377,"3708 24th Avenue W, Vancouver, BC",Dunbar,4691000.0,4 bed,5 bath,3189 sqft,2017,https://www.zolo.ca/vancouver-real-estate/3708-west-24th-avenue,2020-04-04,Vancouver,1470.9940420194418,0
+378,"6671 Gibbons Drive, Richmond, BC",Riverdale RI,4980000.0,4 bed,4 bath,3371 sqft,2015,https://www.zolo.ca/richmond-real-estate/6671-gibbons-drive,2020-04-04,Richmond,1477.3064372589736,0
+379,"3011 27th Avenue W, Vancouver, BC",MacKenzie Heights,5880000.0,5 bed,5 bath,3945 sqft,2016,https://www.zolo.ca/vancouver-real-estate/3011-west-27th-avenue,2020-04-04,Vancouver,1490.4942965779467,0
+380,"4775 Blenheim Street, Vancouver, BC",Dunbar,5580000.0,4 bed,5 bath,3708 sqft,2019,https://www.zolo.ca/vancouver-real-estate/4775-blenheim-street,2020-04-04,Vancouver,1504.8543689320388,0
+381,"3928 29th Avenue W, Vancouver, BC",Dunbar,6880000.0,6 bed,8 bath,4559 sqft,2013,https://www.zolo.ca/vancouver-real-estate/3928-west-29th-avenue,2020-04-04,Vancouver,1509.1028734371573,0
+382,"1136 39th Avenue W, Vancouver, BC",Shaughnessy,7980000.0,5 bed,6 bath,5261 sqft,2017,https://www.zolo.ca/vancouver-real-estate/1136-west-39th-avenue,2020-04-04,Vancouver,1516.8218969777608,0
+383,"6061 Churchill Street, Vancouver, BC",South Granville,7888000.0,6 bed,4 bath,5125 sqft,9999,https://www.zolo.ca/vancouver-real-estate/6061-churchill-street,2020-04-04,Vancouver,1539.121951219512,0
+384,"2454 13th Avenue W, Vancouver, BC",Kitsilano,5998000.0,5 bed,6 bath,3897 sqft,2019,https://www.zolo.ca/vancouver-real-estate/2454-west-13th-avenue,2020-04-04,Vancouver,1539.1326661534513,0
+385,"4025 38th Avenue W, Vancouver, BC",Dunbar,6380000.0,6 bed,6 bath,4128 sqft,2020,https://www.zolo.ca/vancouver-real-estate/4025-west-38th-avenue,2020-04-04,Vancouver,1545.5426356589148,0
+386,"2399 35th Avenue W, Vancouver, BC",Quilchena,7280000.0,6 bed,7 bath,4673 sqft,2019,https://www.zolo.ca/vancouver-real-estate/2399-west-35th-avenue,2020-04-04,Vancouver,1557.8857265140166,0
+387,"3883 21st Avenue W, Vancouver, BC",Dunbar,7388000.0,6 bed,7 bath,4639 sqft,2017,https://www.zolo.ca/vancouver-real-estate/3883-west-21st-avenue,2020-04-04,Vancouver,1592.5846087518862,0
+388,"6450 Cedarhurst Street, Vancouver, BC",Kerrisdale,5500000.0,5 bed,2 bath,3307 sqft,9999,https://www.zolo.ca/vancouver-real-estate/6450-cedarhurst-street,2020-04-04,Vancouver,1663.138796492289,0
+389,"3863 20th Avenue W, Vancouver, BC",Dunbar,5980000.0,4 bed,5 bath,3585 sqft,2020,https://www.zolo.ca/vancouver-real-estate/3863-west-20th-avenue,2020-04-04,Vancouver,1668.0613668061367,0
+390,"4235 29th Avenue W, Vancouver, BC",Dunbar,7999800.0,6 bed,8 bath,4707 sqft,2018,https://www.zolo.ca/vancouver-real-estate/4235-west-29th-avenue,2020-04-04,Vancouver,1699.5538559592096,0
+391,"4261 13th Avenue W, Vancouver, BC",Point Grey,7688000.0,5 bed,7 bath,4337 sqft,2017,https://www.zolo.ca/vancouver-real-estate/4261-west-13th-avenue,2020-04-04,Vancouver,1772.6539082314964,0
+392,"1701-499 Pacific Street, Vancouver, BC",Yaletown,6990000.0,3 bed,1 bath,3294 sqft,2018,https://www.zolo.ca/vancouver-real-estate/499-pacific-street/1701,2020-04-04,Vancouver,2122.040072859745,0

@@ -11,6 +11,29 @@ import time
 from bs4 import BeautifulSoup as bs
 import requests
 
+import sys
+from IPython.display import clear_output
+
+def update_progress(progress, date_str):
+    bar_length = 60
+    
+    if isinstance(progress, int):
+        progress = float(progress)
+    if not isinstance(progress, float):
+        progress = 0
+    if progress < 0:
+        progress = 0
+    if progress >= 1:
+        progress = 1
+
+    block = int(round(bar_length * progress))
+
+    clear_output(wait = True)
+    text = "Progress: [{0}] {1:.1f}% Elapsed Run Time: {2}".format( "#" * block + "-" * (bar_length - block), 
+                                                      progress * 100,
+                                                      date_str)
+    print(text)
+
 #%% Functions for insider txns scraping
 def create_insidertxns(currF4):
     
@@ -109,7 +132,10 @@ def create_insidertxns(currF4):
                              insidername, isdirector, isofficer,
                              istenpercentowner, officertitle, txnAcqDispCode, sharesownedaftertxn]
         i += 1
-        print('Completed %.2f Percent' % float(100*i/total_length))
+        run_time = round(time.time() - start_time, 2)
+        
+        update_progress((i + 1)/total_length, '{0} seconds for {1} on {2} '.format(run_time, ticker, transactiondate))
+        #print('Completed %.2f Percent' % float(100*i/total_length))
 
     print('Completed in {} seconds'.format(time.time() - start_time))
     return f4_df
